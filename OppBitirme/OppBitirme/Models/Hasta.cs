@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OppBitirme.Models
 {
-    class Hasta
+    public class Hasta
     {
     }
 }

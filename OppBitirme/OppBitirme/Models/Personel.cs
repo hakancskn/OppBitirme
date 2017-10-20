@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace OppBitirme.Models
 {
-    class Personel
+    public class Personel
     {
+
     }
 }

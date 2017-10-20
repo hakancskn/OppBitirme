@@ -30,11 +30,11 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.kişiEkleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.randevuOluşturToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.doktorlarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hemşirelerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.personelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hastalarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.randevuOluşturToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.randevularToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -58,8 +58,14 @@
             // kişiEkleToolStripMenuItem
             // 
             this.kişiEkleToolStripMenuItem.Name = "kişiEkleToolStripMenuItem";
-            this.kişiEkleToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.kişiEkleToolStripMenuItem.Text = "Kişi Ekle";
+            this.kişiEkleToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.kişiEkleToolStripMenuItem.Text = "Yeni Kişi";
+            // 
+            // randevuOluşturToolStripMenuItem
+            // 
+            this.randevuOluşturToolStripMenuItem.Name = "randevuOluşturToolStripMenuItem";
+            this.randevuOluşturToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
+            this.randevuOluşturToolStripMenuItem.Text = "Yeni Randevu";
             // 
             // doktorlarToolStripMenuItem
             // 
@@ -85,12 +91,6 @@
             this.hastalarToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.hastalarToolStripMenuItem.Text = "Hastalar";
             // 
-            // randevuOluşturToolStripMenuItem
-            // 
-            this.randevuOluşturToolStripMenuItem.Name = "randevuOluşturToolStripMenuItem";
-            this.randevuOluşturToolStripMenuItem.Size = new System.Drawing.Size(107, 20);
-            this.randevuOluşturToolStripMenuItem.Text = "Randevu Oluştur";
-            // 
             // randevularToolStripMenuItem
             // 
             this.randevularToolStripMenuItem.Name = "randevularToolStripMenuItem";
@@ -106,6 +106,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
