@@ -123,6 +123,9 @@
     <EmbeddedResource Include="View\PersonelEkrani.resx">
       <DependentUpon>PersonelEkrani.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\YeniRandevu.resx">
+      <DependentUpon>YeniRandevu.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
