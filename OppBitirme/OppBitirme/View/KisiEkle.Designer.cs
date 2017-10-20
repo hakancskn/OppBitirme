@@ -49,11 +49,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.cmbUnvani = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtEposta = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cmbUnvani = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -236,6 +237,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.txtEposta);
@@ -258,29 +260,6 @@
             this.groupBox1.Size = new System.Drawing.Size(320, 262);
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(44, 291);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(60, 16);
-            this.label9.TabIndex = 39;
-            this.label9.Text = "Unvanı:";
-            // 
-            // cmbUnvani
-            // 
-            this.cmbUnvani.FormattingEnabled = true;
-            this.cmbUnvani.Items.AddRange(new object[] {
-            "Hasta",
-            "Personel",
-            "Doktor",
-            "Hemşire"});
-            this.cmbUnvani.Location = new System.Drawing.Point(147, 286);
-            this.cmbUnvani.Name = "cmbUnvani";
-            this.cmbUnvani.Size = new System.Drawing.Size(181, 21);
-            this.cmbUnvani.TabIndex = 38;
             // 
             // comboBox1
             // 
@@ -306,6 +285,39 @@
             this.txtEposta.Name = "txtEposta";
             this.txtEposta.Size = new System.Drawing.Size(75, 20);
             this.txtEposta.TabIndex = 40;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(44, 291);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(60, 16);
+            this.label9.TabIndex = 39;
+            this.label9.Text = "Unvanı:";
+            // 
+            // cmbUnvani
+            // 
+            this.cmbUnvani.FormattingEnabled = true;
+            this.cmbUnvani.Items.AddRange(new object[] {
+            "Hasta",
+            "Personel",
+            "Doktor",
+            "Hemşire"});
+            this.cmbUnvani.Location = new System.Drawing.Point(147, 286);
+            this.cmbUnvani.Name = "cmbUnvani";
+            this.cmbUnvani.Size = new System.Drawing.Size(181, 21);
+            this.cmbUnvani.TabIndex = 38;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(23, 200);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(67, 16);
+            this.label12.TabIndex = 43;
+            this.label12.Text = "E-Posta:";
             // 
             // KisiEkle
             // 
@@ -356,5 +368,6 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtEposta;
+        private System.Windows.Forms.Label label12;
     }
 }
