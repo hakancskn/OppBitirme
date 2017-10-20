@@ -28,73 +28,52 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnGuncelle = new System.Windows.Forms.Button();
-            this.cmbDoktorlar = new System.Windows.Forms.ComboBox();
+            this.cmbRandevuDoktor = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.cmbServis = new System.Windows.Forms.ComboBox();
+            this.cmbRandevuServis = new System.Windows.Forms.ComboBox();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnGuncelle = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // cmbRandevuDoktor
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button1.Location = new System.Drawing.Point(359, 319);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(206, 33);
-            this.button1.TabIndex = 56;
-            this.button1.Text = "Güncelle";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // btnGuncelle
-            // 
-            this.btnGuncelle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnGuncelle.Location = new System.Drawing.Point(359, 280);
-            this.btnGuncelle.Name = "btnGuncelle";
-            this.btnGuncelle.Size = new System.Drawing.Size(206, 33);
-            this.btnGuncelle.TabIndex = 55;
-            this.btnGuncelle.Text = "Güncelle";
-            this.btnGuncelle.UseVisualStyleBackColor = true;
-            // 
-            // cmbDoktorlar
-            // 
-            this.cmbDoktorlar.FormattingEnabled = true;
-            this.cmbDoktorlar.Location = new System.Drawing.Point(444, 50);
-            this.cmbDoktorlar.Name = "cmbDoktorlar";
-            this.cmbDoktorlar.Size = new System.Drawing.Size(121, 21);
-            this.cmbDoktorlar.TabIndex = 54;
+            this.cmbRandevuDoktor.FormattingEnabled = true;
+            this.cmbRandevuDoktor.Location = new System.Drawing.Point(467, 52);
+            this.cmbRandevuDoktor.Name = "cmbRandevuDoktor";
+            this.cmbRandevuDoktor.Size = new System.Drawing.Size(121, 21);
+            this.cmbRandevuDoktor.TabIndex = 54;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(356, 55);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.Location = new System.Drawing.Point(379, 54);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 16);
+            this.label2.Size = new System.Drawing.Size(72, 17);
             this.label2.TabIndex = 53;
             this.label2.Text = "Doktorlar:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(356, 23);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.Location = new System.Drawing.Point(379, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 16);
+            this.label1.Size = new System.Drawing.Size(49, 17);
             this.label1.TabIndex = 52;
             this.label1.Text = "Servis:";
             // 
-            // cmbServis
+            // cmbRandevuServis
             // 
-            this.cmbServis.FormattingEnabled = true;
-            this.cmbServis.Location = new System.Drawing.Point(444, 18);
-            this.cmbServis.Name = "cmbServis";
-            this.cmbServis.Size = new System.Drawing.Size(121, 21);
-            this.cmbServis.TabIndex = 51;
+            this.cmbRandevuServis.FormattingEnabled = true;
+            this.cmbRandevuServis.Location = new System.Drawing.Point(467, 20);
+            this.cmbRandevuServis.Name = "cmbRandevuServis";
+            this.cmbRandevuServis.Size = new System.Drawing.Size(121, 21);
+            this.cmbRandevuServis.TabIndex = 51;
             // 
             // listView1
             // 
@@ -126,35 +105,44 @@
             this.columnHeader5.Text = "Tckn";
             this.columnHeader5.Width = 129;
             // 
+            // btnGuncelle
+            // 
+            this.btnGuncelle.BackColor = System.Drawing.SystemColors.Control;
+            this.btnGuncelle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnGuncelle.Location = new System.Drawing.Point(403, 360);
+            this.btnGuncelle.Name = "btnGuncelle";
+            this.btnGuncelle.Size = new System.Drawing.Size(185, 28);
+            this.btnGuncelle.TabIndex = 74;
+            this.btnGuncelle.Text = "Güncelle";
+            this.btnGuncelle.UseVisualStyleBackColor = false;
+            // 
             // YeniRandevu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button1);
+            this.BackColor = System.Drawing.Color.PowderBlue;
             this.Controls.Add(this.btnGuncelle);
-            this.Controls.Add(this.cmbDoktorlar);
+            this.Controls.Add(this.cmbRandevuDoktor);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.cmbServis);
+            this.Controls.Add(this.cmbRandevuServis);
             this.Controls.Add(this.listView1);
             this.Name = "YeniRandevu";
-            this.Size = new System.Drawing.Size(721, 425);
+            this.Size = new System.Drawing.Size(630, 403);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnGuncelle;
-        private System.Windows.Forms.ComboBox cmbDoktorlar;
+        private System.Windows.Forms.ComboBox cmbRandevuDoktor;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cmbServis;
+        private System.Windows.Forms.ComboBox cmbRandevuServis;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.Button btnGuncelle;
     }
 }

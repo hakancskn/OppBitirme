@@ -16,5 +16,10 @@ namespace OppBitirme.View
         {
             InitializeComponent();
         }
+
+        private void HastaEkrani_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
