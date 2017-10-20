@@ -114,6 +114,9 @@
     <EmbeddedResource Include="View\HastaEkrani.resx">
       <DependentUpon>HastaEkrani.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\HemsireEkrani.resx">
+      <DependentUpon>HemsireEkrani.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\KisiEkle.resx">
       <DependentUpon>KisiEkle.cs</DependentUpon>
     </EmbeddedResource>
