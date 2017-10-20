@@ -55,7 +55,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.cmbUnvani = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label3
@@ -70,7 +72,7 @@
             // btnTemizle
             // 
             this.btnTemizle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTemizle.Location = new System.Drawing.Point(348, 352);
+            this.btnTemizle.Location = new System.Drawing.Point(348, 377);
             this.btnTemizle.Name = "btnTemizle";
             this.btnTemizle.Size = new System.Drawing.Size(222, 26);
             this.btnTemizle.TabIndex = 20;
@@ -80,7 +82,7 @@
             // btnKaydet
             // 
             this.btnKaydet.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnKaydet.Location = new System.Drawing.Point(348, 384);
+            this.btnKaydet.Location = new System.Drawing.Point(348, 409);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(222, 26);
             this.btnKaydet.TabIndex = 19;
@@ -90,7 +92,7 @@
             // cmbBransi
             // 
             this.cmbBransi.FormattingEnabled = true;
-            this.cmbBransi.Location = new System.Drawing.Point(148, 320);
+            this.cmbBransi.Location = new System.Drawing.Point(125, 46);
             this.cmbBransi.Name = "cmbBransi";
             this.cmbBransi.Size = new System.Drawing.Size(180, 21);
             this.cmbBransi.TabIndex = 36;
@@ -99,7 +101,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(44, 325);
+            this.label10.Location = new System.Drawing.Point(22, 46);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(56, 16);
             this.label10.TabIndex = 35;
@@ -110,7 +112,7 @@
             this.chlsHemsire.FormattingEnabled = true;
             this.chlsHemsire.Location = new System.Drawing.Point(348, 22);
             this.chlsHemsire.Name = "chlsHemsire";
-            this.chlsHemsire.Size = new System.Drawing.Size(222, 319);
+            this.chlsHemsire.Size = new System.Drawing.Size(222, 349);
             this.chlsHemsire.TabIndex = 37;
             // 
             // txtTC
@@ -290,7 +292,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(44, 291);
+            this.label9.Location = new System.Drawing.Point(22, 16);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(60, 16);
             this.label9.TabIndex = 39;
@@ -304,7 +306,7 @@
             "Personel",
             "Doktor",
             "Hemşire"});
-            this.cmbUnvani.Location = new System.Drawing.Point(147, 286);
+            this.cmbUnvani.Location = new System.Drawing.Point(125, 11);
             this.cmbUnvani.Name = "cmbUnvani";
             this.cmbUnvani.Size = new System.Drawing.Size(181, 21);
             this.cmbUnvani.TabIndex = 38;
@@ -319,23 +321,34 @@
             this.label12.TabIndex = 43;
             this.label12.Text = "E-Posta:";
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.cmbUnvani);
+            this.groupBox2.Controls.Add(this.cmbBransi);
+            this.groupBox2.Location = new System.Drawing.Point(22, 286);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(320, 81);
+            this.groupBox2.TabIndex = 40;
+            this.groupBox2.TabStop = false;
+            // 
             // KisiEkle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.cmbUnvani);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.chlsHemsire);
-            this.Controls.Add(this.cmbBransi);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.btnTemizle);
             this.Controls.Add(this.btnKaydet);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label3);
             this.Name = "KisiEkle";
-            this.Size = new System.Drawing.Size(640, 426);
+            this.Size = new System.Drawing.Size(640, 533);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -369,5 +382,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtEposta;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
