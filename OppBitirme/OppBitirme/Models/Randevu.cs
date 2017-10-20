@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OppBitirme.Models
 {
-    public class Hemsire
+    public class Randevu
     {
     }
 }

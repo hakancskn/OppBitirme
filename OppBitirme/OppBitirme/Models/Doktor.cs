@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OppBitirme.Models
 {
-    class Doktor
+    public class Doktor
     {
     }
 }
