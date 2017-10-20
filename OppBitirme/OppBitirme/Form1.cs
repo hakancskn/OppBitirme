@@ -15,6 +15,7 @@ namespace OppBitirme
         public Form1()
         {
             InitializeComponent();
+            //hcfhcghcfh
         }
     }
 }
