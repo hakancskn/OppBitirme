@@ -16,9 +16,13 @@ namespace OppBitirme.Models
 
 
 
-        enum Servisler
+        public enum Servisler
         {
 
+
+        }
+        public enum Branslar
+        {
 
         }
 

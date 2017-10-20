@@ -51,7 +51,8 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\ICalisan.cs" />
+    <Compile Include="Interfaces\IBrans.cs" />
+    <Compile Include="Interfaces\IServis.cs" />
     <Compile Include="Models\Doktor.cs" />
     <Compile Include="Models\Hasta.cs" />
     <Compile Include="Models\Hastane.cs" />
