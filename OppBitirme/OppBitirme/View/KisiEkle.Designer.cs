@@ -198,6 +198,7 @@
             this.groupBox1.Size = new System.Drawing.Size(325, 274);
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // label13
             // 
@@ -347,6 +348,7 @@
             this.Controls.Add(this.label3);
             this.Name = "KisiEkle";
             this.Size = new System.Drawing.Size(858, 540);
+            this.Load += new System.EventHandler(this.KisiEkle_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
