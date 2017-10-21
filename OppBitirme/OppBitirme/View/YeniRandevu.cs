@@ -16,5 +16,10 @@ namespace OppBitirme.View
         {
             InitializeComponent();
         }
+
+        private void YeniRandevu_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

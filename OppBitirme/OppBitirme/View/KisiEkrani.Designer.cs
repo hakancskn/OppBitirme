@@ -1,6 +1,6 @@
 ﻿namespace OppBitirme.View
 {
-    partial class DoktorEkrani
+    partial class KisiEkrani
     {
         /// <summary> 
         /// Required designer variable.
@@ -293,7 +293,7 @@
             this.txtDrMail.Size = new System.Drawing.Size(75, 20);
             this.txtDrMail.TabIndex = 64;
             // 
-            // DoktorEkrani
+            // KisiEkrani
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -323,8 +323,9 @@
             this.Controls.Add(this.txtDrSoyad);
             this.Controls.Add(this.txtDradi);
             this.DoubleBuffered = true;
-            this.Name = "DoktorEkrani";
+            this.Name = "KisiEkrani";
             this.Size = new System.Drawing.Size(519, 550);
+            this.Load += new System.EventHandler(this.KisiEkrani_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

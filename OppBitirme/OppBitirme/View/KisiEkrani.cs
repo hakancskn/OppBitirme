@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace OppBitirme.View
 {
-    public partial class DoktorEkrani : UserControl
+    public partial class KisiEkrani : UserControl
     {
-        public DoktorEkrani()
+        public KisiEkrani()
         {
             InitializeComponent();
         }
@@ -23,6 +23,11 @@ namespace OppBitirme.View
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void KisiEkrani_Load(object sender, EventArgs e)
         {
 
         }

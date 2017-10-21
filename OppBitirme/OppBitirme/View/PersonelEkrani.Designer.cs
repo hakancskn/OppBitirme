@@ -311,7 +311,7 @@
             this.Controls.Add(this.txtDrSoyad);
             this.Controls.Add(this.txtDradi);
             this.Name = "PersonelEkrani";
-            this.Size = new System.Drawing.Size(498, 610);
+            this.Size = new System.Drawing.Size(485, 605);
             this.Load += new System.EventHandler(this.PersonelEkrani_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

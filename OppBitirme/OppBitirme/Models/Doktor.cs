@@ -9,7 +9,7 @@ namespace OppBitirme.Models
 {
     public class Doktor : Kisi, IServis
     {
-        
-        Enumlar.Servisler IServis.Servis { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public Hastane.Servisler Servis { get; set; }
+      
     }
 }
