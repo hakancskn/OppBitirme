@@ -93,12 +93,6 @@
     <Compile Include="View\PersonelEkrani.Designer.cs">
       <DependentUpon>PersonelEkrani.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\YeniRandevu.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="View\YeniRandevu.Designer.cs">
-      <DependentUpon>YeniRandevu.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -127,9 +121,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\PersonelEkrani.resx">
       <DependentUpon>PersonelEkrani.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\YeniRandevu.resx">
-      <DependentUpon>YeniRandevu.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
