@@ -20,7 +20,7 @@ namespace OppBitirme
             InitializeComponent();
             
         }
-
+        KisiEkrani kisiEkrani;
         private void Form1_Load(object sender, EventArgs e)
         {
             Hastane hastane = new Hastane();
@@ -30,7 +30,7 @@ namespace OppBitirme
             doktor.Tckn = "15143256030";
             doktor.Telefon = "05387299810";
             doktor.unvan = Kisi.Unvan.Doktor;
-            
+            doktor.Servis = Hastane.Servisler.das;
             hastane.Doktorlar.Add(doktor);
             Hemsire hemsire = new Hemsire();
             hemsire.Ad = "dasds";
@@ -39,10 +39,17 @@ namespace OppBitirme
             hastane.Hemsireler.Add(hemsire);
             hastane.xml();
             KisiEkle kisiEkle = new KisiEkle();
-            panel1.Controls.Add(kisiEkle);
            
 
+
             this.LayoutMdi(MdiLayout.TileVertical);
+        }
+
+        private void doktorlarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            kisiEkrani = new KisiEkrani();
+            panel1.Controls.Clear();
+            panel1.Controls.Add(kisiEkrani);
         }
     }
 }

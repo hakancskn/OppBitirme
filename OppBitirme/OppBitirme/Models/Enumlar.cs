@@ -8,15 +8,7 @@ namespace OppBitirme.Models
 {
     class Enumlar
     {
-        public enum Servisler
-        {
-
-
-        }
-        public enum Branslar
-        {
-
-        }
+    
 
     }
 }

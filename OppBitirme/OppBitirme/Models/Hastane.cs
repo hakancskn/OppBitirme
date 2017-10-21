@@ -18,9 +18,17 @@ namespace OppBitirme.Models
 
         public List<Randevu> Randevular { get; set; } = new List<Randevu>();
 
+        public enum Servisler
+        {
+            das
+
+        }
+        public enum Branslar
+        {
+dsa
+        }
 
 
-      
         SaveFileDialog dosyaKaydet = new SaveFileDialog();
         public void xml()
         {

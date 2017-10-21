@@ -74,6 +74,7 @@
             this.doktorlarToolStripMenuItem.Name = "doktorlarToolStripMenuItem";
             this.doktorlarToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
             this.doktorlarToolStripMenuItem.Text = "Doktorlar";
+            this.doktorlarToolStripMenuItem.Click += new System.EventHandler(this.doktorlarToolStripMenuItem_Click);
             // 
             // hemşirelerToolStripMenuItem
             // 
