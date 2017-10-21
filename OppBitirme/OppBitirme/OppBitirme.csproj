@@ -54,6 +54,7 @@
     <Compile Include="Interfaces\IBrans.cs" />
     <Compile Include="Interfaces\IServis.cs" />
     <Compile Include="Models\Doktor.cs" />
+    <Compile Include="Models\Enumlar.cs" />
     <Compile Include="Models\Hasta.cs" />
     <Compile Include="Models\Hastane.cs" />
     <Compile Include="Models\Hemsire.cs" />

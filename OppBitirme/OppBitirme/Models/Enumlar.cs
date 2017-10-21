@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace OppBitirme.Models
 {
-    public class Hasta:Kisi
+    class Enumlar
     {
+        public enum Servisler
+        {
+
+
+        }
+        public enum Branslar
+        {
+
+        }
+
     }
 }
