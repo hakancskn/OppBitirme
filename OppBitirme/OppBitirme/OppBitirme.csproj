@@ -100,6 +100,7 @@
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -109,6 +110,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="View\DoktorEkrani.resx">
       <DependentUpon>DoktorEkrani.cs</DependentUpon>
@@ -140,6 +142,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\18bhfgx8bli31jpg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\heart-beat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hospital-medical-tech.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Littmann_CardiologyIV_Stethoscope_SoundPath_410x200_1174375.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medical %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Medical.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medical-logo.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
