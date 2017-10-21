@@ -129,6 +129,7 @@
             this.Controls.Add(this.listView1);
             this.Name = "YeniRandevu";
             this.Size = new System.Drawing.Size(630, 403);
+            this.Load += new System.EventHandler(this.YeniRandevu_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
