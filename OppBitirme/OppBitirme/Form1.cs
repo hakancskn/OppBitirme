@@ -47,9 +47,14 @@ namespace OppBitirme
 
         private void doktorlarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            kisiEkrani = new KisiEkrani();
+           
+        }
+
+        private void kişiEkleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            KisiEkle kisi = new KisiEkle();
             panel1.Controls.Clear();
-            panel1.Controls.Add(kisiEkrani);
+            panel1.Controls.Add(kisi);
         }
     }
 }
