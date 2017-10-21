@@ -13,6 +13,7 @@ namespace OppBitirme.View
 {
     public partial class GuncelleEkran : UserControl
     {
+        public Unvan unvan { get; set; }
         public GuncelleEkran()
         {
             InitializeComponent();

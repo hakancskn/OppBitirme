@@ -40,7 +40,8 @@ namespace OppBitirme
             hastane.Hemsireler.Add(hemsire);
             hastane.xml();
             kisi = new KisiEkle();
-            
+            Hemsire hemsa = new Hemsire();
+
 
 
             this.LayoutMdi(MdiLayout.TileVertical);

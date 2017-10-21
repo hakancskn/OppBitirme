@@ -1,19 +1,14 @@
-﻿using System;
+﻿using OppBitirme.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using static OppBitirme.Models.Hastane;
-
 namespace OppBitirme.Interfaces
 {
-     interface IServis
+   public  interface IHemsireAlabilen
     {
-         Servisler Servis { get; set; }
-
+      List<Hemsire> Hemsireleri { get; set; }
     }
-
-
-
 }

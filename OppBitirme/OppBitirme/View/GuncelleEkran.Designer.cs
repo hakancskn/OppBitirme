@@ -52,9 +52,14 @@
             this.cmbHastaMail = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtHastaMail = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnGuncelle = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.chlsHemsire = new System.Windows.Forms.CheckedListBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cmbKisiBrans = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // columnHeader5
@@ -88,7 +93,7 @@
             this.listView1.GridLines = true;
             this.listView1.Location = new System.Drawing.Point(29, 365);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(511, 230);
+            this.listView1.Size = new System.Drawing.Size(753, 230);
             this.listView1.TabIndex = 46;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -248,6 +253,19 @@
             this.txtHastaMail.Size = new System.Drawing.Size(84, 20);
             this.txtHastaMail.TabIndex = 65;
             // 
+            // btnGuncelle
+            // 
+            this.btnGuncelle.BackColor = System.Drawing.Color.PowderBlue;
+            this.btnGuncelle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnGuncelle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnGuncelle.Location = new System.Drawing.Point(341, 328);
+            this.btnGuncelle.Name = "btnGuncelle";
+            this.btnGuncelle.Size = new System.Drawing.Size(184, 31);
+            this.btnGuncelle.TabIndex = 83;
+            this.btnGuncelle.Text = "Güncelle";
+            this.btnGuncelle.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnGuncelle.UseVisualStyleBackColor = false;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -258,24 +276,49 @@
             this.pictureBox1.TabIndex = 68;
             this.pictureBox1.TabStop = false;
             // 
-            // btnGuncelle
+            // chlsHemsire
             // 
-            this.btnGuncelle.BackColor = System.Drawing.Color.PowderBlue;
-            this.btnGuncelle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnGuncelle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnGuncelle.Location = new System.Drawing.Point(341, 259);
-            this.btnGuncelle.Name = "btnGuncelle";
-            this.btnGuncelle.Size = new System.Drawing.Size(184, 100);
-            this.btnGuncelle.TabIndex = 83;
-            this.btnGuncelle.Text = "Güncelle";
-            this.btnGuncelle.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnGuncelle.UseVisualStyleBackColor = false;
+            this.chlsHemsire.FormattingEnabled = true;
+            this.chlsHemsire.Location = new System.Drawing.Point(546, 12);
+            this.chlsHemsire.Name = "chlsHemsire";
+            this.chlsHemsire.Size = new System.Drawing.Size(261, 319);
+            this.chlsHemsire.TabIndex = 84;
             // 
-            // GüncelleEkran
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.cmbKisiBrans);
+            this.groupBox2.Location = new System.Drawing.Point(227, 259);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(313, 63);
+            this.groupBox2.TabIndex = 85;
+            this.groupBox2.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(-3, 19);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(50, 17);
+            this.label3.TabIndex = 35;
+            this.label3.Text = "Branşı:";
+            // 
+            // cmbKisiBrans
+            // 
+            this.cmbKisiBrans.FormattingEnabled = true;
+            this.cmbKisiBrans.Location = new System.Drawing.Point(101, 19);
+            this.cmbKisiBrans.Name = "cmbKisiBrans";
+            this.cmbKisiBrans.Size = new System.Drawing.Size(180, 21);
+            this.cmbKisiBrans.TabIndex = 36;
+            // 
+            // GuncelleEkran
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PowderBlue;
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.chlsHemsire);
             this.Controls.Add(this.btnGuncelle);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cmbHastaMail);
@@ -297,10 +340,12 @@
             this.Controls.Add(this.cmbHastaCinsiyeti);
             this.Controls.Add(this.txtHastaSoyadi);
             this.Controls.Add(this.txtHastaAdi);
-            this.Name = "GüncelleEkran";
-            this.Size = new System.Drawing.Size(572, 607);
+            this.Name = "GuncelleEkran";
+            this.Size = new System.Drawing.Size(827, 607);
             this.Load += new System.EventHandler(this.HastaEkrani_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -333,5 +378,9 @@
         private System.Windows.Forms.TextBox txtHastaMail;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnGuncelle;
+        private System.Windows.Forms.CheckedListBox chlsHemsire;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cmbKisiBrans;
     }
 }

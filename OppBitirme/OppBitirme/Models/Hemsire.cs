@@ -10,6 +10,6 @@ namespace OppBitirme.Models
     public class Hemsire : Kisi, IServis
     {
         public Hastane.Servisler Servis { get ; set; }
-
+        public Doktor Doktoru { get; set; }
     }
 }
