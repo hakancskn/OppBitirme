@@ -7,14 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static OppBitirme.Models.Kisi;
 
 namespace OppBitirme.View
 {
-    public partial class HastaEkrani : UserControl
+    public partial class GuncelleEkran : UserControl
     {
-        public HastaEkrani()
+        public GuncelleEkran()
         {
             InitializeComponent();
+        }
+        public GuncelleEkran(Unvan unvani)
+        {
+            InitializeComponent();
+
         }
 
         private void HastaEkrani_Load(object sender, EventArgs e)
