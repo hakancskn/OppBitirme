@@ -52,8 +52,6 @@
             this.lblDrSoyad = new System.Windows.Forms.Label();
             this.lblDrAd = new System.Windows.Forms.Label();
             this.btnGuncelle = new System.Windows.Forms.Button();
-            this.cmbHemsireMail = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.txtHemsireMail = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -69,7 +67,7 @@
             this.columnHeader5});
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(0, 400);
+            this.listView1.Location = new System.Drawing.Point(16, 416);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(502, 217);
             this.listView1.TabIndex = 47;
@@ -103,28 +101,28 @@
             // 
             // txtHemsireAdres
             // 
-            this.txtHemsireAdres.Location = new System.Drawing.Point(300, 219);
+            this.txtHemsireAdres.Location = new System.Drawing.Point(316, 235);
             this.txtHemsireAdres.Name = "txtHemsireAdres";
             this.txtHemsireAdres.Size = new System.Drawing.Size(202, 20);
             this.txtHemsireAdres.TabIndex = 45;
             // 
             // txtHemsireTel
             // 
-            this.txtHemsireTel.Location = new System.Drawing.Point(300, 190);
+            this.txtHemsireTel.Location = new System.Drawing.Point(316, 206);
             this.txtHemsireTel.Name = "txtHemsireTel";
             this.txtHemsireTel.Size = new System.Drawing.Size(202, 20);
             this.txtHemsireTel.TabIndex = 44;
             // 
             // txtHemsireTckn
             // 
-            this.txtHemsireTckn.Location = new System.Drawing.Point(300, 161);
+            this.txtHemsireTckn.Location = new System.Drawing.Point(316, 177);
             this.txtHemsireTckn.Name = "txtHemsireTckn";
             this.txtHemsireTckn.Size = new System.Drawing.Size(202, 20);
             this.txtHemsireTckn.TabIndex = 43;
             // 
             // dtpHemsireDogumTarihi
             // 
-            this.dtpHemsireDogumTarihi.Location = new System.Drawing.Point(300, 130);
+            this.dtpHemsireDogumTarihi.Location = new System.Drawing.Point(316, 146);
             this.dtpHemsireDogumTarihi.Name = "dtpHemsireDogumTarihi";
             this.dtpHemsireDogumTarihi.Size = new System.Drawing.Size(202, 20);
             this.dtpHemsireDogumTarihi.TabIndex = 42;
@@ -132,21 +130,21 @@
             // cmbHemsireCinsiyet
             // 
             this.cmbHemsireCinsiyet.FormattingEnabled = true;
-            this.cmbHemsireCinsiyet.Location = new System.Drawing.Point(300, 96);
+            this.cmbHemsireCinsiyet.Location = new System.Drawing.Point(316, 112);
             this.cmbHemsireCinsiyet.Name = "cmbHemsireCinsiyet";
             this.cmbHemsireCinsiyet.Size = new System.Drawing.Size(202, 21);
             this.cmbHemsireCinsiyet.TabIndex = 41;
             // 
             // txtHemsireSoyad
             // 
-            this.txtHemsireSoyad.Location = new System.Drawing.Point(300, 33);
+            this.txtHemsireSoyad.Location = new System.Drawing.Point(316, 49);
             this.txtHemsireSoyad.Name = "txtHemsireSoyad";
             this.txtHemsireSoyad.Size = new System.Drawing.Size(202, 20);
             this.txtHemsireSoyad.TabIndex = 30;
             // 
             // txtHemsireAdi
             // 
-            this.txtHemsireAdi.Location = new System.Drawing.Point(300, 3);
+            this.txtHemsireAdi.Location = new System.Drawing.Point(316, 19);
             this.txtHemsireAdi.Name = "txtHemsireAdi";
             this.txtHemsireAdi.Size = new System.Drawing.Size(202, 20);
             this.txtHemsireAdi.TabIndex = 29;
@@ -154,7 +152,7 @@
             // cmbHemsireBrans
             // 
             this.cmbHemsireBrans.FormattingEnabled = true;
-            this.cmbHemsireBrans.Location = new System.Drawing.Point(300, 62);
+            this.cmbHemsireBrans.Location = new System.Drawing.Point(316, 78);
             this.cmbHemsireBrans.Name = "cmbHemsireBrans";
             this.cmbHemsireBrans.Size = new System.Drawing.Size(202, 21);
             this.cmbHemsireBrans.TabIndex = 40;
@@ -163,7 +161,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label7.Location = new System.Drawing.Point(192, 246);
+            this.label7.Location = new System.Drawing.Point(208, 262);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(62, 17);
             this.label7.TabIndex = 72;
@@ -173,7 +171,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(192, 130);
+            this.label6.Location = new System.Drawing.Point(208, 146);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(101, 17);
             this.label6.TabIndex = 71;
@@ -183,7 +181,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.Location = new System.Drawing.Point(192, 219);
+            this.label4.Location = new System.Drawing.Point(208, 235);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 17);
             this.label4.TabIndex = 70;
@@ -193,7 +191,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(192, 187);
+            this.label3.Location = new System.Drawing.Point(208, 203);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(62, 17);
             this.label3.TabIndex = 69;
@@ -203,7 +201,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(192, 160);
+            this.label2.Location = new System.Drawing.Point(208, 176);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 17);
             this.label2.TabIndex = 68;
@@ -213,7 +211,7 @@
             // 
             this.lblCinsiyet.AutoSize = true;
             this.lblCinsiyet.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblCinsiyet.Location = new System.Drawing.Point(192, 97);
+            this.lblCinsiyet.Location = new System.Drawing.Point(208, 113);
             this.lblCinsiyet.Name = "lblCinsiyet";
             this.lblCinsiyet.Size = new System.Drawing.Size(69, 17);
             this.lblCinsiyet.TabIndex = 67;
@@ -223,7 +221,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(192, 63);
+            this.label1.Location = new System.Drawing.Point(208, 79);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 17);
             this.label1.TabIndex = 66;
@@ -233,7 +231,7 @@
             // 
             this.lblDrSoyad.AutoSize = true;
             this.lblDrSoyad.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblDrSoyad.Location = new System.Drawing.Point(192, 30);
+            this.lblDrSoyad.Location = new System.Drawing.Point(208, 46);
             this.lblDrSoyad.Name = "lblDrSoyad";
             this.lblDrSoyad.Size = new System.Drawing.Size(57, 17);
             this.lblDrSoyad.TabIndex = 65;
@@ -243,7 +241,7 @@
             // 
             this.lblDrAd.AutoSize = true;
             this.lblDrAd.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDrAd.Location = new System.Drawing.Point(192, 3);
+            this.lblDrAd.Location = new System.Drawing.Point(208, 19);
             this.lblDrAd.Name = "lblDrAd";
             this.lblDrAd.Size = new System.Drawing.Size(41, 17);
             this.lblDrAd.TabIndex = 64;
@@ -252,10 +250,9 @@
             // btnGuncelle
             // 
             this.btnGuncelle.BackColor = System.Drawing.Color.PowderBlue;
-
             this.btnGuncelle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnGuncelle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnGuncelle.Location = new System.Drawing.Point(300, 274);
+            this.btnGuncelle.Location = new System.Drawing.Point(316, 290);
             this.btnGuncelle.Name = "btnGuncelle";
             this.btnGuncelle.Size = new System.Drawing.Size(202, 108);
             this.btnGuncelle.TabIndex = 73;
@@ -263,35 +260,16 @@
             this.btnGuncelle.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnGuncelle.UseVisualStyleBackColor = false;
             // 
-            // cmbHemsireMail
-            // 
-            this.cmbHemsireMail.FormattingEnabled = true;
-            this.cmbHemsireMail.Location = new System.Drawing.Point(402, 247);
-            this.cmbHemsireMail.Name = "cmbHemsireMail";
-            this.cmbHemsireMail.Size = new System.Drawing.Size(100, 21);
-            this.cmbHemsireMail.TabIndex = 76;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(384, 253);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(19, 15);
-            this.label5.TabIndex = 75;
-            this.label5.Text = "@";
-            // 
             // txtHemsireMail
             // 
-            this.txtHemsireMail.Location = new System.Drawing.Point(300, 248);
+            this.txtHemsireMail.Location = new System.Drawing.Point(316, 264);
             this.txtHemsireMail.Name = "txtHemsireMail";
-            this.txtHemsireMail.Size = new System.Drawing.Size(84, 20);
+            this.txtHemsireMail.Size = new System.Drawing.Size(202, 20);
             this.txtHemsireMail.TabIndex = 74;
             // 
             // pictureBox1
             // 
-  
-            this.pictureBox1.Location = new System.Drawing.Point(0, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(19, 19);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(186, 216);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -304,8 +282,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PowderBlue;
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.cmbHemsireMail);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.txtHemsireMail);
             this.Controls.Add(this.btnGuncelle);
             this.Controls.Add(this.label7);
@@ -327,7 +303,7 @@
             this.Controls.Add(this.txtHemsireSoyad);
             this.Controls.Add(this.txtHemsireAdi);
             this.Name = "HemsireEkrani";
-            this.Size = new System.Drawing.Size(506, 604);
+            this.Size = new System.Drawing.Size(685, 604);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -359,8 +335,6 @@
         private System.Windows.Forms.Label lblDrSoyad;
         private System.Windows.Forms.Label lblDrAd;
         private System.Windows.Forms.Button btnGuncelle;
-        private System.Windows.Forms.ComboBox cmbHemsireMail;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtHemsireMail;
         private System.Windows.Forms.PictureBox pictureBox1;
     }

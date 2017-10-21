@@ -51,8 +51,6 @@
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.cmbKisiMail = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.txtKisiMail = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.cmbKisiUnvan = new System.Windows.Forms.ComboBox();
@@ -67,7 +65,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(153, 145);
+            this.label3.Location = new System.Drawing.Point(169, 167);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(0, 16);
             this.label3.TabIndex = 3;
@@ -78,7 +76,7 @@
             this.btnTemizle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnTemizle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTemizle.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnTemizle.Location = new System.Drawing.Point(537, 373);
+            this.btnTemizle.Location = new System.Drawing.Point(553, 395);
             this.btnTemizle.Name = "btnTemizle";
             this.btnTemizle.Size = new System.Drawing.Size(116, 123);
             this.btnTemizle.TabIndex = 20;
@@ -91,7 +89,7 @@
             this.btnKaydet.BackColor = System.Drawing.Color.PowderBlue;
             this.btnKaydet.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnKaydet.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnKaydet.Location = new System.Drawing.Point(667, 373);
+            this.btnKaydet.Location = new System.Drawing.Point(683, 395);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(115, 123);
             this.btnKaydet.TabIndex = 19;
@@ -121,7 +119,7 @@
             // chlsHemsire
             // 
             this.chlsHemsire.FormattingEnabled = true;
-            this.chlsHemsire.Location = new System.Drawing.Point(537, 3);
+            this.chlsHemsire.Location = new System.Drawing.Point(479, 20);
             this.chlsHemsire.Name = "chlsHemsire";
             this.chlsHemsire.Size = new System.Drawing.Size(245, 364);
             this.chlsHemsire.TabIndex = 37;
@@ -187,8 +185,6 @@
             this.groupBox1.Controls.Add(this.label18);
             this.groupBox1.Controls.Add(this.label19);
             this.groupBox1.Controls.Add(this.label20);
-            this.groupBox1.Controls.Add(this.cmbKisiMail);
-            this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.txtKisiMail);
             this.groupBox1.Controls.Add(this.cmbKisiCinsiyet);
             this.groupBox1.Controls.Add(this.dtpKisiDogumTarihi);
@@ -197,7 +193,7 @@
             this.groupBox1.Controls.Add(this.txtKisiTelefon);
             this.groupBox1.Controls.Add(this.txtKisiSoyad);
             this.groupBox1.Controls.Add(this.txtKisiTckn);
-            this.groupBox1.Location = new System.Drawing.Point(206, 3);
+            this.groupBox1.Location = new System.Drawing.Point(143, 18);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(325, 274);
             this.groupBox1.TabIndex = 21;
@@ -283,29 +279,11 @@
             this.label20.TabIndex = 72;
             this.label20.Text = " Adı :";
             // 
-            // cmbKisiMail
-            // 
-            this.cmbKisiMail.FormattingEnabled = true;
-            this.cmbKisiMail.Location = new System.Drawing.Point(212, 190);
-            this.cmbKisiMail.Name = "cmbKisiMail";
-            this.cmbKisiMail.Size = new System.Drawing.Size(81, 21);
-            this.cmbKisiMail.TabIndex = 42;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(192, 195);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(19, 15);
-            this.label11.TabIndex = 41;
-            this.label11.Text = "@";
-            // 
             // txtKisiMail
             // 
             this.txtKisiMail.Location = new System.Drawing.Point(112, 191);
             this.txtKisiMail.Name = "txtKisiMail";
-            this.txtKisiMail.Size = new System.Drawing.Size(77, 20);
+            this.txtKisiMail.Size = new System.Drawing.Size(181, 20);
             this.txtKisiMail.TabIndex = 40;
             // 
             // label9
@@ -337,7 +315,7 @@
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.cmbKisiUnvan);
             this.groupBox2.Controls.Add(this.cmbKisiBrans);
-            this.groupBox2.Location = new System.Drawing.Point(201, 275);
+            this.groupBox2.Location = new System.Drawing.Point(143, 294);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(330, 93);
             this.groupBox2.TabIndex = 40;
@@ -348,9 +326,9 @@
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(21, 25);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(197, 359);
+            this.pictureBox1.Size = new System.Drawing.Size(116, 158);
             this.pictureBox1.TabIndex = 41;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -368,7 +346,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label3);
             this.Name = "KisiEkle";
-            this.Size = new System.Drawing.Size(785, 500);
+            this.Size = new System.Drawing.Size(858, 540);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -396,8 +374,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cmbKisiUnvan;
-        private System.Windows.Forms.ComboBox cmbKisiMail;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtKisiMail;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label13;
