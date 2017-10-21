@@ -26,5 +26,15 @@ namespace OppBitirme.View
         {
 
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGuncelle_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

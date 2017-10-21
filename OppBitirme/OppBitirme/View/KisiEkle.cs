@@ -21,5 +21,16 @@ namespace OppBitirme.View
         {
 
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnKaydet_Click(object sender, EventArgs e)
+        {
+       
+
+        }
     }
 }
