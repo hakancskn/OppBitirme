@@ -8,5 +8,6 @@ namespace OppBitirme.Models
 {
     public class Randevu
     {
+
     }
 }
