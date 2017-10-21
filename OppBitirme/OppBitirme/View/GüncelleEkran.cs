@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace OppBitirme.View
 {
-    public partial class HastaEkrani : UserControl
+    public partial class GüncelleEkran : UserControl
     {
-        public HastaEkrani()
+        public GüncelleEkran()
         {
             InitializeComponent();
         }
