@@ -19,7 +19,7 @@ namespace OppBitirme.View
 
         private void YeniRandevu_Load(object sender, EventArgs e)
         {
-            
+
         }
     }
 }
