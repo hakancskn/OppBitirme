@@ -261,7 +261,6 @@
             // btnGuncelle
             // 
             this.btnGuncelle.BackColor = System.Drawing.Color.PowderBlue;
-            this.btnGuncelle.BackgroundImage = global::OppBitirme.Properties.Resources.Dapino_Medical_Heart_beat_no_sh;
             this.btnGuncelle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnGuncelle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnGuncelle.Location = new System.Drawing.Point(315, 255);
