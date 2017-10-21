@@ -19,7 +19,7 @@ namespace OppBitirme.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -63,9 +63,9 @@ namespace OppBitirme.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Dapino_Medical_Heart_beat_no_sh {
+        internal static System.Drawing.Bitmap _18bhfgx8bli31jpg {
             get {
-                object obj = ResourceManager.GetObject("Dapino_Medical_Heart_beat_no_sh", resourceCulture);
+                object obj = ResourceManager.GetObject("_18bhfgx8bli31jpg", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace OppBitirme.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Dapino_Medical_Hospital {
+        internal static System.Drawing.Bitmap download {
             get {
-                object obj = ResourceManager.GetObject("Dapino_Medical_Hospital", resourceCulture);
+                object obj = ResourceManager.GetObject("download", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace OppBitirme.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Dapino_Medical_Medical_report {
+        internal static System.Drawing.Bitmap heart_beat {
             get {
-                object obj = ResourceManager.GetObject("Dapino_Medical_Medical_report", resourceCulture);
+                object obj = ResourceManager.GetObject("heart_beat", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace OppBitirme.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Dapino_Medical_Nurse {
+        internal static System.Drawing.Bitmap hospital_medical_tech {
             get {
-                object obj = ResourceManager.GetObject("Dapino_Medical_Nurse", resourceCulture);
+                object obj = ResourceManager.GetObject("hospital_medical_tech", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +103,9 @@ namespace OppBitirme.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Devcom_Medical_Patient {
+        internal static System.Drawing.Bitmap Littmann_CardiologyIV_Stethoscope_SoundPath_410x200_1174375 {
             get {
-                object obj = ResourceManager.GetObject("Devcom_Medical_Patient", resourceCulture);
+                object obj = ResourceManager.GetObject("Littmann_CardiologyIV_Stethoscope_SoundPath_410x200_1174375", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +113,29 @@ namespace OppBitirme.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Devcom_Medical_Receptionist {
+        internal static System.Drawing.Bitmap Medical {
             get {
-                object obj = ResourceManager.GetObject("Devcom_Medical_Receptionist", resourceCulture);
+                object obj = ResourceManager.GetObject("Medical", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap medical__1_ {
+            get {
+                object obj = ResourceManager.GetObject("medical__1_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap medical_logo {
+            get {
+                object obj = ResourceManager.GetObject("medical_logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

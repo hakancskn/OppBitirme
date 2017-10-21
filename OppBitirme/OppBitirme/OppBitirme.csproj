@@ -54,6 +54,7 @@
     <Compile Include="Interfaces\IBrans.cs" />
     <Compile Include="Interfaces\IServis.cs" />
     <Compile Include="Models\Doktor.cs" />
+    <Compile Include="Models\Enumlar.cs" />
     <Compile Include="Models\Hasta.cs" />
     <Compile Include="Models\Hastane.cs" />
     <Compile Include="Models\Hemsire.cs" />
@@ -105,12 +106,18 @@
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <EmbeddedResource Include="View\DoktorEkrani.resx">
       <DependentUpon>DoktorEkrani.cs</DependentUpon>
     </EmbeddedResource>
@@ -143,26 +150,28 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Dapino-Medical-Nurse.png" />
+    <None Include="Resources\18bhfgx8bli31jpg.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Devcom-Medical-Receptionist.png" />
+    <None Include="Resources\download.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Dapino-Medical-Heart-beat-no-sh.png" />
+    <None Include="Resources\heart-beat.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Dapino-Medical-Hospital.png" />
+    <None Include="Resources\hospital-medical-tech.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Dapino-Medical-Medical-report.png" />
+    <None Include="Resources\Littmann_CardiologyIV_Stethoscope_SoundPath_410x200_1174375.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Devcom-Medical-Patient.png" />
+    <None Include="Resources\medical %281%29.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\add_user_group-512.png" />
-    <Content Include="Resources\patient-png-image-29641.png" />
+    <None Include="Resources\Medical.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medical-logo.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
