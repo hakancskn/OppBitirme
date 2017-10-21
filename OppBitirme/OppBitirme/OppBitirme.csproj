@@ -74,6 +74,12 @@
     <Compile Include="View\KisiEkle.Designer.cs">
       <DependentUpon>KisiEkle.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\YeniRandevuEkran.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\YeniRandevuEkran.Designer.cs">
+      <DependentUpon>YeniRandevuEkran.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
       <SubType>Designer</SubType>
