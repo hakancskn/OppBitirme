@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static OppBitirme.Models.Kisi;
+using OppBitirme.Models;
 
 namespace OppBitirme.View
 {
@@ -18,15 +19,62 @@ namespace OppBitirme.View
         {
             InitializeComponent();
         }
-        public GuncelleEkran(Unvan unvani)
+   
+
+        private void GuncelleEkrani_Load(object sender, EventArgs e)
         {
-            InitializeComponent();
+            List<Object> liste = new List<object>();
+            switch (unvan)
+            {
 
-        }
+                case Unvan.Hasta:
+                    Hastane.Hastalar.ForEach(a =>
+                    {
+                        ListViewItem li = new ListViewItem();
+                        li.Text = a.Ad;
+                        li.SubItems.Add(a.Soyad);
+                        li.SubItems.Add(a.Tckn);
+                        li.Tag = a;
+                        listView1.Items.Add(li);
+                    });
+                    break;
+                case Unvan.Personel:
+                    Hastane.Personeller.ForEach(a =>
+                    {
+                        ListViewItem li = new ListViewItem();
+                        li.Text = a.Ad;
+                        li.SubItems.Add(a.Soyad);
+                        li.SubItems.Add(a.Tckn);
+                        li.Tag = a;
+                        listView1.Items.Add(li);
+                    });
 
-        private void HastaEkrani_Load(object sender, EventArgs e)
-        {
-
+                    break;
+                case Unvan.Doktor:
+                    Hastane.Doktorlar.ForEach(a =>
+                    {
+                        ListViewItem li = new ListViewItem();
+                        li.Text = a.Ad;
+                        li.SubItems.Add(a.Soyad);
+                        li.SubItems.Add(a.Tckn);
+                        li.Tag = a;
+                        listView1.Items.Add(li);
+                    });
+                    break;
+                case Unvan.Hemşire:
+                    Hastane.Hemsireler.ForEach(a =>
+                    {
+                        ListViewItem li = new ListViewItem();
+                        li.Text = a.Ad;
+                        li.SubItems.Add(a.Soyad);
+                        li.SubItems.Add(a.Tckn);
+                        li.Tag = a;
+                        listView1.Items.Add(li);
+                    });
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

@@ -342,7 +342,7 @@
             this.Controls.Add(this.txtHastaAdi);
             this.Name = "GuncelleEkran";
             this.Size = new System.Drawing.Size(827, 607);
-            this.Load += new System.EventHandler(this.HastaEkrani_Load);
+            this.Load += new System.EventHandler(this.GuncelleEkrani_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
