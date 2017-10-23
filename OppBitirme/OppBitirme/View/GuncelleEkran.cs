@@ -23,7 +23,7 @@ namespace OppBitirme.View
 
         private void GuncelleEkrani_Load(object sender, EventArgs e)
         {
-            List<Object> liste = new List<object>();
+            
             switch (unvan)
             {
 
@@ -33,10 +33,13 @@ namespace OppBitirme.View
                         ListViewItem li = new ListViewItem();
                         li.Text = a.Ad;
                         li.SubItems.Add(a.Soyad);
+                        li.SubItems.Add(a.cinsiyet.ToString());
                         li.SubItems.Add(a.Tckn);
                         li.Tag = a;
                         listView1.Items.Add(li);
                     });
+                    cmbKisiBrans.DataSource = null;
+                    panel1.Visible = false;
                     break;
                 case Unvan.Personel:
                     Hastane.Personeller.ForEach(a =>
@@ -44,11 +47,15 @@ namespace OppBitirme.View
                         ListViewItem li = new ListViewItem();
                         li.Text = a.Ad;
                         li.SubItems.Add(a.Soyad);
+                        li.SubItems.Add(a.cinsiyet.ToString());
                         li.SubItems.Add(a.Tckn);
                         li.Tag = a;
                         listView1.Items.Add(li);
                     });
-
+                    cmbKisiBrans.DataSource = null;
+                    panel1.Visible = true;
+                    lblBrans.Text = "Branş";
+                    cmbKisiBrans.DataSource = Enum.GetValues(typeof(Hastane.Branslar));
                     break;
                 case Unvan.Doktor:
                     Hastane.Doktorlar.ForEach(a =>
@@ -56,10 +63,17 @@ namespace OppBitirme.View
                         ListViewItem li = new ListViewItem();
                         li.Text = a.Ad;
                         li.SubItems.Add(a.Soyad);
+                        li.SubItems.Add(a.cinsiyet.ToString());
+
                         li.SubItems.Add(a.Tckn);
                         li.Tag = a;
                         listView1.Items.Add(li);
                     });
+                    cmbKisiBrans.DataSource = null;
+                    panel1.Visible = true;
+                    lblBrans.Text = "Servis";
+                    cmbKisiBrans.DataSource = Enum.GetValues(typeof(Hastane.Servisler));
+
                     break;
                 case Unvan.Hemşire:
                     Hastane.Hemsireler.ForEach(a =>
@@ -67,6 +81,8 @@ namespace OppBitirme.View
                         ListViewItem li = new ListViewItem();
                         li.Text = a.Ad;
                         li.SubItems.Add(a.Soyad);
+                        li.SubItems.Add(a.cinsiyet.ToString());
+
                         li.SubItems.Add(a.Tckn);
                         li.Tag = a;
                         listView1.Items.Add(li);
@@ -75,6 +91,21 @@ namespace OppBitirme.View
                 default:
                     break;
             }
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Kisi kisi = (Kisi)(listView1.FocusedItem.Tag);
+            txtHastaAdi.Text = kisi.Ad; 
+            txtHastaSoyadi.Text = kisi.Soyad;
+            txtHastaTckn.Text = kisi.Tckn;
+            txtHastaTel.Text = kisi.Telefon;
+            txtHastaAdres.Text = kisi.Adres;
+            txtHastaMail.Text = kisi.Mail;
+            //dtpHastaDogumTarihi.Value = kisi.DogumTarihi;
+            cmbHastaCinsiyeti.SelectedItem = kisi.cinsiyet;
+            
+
         }
     }
 }
