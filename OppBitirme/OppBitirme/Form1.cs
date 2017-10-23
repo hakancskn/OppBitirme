@@ -26,21 +26,27 @@ namespace OppBitirme
         YeniRandevuEkrani randevuEkran=new YeniRandevuEkrani();
         private void Form1_Load(object sender, EventArgs e)
         {
+       
+         
             Hastane hastane = new Hastane();
+           
+
+            Hemsire hemsire = new Hemsire();
+
+            hemsire.Ad = "dasds";
+            hemsire.Mail = "sadsd0";
+            hemsire.Soyad = "asdsd";
+            Hastane.Hemsireler.Add(hemsire);
             Doktor doktor = new Doktor();
+            doktor.Hemsireleri.Add(hemsire);
             doktor.Ad = "hakan";
             doktor.Soyad = "coşkun";
             doktor.Tckn = "15143256030";
             doktor.Telefon = "05387299810";
             doktor.unvan = Kisi.Unvan.Doktor;
-            doktor.Servis = Hastane.Servisler.das;
+            doktor.Servis = Hastane.Servisler.Göz;
             Hastane.Doktorlar.Add(doktor);
-            Hemsire hemsire = new Hemsire();
-            hemsire.Ad = "dasds";
-            hemsire.Mail = "sadsd0";
-            hemsire.Soyad = "asdsd";
-            Hastane.Hemsireler.Add(hemsire);
-           //hastane.xml();
+            //hastane.xml();
             kisi = new KisiEkle();
             Hemsire hemsa = new Hemsire();
             Hasta hasta = new Hasta();

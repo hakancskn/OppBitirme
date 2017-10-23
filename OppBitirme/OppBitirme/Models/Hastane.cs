@@ -20,7 +20,9 @@ namespace OppBitirme.Models
 
         public enum Servisler
         {
-            das
+            Kardiyoloji,
+            Göz
+
 
         }
         public enum Branslar

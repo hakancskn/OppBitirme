@@ -32,6 +32,21 @@ namespace OppBitirme.View
                 li.Tag = a;
                 lstHasta.Items.Add(li);
             });
+            cmbServisler.DataSource = Enum.GetValues(typeof(Hastane.Servisler));
+            
+        }
+
+        private void lstHasta_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void cmbServisler_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbDoktorlar.DataSource = null;
+            cmbDoktorlar.DisplayMember = "AdSoyad";
+            cmbDoktorlar.DataSource = Hastane.Doktorlar.Where(x => x.Servis == (Hastane.Servisler)cmbServisler.SelectedItem).ToList();
+
         }
     }
 }
