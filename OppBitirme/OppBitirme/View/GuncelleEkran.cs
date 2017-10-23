@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static OppBitirme.Models.Kisi;
 using OppBitirme.Models;
+using OppBitirme.Interfaces;
 
 namespace OppBitirme.View
 {
@@ -19,11 +20,11 @@ namespace OppBitirme.View
         {
             InitializeComponent();
         }
-   
+
 
         private void GuncelleEkrani_Load(object sender, EventArgs e)
         {
-            
+
             switch (unvan)
             {
 
@@ -53,7 +54,7 @@ namespace OppBitirme.View
                         li.Tag = a;
                         listView1.Items.Add(li);
                     });
-                   
+
                     cmbKisiBrans.DataSource = null;
                     panel1.Visible = true;
                     lblBrans.Text = "Branş";
@@ -77,9 +78,8 @@ namespace OppBitirme.View
                     lblBrans.Text = "Servis";
                     cmbKisiBrans.DataSource = Enum.GetValues(typeof(Hastane.Servisler));
                     chlsHemsire.Visible = true;
-                    Doktor dkt = (Doktor)listView1.FocusedItem?.Tag;
-                    chlsHemsire.DataSource = dkt?.Hemsireleri;
-                   
+
+
                     break;
                 case Unvan.Hemşire:
                     Hastane.Hemsireler.ForEach(a =>
@@ -99,20 +99,77 @@ namespace OppBitirme.View
                     break;
             }
         }
-
+        Kisi SeciliKisi;
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Kisi kisi = (Kisi)(listView1.FocusedItem.Tag);
-            txtHastaAdi.Text = kisi.Ad; 
-            txtHastaSoyadi.Text = kisi.Soyad;
-            txtHastaTckn.Text = kisi.Tckn;
-            txtHastaTel.Text = kisi.Telefon;
-            txtHastaAdres.Text = kisi.Adres;
-            txtHastaMail.Text = kisi.Mail;
+            SeciliKisi = (Kisi)(listView1.FocusedItem.Tag);
+            txtHastaAdi.Text = SeciliKisi.Ad;
+            txtHastaSoyadi.Text = SeciliKisi.Soyad;
+            txtHastaTckn.Text = SeciliKisi.Tckn;
+            txtHastaTel.Text = SeciliKisi.Telefon;
+            txtHastaAdres.Text = SeciliKisi.Adres;
+            txtHastaMail.Text = SeciliKisi.Mail;
             //dtpHastaDogumTarihi.Value = kisi.DogumTarihi;
-            cmbHastaCinsiyeti.SelectedItem = kisi.cinsiyet;
-            
+            cmbHastaCinsiyeti.SelectedItem = SeciliKisi.cinsiyet;
+            if (SeciliKisi is IServis)
+            {
+                cmbKisiBrans.SelectedItem = (SeciliKisi as IServis).Servis;
+            }
+            if (SeciliKisi is Doktor)
+            {
+                chlsHemsire.DataSource = null;
+
+                Doktor dkt = (Doktor)listView1.FocusedItem?.Tag;
+
+                chlsHemsire.DataSource = dkt?.Hemsireleri;
+                chlsHemsire.DisplayMember = "AdSoyad";
+
+            }
+            if (SeciliKisi is IBrans)
+            {
+                cmbKisiBrans.SelectedItem = (SeciliKisi as IBrans).branslar;
+            }
+
+        }
+
+        private void btnGuncelle_Click(object sender, EventArgs e)
+        {
+            if (SeciliKisi == null)
+            {
+                MessageBox.Show("Neyi Güncelliyim");
+                return;
+            }
+            DialogResult cevap = MessageBox.Show($"{SeciliKisi.Ad} adlı kişiyi güncellemek istiyor musunuz ?", "kişi güncelle", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (cevap == DialogResult.Yes)
+            {
+                try
+                {
+                    SeciliKisi.Ad = txtHastaAdi.Text;
+                    SeciliKisi.Soyad = txtHastaSoyadi.Text;
+                    SeciliKisi.Tckn = txtHastaTckn.Text;
+                    SeciliKisi.Telefon = txtHastaTel.Text;
+                    SeciliKisi.Mail = txtHastaMail.Text;
+                    SeciliKisi.DogumTarihi = dtpHastaDogumTarihi.Value;
+                    SeciliKisi.cinsiyet = (Cinsiyet)cmbHastaCinsiyeti.SelectedItem;
+                    if(SeciliKisi is IBrans)
+                    {
+                        (SeciliKisi as IBrans).branslar = (Hastane.Branslar)cmbKisiBrans.SelectedItem;
+                    }
+                    if (SeciliKisi is IServis)
+                    {
+                        (SeciliKisi as IServis).Servis = (Hastane.Servisler)cmbKisiBrans.SelectedItem;
+                    }
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
 
         }
     }
 }
+
+   
+

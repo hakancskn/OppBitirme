@@ -246,6 +246,7 @@
             this.btnGuncelle.Text = "Güncelle";
             this.btnGuncelle.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnGuncelle.UseVisualStyleBackColor = false;
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
             // pictureBox1
             // 
@@ -264,6 +265,7 @@
             this.chlsHemsire.Name = "chlsHemsire";
             this.chlsHemsire.Size = new System.Drawing.Size(261, 289);
             this.chlsHemsire.TabIndex = 84;
+           
             // 
             // lblBrans
             // 
