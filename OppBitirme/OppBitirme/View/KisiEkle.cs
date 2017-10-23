@@ -38,9 +38,25 @@ namespace OppBitirme.View
 
         }
 
-        private void KisiEkle_Load(object sender, EventArgs e)
+       
+
+        private void KisiEkle_Load_1(object sender, EventArgs e)
         {
             cmbKisiUnvan.Items.AddRange(Enum.GetNames(typeof(Unvan)));
+
+        }
+
+        private void cmbKisiUnvan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbKisiUnvan.SelectedIndexChanged == -1)
+            {
+
+            }
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
