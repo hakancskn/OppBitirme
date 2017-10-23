@@ -81,6 +81,12 @@
     <Compile Include="View\RandevuEkran.Designer.cs">
       <DependentUpon>RandevuEkran.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\RandevuSaatleri.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\RandevuSaatleri.Designer.cs">
+      <DependentUpon>RandevuSaatleri.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -103,6 +109,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\RandevuEkran.resx">
       <DependentUpon>RandevuEkran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RandevuSaatleri.resx">
+      <DependentUpon>RandevuSaatleri.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

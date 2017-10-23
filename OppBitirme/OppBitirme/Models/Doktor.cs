@@ -10,6 +10,6 @@ namespace OppBitirme.Models
     public class Doktor : Kisi, IServis,IHemsireAlabilen
     {
         public Hastane.Servisler Servis { get; set; }
-        public List<Hemsire> Hemsireleri { get; set; }
+        public List<Hemsire> Hemsireleri { get; set; } = new List<Hemsire>();
     }
 }
