@@ -75,11 +75,11 @@
     <Compile Include="View\KisiEkle.Designer.cs">
       <DependentUpon>KisiEkle.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\YeniRandevuEkran.cs">
+    <Compile Include="View\RandevuEkran.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\YeniRandevuEkran.Designer.cs">
-      <DependentUpon>YeniRandevuEkran.cs</DependentUpon>
+    <Compile Include="View\RandevuEkran.Designer.cs">
+      <DependentUpon>RandevuEkran.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -100,6 +100,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\KisiEkle.resx">
       <DependentUpon>KisiEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RandevuEkran.resx">
+      <DependentUpon>RandevuEkran.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

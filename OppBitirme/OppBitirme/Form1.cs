@@ -22,6 +22,8 @@ namespace OppBitirme
         }
         
         KisiEkle kisi;
+
+        YeniRandevuEkrani randevuEkran=new YeniRandevuEkrani();
         private void Form1_Load(object sender, EventArgs e)
         {
             Hastane hastane = new Hastane();
@@ -32,16 +34,21 @@ namespace OppBitirme
             doktor.Telefon = "05387299810";
             doktor.unvan = Kisi.Unvan.Doktor;
             doktor.Servis = Hastane.Servisler.das;
-            hastane.Doktorlar.Add(doktor);
+            Hastane.Doktorlar.Add(doktor);
             Hemsire hemsire = new Hemsire();
             hemsire.Ad = "dasds";
             hemsire.Mail = "sadsd0";
             hemsire.Soyad = "asdsd";
-            hastane.Hemsireler.Add(hemsire);
-            hastane.xml();
+            Hastane.Hemsireler.Add(hemsire);
+           //hastane.xml();
             kisi = new KisiEkle();
             Hemsire hemsa = new Hemsire();
-
+            Hasta hasta = new Hasta();
+            hasta.Ad = "Murat";
+            hasta.Soyad = "ciguli";
+            hasta.Telefon = "12545";
+            hasta.Tckn = "15143256030";
+            Hastane.Hastalar.Add(hasta);
 
 
             this.LayoutMdi(MdiLayout.TileVertical);
@@ -59,6 +66,12 @@ namespace OppBitirme
            
             panel1.Controls.Clear();
             panel1.Controls.Add(kisi);
+        }
+
+        private void randevuOluşturToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            panel1.Controls.Add(randevuEkran);
         }
     }
 }
