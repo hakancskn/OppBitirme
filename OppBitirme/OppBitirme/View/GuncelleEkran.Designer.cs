@@ -262,7 +262,7 @@
             this.chlsHemsire.FormattingEnabled = true;
             this.chlsHemsire.Location = new System.Drawing.Point(546, 27);
             this.chlsHemsire.Name = "chlsHemsire";
-            this.chlsHemsire.Size = new System.Drawing.Size(261, 304);
+            this.chlsHemsire.Size = new System.Drawing.Size(261, 289);
             this.chlsHemsire.TabIndex = 84;
             // 
             // lblBrans

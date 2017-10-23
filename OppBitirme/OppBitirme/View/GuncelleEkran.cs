@@ -40,6 +40,7 @@ namespace OppBitirme.View
                     });
                     cmbKisiBrans.DataSource = null;
                     panel1.Visible = false;
+                    chlsHemsire.Visible = false;
                     break;
                 case Unvan.Personel:
                     Hastane.Personeller.ForEach(a =>
@@ -52,10 +53,12 @@ namespace OppBitirme.View
                         li.Tag = a;
                         listView1.Items.Add(li);
                     });
+                   
                     cmbKisiBrans.DataSource = null;
                     panel1.Visible = true;
                     lblBrans.Text = "Branş";
                     cmbKisiBrans.DataSource = Enum.GetValues(typeof(Hastane.Branslar));
+                    chlsHemsire.Visible = false;
                     break;
                 case Unvan.Doktor:
                     Hastane.Doktorlar.ForEach(a =>
@@ -73,7 +76,10 @@ namespace OppBitirme.View
                     panel1.Visible = true;
                     lblBrans.Text = "Servis";
                     cmbKisiBrans.DataSource = Enum.GetValues(typeof(Hastane.Servisler));
-
+                    chlsHemsire.Visible = true;
+                    Doktor dkt = (Doktor)listView1.FocusedItem?.Tag;
+                    chlsHemsire.DataSource = dkt?.Hemsireleri;
+                   
                     break;
                 case Unvan.Hemşire:
                     Hastane.Hemsireler.ForEach(a =>
@@ -87,6 +93,7 @@ namespace OppBitirme.View
                         li.Tag = a;
                         listView1.Items.Add(li);
                     });
+                    chlsHemsire.Visible = false;
                     break;
                 default:
                     break;
