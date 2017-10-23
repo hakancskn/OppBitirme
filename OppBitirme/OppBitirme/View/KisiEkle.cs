@@ -115,9 +115,12 @@ namespace OppBitirme.View
 
             }
 
-          
+            chlsHemsire.DataSource = null;
+            chlsHemsire.DisplayMember = "AdSoyad";
+            Hastane.Hemsireler.Where(x => x.Servis == (Hastane.Servisler)cmbKisiBrans.SelectedItem && x.Doktoru==null).ToList();
 
-
+           
+            
         }
 
         private void label10_Click(object sender, EventArgs e)
