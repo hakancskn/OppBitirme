@@ -48,5 +48,20 @@ namespace OppBitirme.View
             cmbDoktorlar.DataSource = Hastane.Doktorlar.Where(x => x.Servis == (Hastane.Servisler)cmbServisler.SelectedItem).ToList();
 
         }
+
+        private void cmbDoktorlar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbDoktorlar.SelectedIndex == -1)
+                return;
+            else
+            {
+                RandevuSaatleri randevuSaatleri = new RandevuSaatleri();
+                randevuSaatleri.doktor = (Doktor)cmbDoktorlar.SelectedItem;
+                pnlSaatler.Controls.Add(randevuSaatleri);
+
+            }
+
+
+        }
     }
 }
