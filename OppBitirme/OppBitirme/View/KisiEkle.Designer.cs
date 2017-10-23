@@ -30,10 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KisiEkle));
             this.btnKaydet = new System.Windows.Forms.Button();
-            this.cmbKisiBrans = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.chlsHemsire = new System.Windows.Forms.CheckedListBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnTemizle = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -51,12 +48,15 @@
             this.dtpKisiDogumTarihi = new System.Windows.Forms.DateTimePicker();
             this.txtKisiAdres = new System.Windows.Forms.TextBox();
             this.txtKisiAd = new System.Windows.Forms.TextBox();
-            this.txtKisiTelefon = new System.Windows.Forms.TextBox();
             this.txtKisiSoyad = new System.Windows.Forms.TextBox();
             this.txtKisiTckn = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.groupBox2.SuspendLayout();
+            this.pnlBrans = new System.Windows.Forms.Panel();
+            this.lblBrans = new System.Windows.Forms.Label();
+            this.cmbKisiBrans = new System.Windows.Forms.ComboBox();
+            this.mtxtTel = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pnlBrans.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnKaydet
@@ -64,7 +64,7 @@
             this.btnKaydet.BackColor = System.Drawing.Color.PowderBlue;
             this.btnKaydet.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnKaydet.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnKaydet.Location = new System.Drawing.Point(321, 367);
+            this.btnKaydet.Location = new System.Drawing.Point(344, 367);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(115, 39);
             this.btnKaydet.TabIndex = 19;
@@ -73,41 +73,13 @@
             this.btnKaydet.UseVisualStyleBackColor = false;
             this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
-            // cmbKisiBrans
-            // 
-            this.cmbKisiBrans.FormattingEnabled = true;
-            this.cmbKisiBrans.Location = new System.Drawing.Point(101, 19);
-            this.cmbKisiBrans.Name = "cmbKisiBrans";
-            this.cmbKisiBrans.Size = new System.Drawing.Size(180, 21);
-            this.cmbKisiBrans.TabIndex = 36;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(-3, 19);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(50, 17);
-            this.label10.TabIndex = 35;
-            this.label10.Text = "Branşı:";
-            // 
             // chlsHemsire
             // 
             this.chlsHemsire.FormattingEnabled = true;
             this.chlsHemsire.Location = new System.Drawing.Point(487, 25);
             this.chlsHemsire.Name = "chlsHemsire";
-            this.chlsHemsire.Size = new System.Drawing.Size(261, 394);
+            this.chlsHemsire.Size = new System.Drawing.Size(261, 319);
             this.chlsHemsire.TabIndex = 37;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.cmbKisiBrans);
-            this.groupBox2.Location = new System.Drawing.Point(168, 282);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(281, 63);
-            this.groupBox2.TabIndex = 40;
-            this.groupBox2.TabStop = false;
             // 
             // btnTemizle
             // 
@@ -115,13 +87,14 @@
             this.btnTemizle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnTemizle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTemizle.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnTemizle.Location = new System.Drawing.Point(137, 367);
+            this.btnTemizle.Location = new System.Drawing.Point(222, 367);
             this.btnTemizle.Name = "btnTemizle";
             this.btnTemizle.Size = new System.Drawing.Size(116, 39);
             this.btnTemizle.TabIndex = 20;
             this.btnTemizle.Text = "Temizle";
             this.btnTemizle.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnTemizle.UseVisualStyleBackColor = false;
+            this.btnTemizle.Click += new System.EventHandler(this.btnTemizle_Click);
             // 
             // pictureBox1
             // 
@@ -148,15 +121,11 @@
             // cmbKisiUnvan
             // 
             this.cmbKisiUnvan.FormattingEnabled = true;
-            this.cmbKisiUnvan.Items.AddRange(new object[] {
-            "Hasta",
-            "Personel",
-            "Doktor",
-            "Hemşire"});
             this.cmbKisiUnvan.Location = new System.Drawing.Point(268, 255);
             this.cmbKisiUnvan.Name = "cmbKisiUnvan";
             this.cmbKisiUnvan.Size = new System.Drawing.Size(181, 21);
             this.cmbKisiUnvan.TabIndex = 136;
+            this.cmbKisiUnvan.SelectedIndexChanged += new System.EventHandler(this.cmbKisiUnvan_SelectedIndexChanged);
             // 
             // label13
             // 
@@ -275,13 +244,6 @@
             this.txtKisiAd.Size = new System.Drawing.Size(181, 20);
             this.txtKisiAd.TabIndex = 120;
             // 
-            // txtKisiTelefon
-            // 
-            this.txtKisiTelefon.Location = new System.Drawing.Point(268, 162);
-            this.txtKisiTelefon.Name = "txtKisiTelefon";
-            this.txtKisiTelefon.Size = new System.Drawing.Size(181, 20);
-            this.txtKisiTelefon.TabIndex = 123;
-            // 
             // txtKisiSoyad
             // 
             this.txtKisiSoyad.Location = new System.Drawing.Point(268, 52);
@@ -305,11 +267,50 @@
             this.label3.Size = new System.Drawing.Size(0, 16);
             this.label3.TabIndex = 119;
             // 
+            // pnlBrans
+            // 
+            this.pnlBrans.Controls.Add(this.lblBrans);
+            this.pnlBrans.Controls.Add(this.cmbKisiBrans);
+            this.pnlBrans.Location = new System.Drawing.Point(148, 276);
+            this.pnlBrans.Name = "pnlBrans";
+            this.pnlBrans.Size = new System.Drawing.Size(311, 65);
+            this.pnlBrans.TabIndex = 138;
+            // 
+            // lblBrans
+            // 
+            this.lblBrans.AutoSize = true;
+            this.lblBrans.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBrans.Location = new System.Drawing.Point(21, 25);
+            this.lblBrans.Name = "lblBrans";
+            this.lblBrans.Size = new System.Drawing.Size(50, 17);
+            this.lblBrans.TabIndex = 37;
+            this.lblBrans.Text = "Branşı:";
+            this.lblBrans.Click += new System.EventHandler(this.label10_Click);
+            // 
+            // cmbKisiBrans
+            // 
+            this.cmbKisiBrans.FormattingEnabled = true;
+            this.cmbKisiBrans.Location = new System.Drawing.Point(120, 21);
+            this.cmbKisiBrans.Name = "cmbKisiBrans";
+            this.cmbKisiBrans.Size = new System.Drawing.Size(183, 21);
+            this.cmbKisiBrans.TabIndex = 38;
+            this.cmbKisiBrans.SelectedIndexChanged += new System.EventHandler(this.cmbKisiBrans_SelectedIndexChanged);
+            // 
+            // mtxtTel
+            // 
+            this.mtxtTel.Location = new System.Drawing.Point(268, 165);
+            this.mtxtTel.Mask = "(999) 000-0000";
+            this.mtxtTel.Name = "mtxtTel";
+            this.mtxtTel.Size = new System.Drawing.Size(181, 20);
+            this.mtxtTel.TabIndex = 139;
+            // 
             // KisiEkle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PowderBlue;
+            this.Controls.Add(this.mtxtTel);
+            this.Controls.Add(this.pnlBrans);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.cmbKisiUnvan);
             this.Controls.Add(this.label13);
@@ -325,20 +326,19 @@
             this.Controls.Add(this.dtpKisiDogumTarihi);
             this.Controls.Add(this.txtKisiAdres);
             this.Controls.Add(this.txtKisiAd);
-            this.Controls.Add(this.txtKisiTelefon);
             this.Controls.Add(this.txtKisiSoyad);
             this.Controls.Add(this.txtKisiTckn);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.chlsHemsire);
             this.Controls.Add(this.btnTemizle);
             this.Controls.Add(this.btnKaydet);
             this.Name = "KisiEkle";
-            this.Size = new System.Drawing.Size(793, 497);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.Size = new System.Drawing.Size(798, 414);
+            this.Load += new System.EventHandler(this.KisiEkle_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.pnlBrans.ResumeLayout(false);
+            this.pnlBrans.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -346,10 +346,7 @@
 
         #endregion
         private System.Windows.Forms.Button btnKaydet;
-        private System.Windows.Forms.ComboBox cmbKisiBrans;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.CheckedListBox chlsHemsire;
-        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnTemizle;
         private System.Windows.Forms.Label label9;
@@ -367,9 +364,12 @@
         private System.Windows.Forms.DateTimePicker dtpKisiDogumTarihi;
         private System.Windows.Forms.TextBox txtKisiAdres;
         private System.Windows.Forms.TextBox txtKisiAd;
-        private System.Windows.Forms.TextBox txtKisiTelefon;
         private System.Windows.Forms.TextBox txtKisiSoyad;
         private System.Windows.Forms.TextBox txtKisiTckn;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel pnlBrans;
+        private System.Windows.Forms.Label lblBrans;
+        private System.Windows.Forms.ComboBox cmbKisiBrans;
+        private System.Windows.Forms.MaskedTextBox mtxtTel;
     }
 }
