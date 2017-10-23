@@ -42,7 +42,7 @@ namespace OppBitirme.View
                             Anchor = AnchorStyles.Left,
                             AutoSize = true,
                             Tag = saat,
-                            BackColor=(varmi > 0) ? Color.Green : Color.Gray
+                            BackColor=(varmi > 0) ? Color.Gray : Color.Green
 
                         }, i, j);
 

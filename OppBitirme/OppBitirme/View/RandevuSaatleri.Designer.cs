@@ -33,19 +33,22 @@
             // 
             // tblSaatler
             // 
+            this.tblSaatler.AutoScroll = true;
+            this.tblSaatler.AutoSize = true;
             this.tblSaatler.ColumnCount = 4;
-            this.tblSaatler.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblSaatler.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tblSaatler.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tblSaatler.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tblSaatler.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tblSaatler.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tblSaatler.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tblSaatler.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tblSaatler.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.tblSaatler.Location = new System.Drawing.Point(0, 0);
             this.tblSaatler.Name = "tblSaatler";
             this.tblSaatler.RowCount = 4;
-            this.tblSaatler.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblSaatler.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblSaatler.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tblSaatler.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tblSaatler.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tblSaatler.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tblSaatler.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tblSaatler.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tblSaatler.Size = new System.Drawing.Size(473, 291);
             this.tblSaatler.TabIndex = 0;
             // 
@@ -58,6 +61,7 @@
             this.Size = new System.Drawing.Size(473, 291);
             this.Load += new System.EventHandler(this.RandevuSaatleri_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
