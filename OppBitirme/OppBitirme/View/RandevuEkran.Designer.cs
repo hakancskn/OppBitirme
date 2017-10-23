@@ -38,6 +38,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnKaydet = new System.Windows.Forms.Button();
             this.pnlDoktor = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pnlDoktor.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -131,11 +132,27 @@
             this.pnlDoktor.Size = new System.Drawing.Size(207, 53);
             this.pnlDoktor.TabIndex = 51;
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(345, 165);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(285, 139);
+            this.tableLayoutPanel1.TabIndex = 52;
+            // 
             // YeniRandevuEkrani
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PowderBlue;
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.pnlDoktor);
             this.Controls.Add(this.btnKaydet);
             this.Controls.Add(this.lstHasta);
@@ -162,5 +179,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnKaydet;
         private System.Windows.Forms.Panel pnlDoktor;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }
