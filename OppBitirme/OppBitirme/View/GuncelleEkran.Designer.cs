@@ -91,7 +91,7 @@
             this.listView1.GridLines = true;
             this.listView1.Location = new System.Drawing.Point(29, 365);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(753, 230);
+            this.listView1.Size = new System.Drawing.Size(778, 230);
             this.listView1.TabIndex = 46;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -239,9 +239,9 @@
             this.btnGuncelle.BackColor = System.Drawing.Color.PowderBlue;
             this.btnGuncelle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnGuncelle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnGuncelle.Location = new System.Drawing.Point(341, 328);
+            this.btnGuncelle.Location = new System.Drawing.Point(331, 328);
             this.btnGuncelle.Name = "btnGuncelle";
-            this.btnGuncelle.Size = new System.Drawing.Size(184, 31);
+            this.btnGuncelle.Size = new System.Drawing.Size(206, 31);
             this.btnGuncelle.TabIndex = 83;
             this.btnGuncelle.Text = "Güncelle";
             this.btnGuncelle.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -250,9 +250,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(29, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(29, 26);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(189, 241);
+            this.pictureBox1.Size = new System.Drawing.Size(189, 227);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 68;
             this.pictureBox1.TabStop = false;
@@ -260,9 +260,9 @@
             // chlsHemsire
             // 
             this.chlsHemsire.FormattingEnabled = true;
-            this.chlsHemsire.Location = new System.Drawing.Point(546, 12);
+            this.chlsHemsire.Location = new System.Drawing.Point(546, 27);
             this.chlsHemsire.Name = "chlsHemsire";
-            this.chlsHemsire.Size = new System.Drawing.Size(261, 319);
+            this.chlsHemsire.Size = new System.Drawing.Size(261, 304);
             this.chlsHemsire.TabIndex = 84;
             // 
             // lblBrans
@@ -278,9 +278,9 @@
             // cmbKisiBrans
             // 
             this.cmbKisiBrans.FormattingEnabled = true;
-            this.cmbKisiBrans.Location = new System.Drawing.Point(95, 15);
+            this.cmbKisiBrans.Location = new System.Drawing.Point(116, 15);
             this.cmbKisiBrans.Name = "cmbKisiBrans";
-            this.cmbKisiBrans.Size = new System.Drawing.Size(180, 21);
+            this.cmbKisiBrans.Size = new System.Drawing.Size(206, 21);
             this.cmbKisiBrans.TabIndex = 36;
             // 
             // panel1
@@ -289,7 +289,7 @@
             this.panel1.Controls.Add(this.lblBrans);
             this.panel1.Location = new System.Drawing.Point(215, 259);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(310, 63);
+            this.panel1.Size = new System.Drawing.Size(325, 63);
             this.panel1.TabIndex = 85;
             // 
             // GuncelleEkran
