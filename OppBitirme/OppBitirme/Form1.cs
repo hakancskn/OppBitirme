@@ -56,7 +56,8 @@ namespace OppBitirme
 
         private void doktorlarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            GuncelleEkran guncelle = new GuncelleEkran(Kisi.Unvan.Doktor);
+            GuncelleEkran guncelle = new GuncelleEkran();
+            guncelle.unvan = Kisi.Unvan.Doktor;
             panel1.Controls.Clear();
             panel1.Controls.Add(guncelle);
         }
