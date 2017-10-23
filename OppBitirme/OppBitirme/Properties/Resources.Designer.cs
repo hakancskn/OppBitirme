@@ -61,81 +61,131 @@ namespace OppBitirme.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Bitmap _18bhfgx8bli31jpg {
+        internal static System.Drawing.Icon Aha_Soft_Medical_Head_physician {
             get {
-                object obj = ResourceManager.GetObject("_18bhfgx8bli31jpg", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                object obj = ResourceManager.GetObject("Aha_Soft_Medical_Head_physician", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon Custom_Icon_Design_Pretty_Office_6_Doctor {
+            get {
+                object obj = ResourceManager.GetObject("Custom_Icon_Design_Pretty_Office_6_Doctor", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon Custom_Icon_Design_Pretty_Office_6_Surgeon {
+            get {
+                object obj = ResourceManager.GetObject("Custom_Icon_Design_Pretty_Office_6_Surgeon", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon Dapino_Medical_Heart_beat_no_sh {
+            get {
+                object obj = ResourceManager.GetObject("Dapino_Medical_Heart_beat_no_sh", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon Dapino_Medical_Hospital {
+            get {
+                object obj = ResourceManager.GetObject("Dapino_Medical_Hospital", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon Dapino_Medical_Medical_report {
+            get {
+                object obj = ResourceManager.GetObject("Dapino_Medical_Medical_report", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon Dapino_Medical_Nurse {
+            get {
+                object obj = ResourceManager.GetObject("Dapino_Medical_Nurse", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon Devcom_Medical_Patient {
+            get {
+                object obj = ResourceManager.GetObject("Devcom_Medical_Patient", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon Devcom_Medical_Receptionist {
+            get {
+                object obj = ResourceManager.GetObject("Devcom_Medical_Receptionist", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon Icons_Land_Medical_People_Patient_Male {
+            get {
+                object obj = ResourceManager.GetObject("Icons_Land_Medical_People_Patient_Male", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon Icons_Land_Transport_Ambulance {
+            get {
+                object obj = ResourceManager.GetObject("Icons_Land_Transport_Ambulance", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon Iconshock_Super_Vista_Medical_Nurse {
+            get {
+                object obj = ResourceManager.GetObject("Iconshock_Super_Vista_Medical_Nurse", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap download {
+        internal static System.Drawing.Bitmap user_add {
             get {
-                object obj = ResourceManager.GetObject("download", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap heart_beat {
-            get {
-                object obj = ResourceManager.GetObject("heart_beat", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap hospital_medical_tech {
-            get {
-                object obj = ResourceManager.GetObject("hospital_medical_tech", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Littmann_CardiologyIV_Stethoscope_SoundPath_410x200_1174375 {
-            get {
-                object obj = ResourceManager.GetObject("Littmann_CardiologyIV_Stethoscope_SoundPath_410x200_1174375", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Medical {
-            get {
-                object obj = ResourceManager.GetObject("Medical", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap medical__1_ {
-            get {
-                object obj = ResourceManager.GetObject("medical__1_", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap medical_logo {
-            get {
-                object obj = ResourceManager.GetObject("medical_logo", resourceCulture);
+                object obj = ResourceManager.GetObject("user_add", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

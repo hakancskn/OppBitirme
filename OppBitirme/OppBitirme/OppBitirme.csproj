@@ -141,5 +141,44 @@
   <ItemGroup>
     <None Include="Resources\medical-logo.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons-Land-Medical-People-Patient-Male.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Devcom-Medical-Patient.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Devcom-Medical-Receptionist.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Custom-Icon-Design-Pretty-Office-6-Surgeon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Custom-Icon-Design-Pretty-Office-6-Doctor.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dapino-Medical-Medical-report.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dapino-Medical-Hospital.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dapino-Medical-Nurse.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dapino-Medical-Heart-beat-no-sh.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons-Land-Transport-Ambulance.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aha-Soft-Medical-Head-physician.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Iconshock-Super-Vista-Medical-Nurse.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_user_group-512.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
