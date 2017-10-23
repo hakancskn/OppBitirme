@@ -18,6 +18,7 @@ namespace OppBitirme.Models
         public String Mail { get; set; }
         public Unvan unvan { get; set; }
 
+        public String AdSoyad { get { return Ad + " " + Soyad; } }
         public enum  Cinsiyet
     {
         Erkek,

@@ -37,6 +37,8 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.btnKaydet = new System.Windows.Forms.Button();
+            this.pnlDoktor = new System.Windows.Forms.Panel();
+            this.pnlDoktor.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmbServisler
@@ -46,11 +48,12 @@
             this.cmbServisler.Name = "cmbServisler";
             this.cmbServisler.Size = new System.Drawing.Size(121, 21);
             this.cmbServisler.TabIndex = 3;
+            this.cmbServisler.SelectedIndexChanged += new System.EventHandler(this.cmbServisler_SelectedIndexChanged);
             // 
             // cmbDoktorlar
             // 
             this.cmbDoktorlar.FormattingEnabled = true;
-            this.cmbDoktorlar.Location = new System.Drawing.Point(442, 81);
+            this.cmbDoktorlar.Location = new System.Drawing.Point(86, 11);
             this.cmbDoktorlar.Name = "cmbDoktorlar";
             this.cmbDoktorlar.Size = new System.Drawing.Size(121, 21);
             this.cmbDoktorlar.TabIndex = 4;
@@ -73,12 +76,13 @@
             this.columnHeader5});
             this.lstHasta.FullRowSelect = true;
             this.lstHasta.GridLines = true;
-            this.lstHasta.Location = new System.Drawing.Point(17, 41);
+            this.lstHasta.Location = new System.Drawing.Point(17, 36);
             this.lstHasta.Name = "lstHasta";
-            this.lstHasta.Size = new System.Drawing.Size(295, 246);
+            this.lstHasta.Size = new System.Drawing.Size(295, 405);
             this.lstHasta.TabIndex = 48;
             this.lstHasta.UseCompatibleStateImageBehavior = false;
             this.lstHasta.View = System.Windows.Forms.View.Details;
+            this.lstHasta.SelectedIndexChanged += new System.EventHandler(this.lstHasta_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -99,7 +103,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(353, 85);
+            this.label1.Location = new System.Drawing.Point(-3, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 17);
             this.label1.TabIndex = 49;
@@ -110,7 +114,7 @@
             this.btnKaydet.BackColor = System.Drawing.Color.PowderBlue;
             this.btnKaydet.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnKaydet.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnKaydet.Location = new System.Drawing.Point(525, 319);
+            this.btnKaydet.Location = new System.Drawing.Point(524, 372);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(115, 58);
             this.btnKaydet.TabIndex = 50;
@@ -118,20 +122,30 @@
             this.btnKaydet.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnKaydet.UseVisualStyleBackColor = false;
             // 
+            // pnlDoktor
+            // 
+            this.pnlDoktor.Controls.Add(this.label1);
+            this.pnlDoktor.Controls.Add(this.cmbDoktorlar);
+            this.pnlDoktor.Location = new System.Drawing.Point(356, 68);
+            this.pnlDoktor.Name = "pnlDoktor";
+            this.pnlDoktor.Size = new System.Drawing.Size(207, 53);
+            this.pnlDoktor.TabIndex = 51;
+            // 
             // YeniRandevuEkrani
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PowderBlue;
+            this.Controls.Add(this.pnlDoktor);
             this.Controls.Add(this.btnKaydet);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.lstHasta);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.cmbDoktorlar);
             this.Controls.Add(this.cmbServisler);
             this.Name = "YeniRandevuEkrani";
             this.Size = new System.Drawing.Size(689, 478);
             this.Load += new System.EventHandler(this.YeniRandevuEkrani_Load);
+            this.pnlDoktor.ResumeLayout(false);
+            this.pnlDoktor.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -147,5 +161,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnKaydet;
+        private System.Windows.Forms.Panel pnlDoktor;
     }
 }

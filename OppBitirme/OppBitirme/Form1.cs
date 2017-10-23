@@ -33,7 +33,7 @@ namespace OppBitirme
             doktor.Tckn = "15143256030";
             doktor.Telefon = "05387299810";
             doktor.unvan = Kisi.Unvan.Doktor;
-            doktor.Servis = Hastane.Servisler.das;
+            doktor.Servis = Hastane.Servisler.Göz;
             Hastane.Doktorlar.Add(doktor);
             Hemsire hemsire = new Hemsire();
             hemsire.Ad = "dasds";
