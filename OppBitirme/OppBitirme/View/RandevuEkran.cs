@@ -20,7 +20,10 @@ namespace OppBitirme.View
 
         private void YeniRandevuEkrani_Load(object sender, EventArgs e)
         {
-            Hastane.Hastalar.ForEach(a =>
+
+            List<Hasta> hasta = Hastane.Hastalar;
+
+            hasta.ForEach(a =>
             {
                 ListViewItem li = new ListViewItem();
                 li.Text = a.Ad;
