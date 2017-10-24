@@ -33,12 +33,12 @@ namespace OppBitirme.View
                 lstHasta.Items.Add(li);
             });
             cmbServisler.DataSource = Enum.GetValues(typeof(Hastane.Servisler));
-            
+
         }
 
         private void lstHasta_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void cmbServisler_SelectedIndexChanged(object sender, EventArgs e)
@@ -52,11 +52,16 @@ namespace OppBitirme.View
         private void cmbDoktorlar_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbDoktorlar.SelectedIndex == -1)
-                return;
+            {
+                pnlSaatler.Controls.Clear();
+
+            }
             else
             {
+                pnlSaatler.Controls.Clear();
                 RandevuSaatleri randevuSaatleri = new RandevuSaatleri();
                 randevuSaatleri.doktor = (Doktor)cmbDoktorlar.SelectedItem;
+                randevuSaatleri.Size = pnlSaatler.Size - (new Size(5, 5));
                 pnlSaatler.Controls.Add(randevuSaatleri);
 
             }

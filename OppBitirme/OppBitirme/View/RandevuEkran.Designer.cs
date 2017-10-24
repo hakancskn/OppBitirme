@@ -28,47 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cmbServisler = new System.Windows.Forms.ComboBox();
-            this.cmbDoktorlar = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.lstHasta = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label1 = new System.Windows.Forms.Label();
             this.btnKaydet = new System.Windows.Forms.Button();
+            this.cmbServisler = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cmbDoktorlar = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnlDoktor = new System.Windows.Forms.Panel();
             this.pnlSaatler = new System.Windows.Forms.Panel();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.pnlDoktor.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // cmbServisler
-            // 
-            this.cmbServisler.FormattingEnabled = true;
-            this.cmbServisler.Location = new System.Drawing.Point(442, 41);
-            this.cmbServisler.Name = "cmbServisler";
-            this.cmbServisler.Size = new System.Drawing.Size(121, 21);
-            this.cmbServisler.TabIndex = 3;
-            this.cmbServisler.SelectedIndexChanged += new System.EventHandler(this.cmbServisler_SelectedIndexChanged);
-            // 
-            // cmbDoktorlar
-            // 
-            this.cmbDoktorlar.FormattingEnabled = true;
-            this.cmbDoktorlar.Location = new System.Drawing.Point(86, 11);
-            this.cmbDoktorlar.Name = "cmbDoktorlar";
-            this.cmbDoktorlar.Size = new System.Drawing.Size(121, 21);
-            this.cmbDoktorlar.TabIndex = 4;
-            this.cmbDoktorlar.SelectedIndexChanged += new System.EventHandler(this.cmbDoktorlar_SelectedIndexChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(353, 45);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 17);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Servisler:";
             // 
             // lstHasta
             // 
@@ -77,10 +50,11 @@
             this.columnHeader2,
             this.columnHeader5});
             this.lstHasta.FullRowSelect = true;
-            this.lstHasta.GridLines = true;
+            this.lstHasta.HideSelection = false;
             this.lstHasta.Location = new System.Drawing.Point(17, 36);
+            this.lstHasta.MultiSelect = false;
             this.lstHasta.Name = "lstHasta";
-            this.lstHasta.Size = new System.Drawing.Size(295, 405);
+            this.lstHasta.Size = new System.Drawing.Size(295, 297);
             this.lstHasta.TabIndex = 48;
             this.lstHasta.UseCompatibleStateImageBehavior = false;
             this.lstHasta.View = System.Windows.Forms.View.Details;
@@ -101,16 +75,6 @@
             this.columnHeader5.Text = "Tckn";
             this.columnHeader5.Width = 117;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(-3, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 17);
-            this.label1.TabIndex = 49;
-            this.label1.Text = "Doktorlar:";
-            // 
             // btnKaydet
             // 
             this.btnKaydet.BackColor = System.Drawing.Color.PowderBlue;
@@ -120,9 +84,47 @@
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(115, 58);
             this.btnKaydet.TabIndex = 50;
-            this.btnKaydet.Text = "Kaydet";
+            this.btnKaydet.Text = "Yeni Randevu";
             this.btnKaydet.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnKaydet.UseVisualStyleBackColor = false;
+            // 
+            // cmbServisler
+            // 
+            this.cmbServisler.FormattingEnabled = true;
+            this.cmbServisler.Location = new System.Drawing.Point(442, 41);
+            this.cmbServisler.Name = "cmbServisler";
+            this.cmbServisler.Size = new System.Drawing.Size(121, 21);
+            this.cmbServisler.TabIndex = 3;
+            this.cmbServisler.SelectedIndexChanged += new System.EventHandler(this.cmbServisler_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(353, 45);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(66, 17);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Servisler:";
+            // 
+            // cmbDoktorlar
+            // 
+            this.cmbDoktorlar.FormattingEnabled = true;
+            this.cmbDoktorlar.Location = new System.Drawing.Point(86, 11);
+            this.cmbDoktorlar.Name = "cmbDoktorlar";
+            this.cmbDoktorlar.Size = new System.Drawing.Size(121, 21);
+            this.cmbDoktorlar.TabIndex = 4;
+            this.cmbDoktorlar.SelectedIndexChanged += new System.EventHandler(this.cmbDoktorlar_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(-3, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(72, 17);
+            this.label1.TabIndex = 49;
+            this.label1.Text = "Doktorlar:";
             // 
             // pnlDoktor
             // 
@@ -135,16 +137,25 @@
             // 
             // pnlSaatler
             // 
-            this.pnlSaatler.Location = new System.Drawing.Point(356, 152);
+            this.pnlSaatler.Location = new System.Drawing.Point(376, 163);
             this.pnlSaatler.Name = "pnlSaatler";
-            this.pnlSaatler.Size = new System.Drawing.Size(262, 173);
+            this.pnlSaatler.Size = new System.Drawing.Size(283, 181);
             this.pnlSaatler.TabIndex = 52;
+            // 
+            // listView1
+            // 
+            this.listView1.Location = new System.Drawing.Point(17, 360);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(442, 97);
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // YeniRandevuEkrani
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PowderBlue;
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.pnlSaatler);
             this.Controls.Add(this.pnlDoktor);
             this.Controls.Add(this.btnKaydet);
@@ -152,7 +163,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cmbServisler);
             this.Name = "YeniRandevuEkrani";
-            this.Size = new System.Drawing.Size(689, 478);
+            this.Size = new System.Drawing.Size(740, 509);
             this.Load += new System.EventHandler(this.YeniRandevuEkrani_Load);
             this.pnlDoktor.ResumeLayout(false);
             this.pnlDoktor.PerformLayout();
@@ -162,16 +173,17 @@
         }
 
         #endregion
-        private System.Windows.Forms.ComboBox cmbServisler;
-        private System.Windows.Forms.ComboBox cmbDoktorlar;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListView lstHasta;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnKaydet;
+        private System.Windows.Forms.ComboBox cmbServisler;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cmbDoktorlar;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel pnlDoktor;
         private System.Windows.Forms.Panel pnlSaatler;
+        private System.Windows.Forms.ListView listView1;
     }
 }

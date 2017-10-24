@@ -33,13 +33,12 @@
             // 
             // tblSaatler
             // 
-            this.tblSaatler.AutoScroll = true;
             this.tblSaatler.AutoSize = true;
             this.tblSaatler.ColumnCount = 4;
-            this.tblSaatler.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tblSaatler.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tblSaatler.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tblSaatler.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tblSaatler.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tblSaatler.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tblSaatler.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tblSaatler.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tblSaatler.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tblSaatler.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.tblSaatler.Location = new System.Drawing.Point(0, 0);

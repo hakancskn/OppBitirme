@@ -46,6 +46,17 @@ namespace OppBitirme
             doktor.unvan = Kisi.Unvan.Doktor;
             doktor.Servis = Hastane.Servisler.Göz;
             Hastane.Doktorlar.Add(doktor);
+            Doktor doktor2 = new Doktor();
+            doktor2.Hemsireleri.Add(hemsire);
+            doktor2.Ad = "hakasdsdan";
+            doktor2.Soyad = "coşkuasdsdn";
+            doktor2.Tckn = "1514325saf6030";
+            doktor2.Telefon = "05387299810";
+            doktor2.unvan = Kisi.Unvan.Doktor;
+            doktor2.Servis = Hastane.Servisler.Göz;
+            Hastane.Doktorlar.Add(doktor2);
+
+
             //hastane.xml();
             kisi = new KisiEkle();
             Hemsire hemsa = new Hemsire();
@@ -55,6 +66,12 @@ namespace OppBitirme
             hasta.Telefon = "12545";
             hasta.Tckn = "15143256030";
             Hastane.Hastalar.Add(hasta);
+            Hasta hasta2 = new Hasta();
+            hasta2.Ad = "Musadasdasdrat";
+            hasta2.Soyad = "sdasd";
+            hasta2.Telefon = "asdsad";
+            hasta2.Tckn = "15143256030";
+            Hastane.Hastalar.Add(hasta2);
 
 
             this.LayoutMdi(MdiLayout.TileVertical);
