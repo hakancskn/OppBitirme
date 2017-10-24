@@ -60,14 +60,14 @@
             // 
             this.kişiEkleToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kişiEkleToolStripMenuItem.Name = "kişiEkleToolStripMenuItem";
-            this.kişiEkleToolStripMenuItem.Size = new System.Drawing.Size(67, 21);
+            this.kişiEkleToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
             this.kişiEkleToolStripMenuItem.Text = "Yeni Kişi";
             this.kişiEkleToolStripMenuItem.Click += new System.EventHandler(this.kişiEkleToolStripMenuItem_Click);
             // 
             // randevuOluşturToolStripMenuItem
             // 
             this.randevuOluşturToolStripMenuItem.Name = "randevuOluşturToolStripMenuItem";
-            this.randevuOluşturToolStripMenuItem.Size = new System.Drawing.Size(90, 21);
+            this.randevuOluşturToolStripMenuItem.Size = new System.Drawing.Size(91, 21);
             this.randevuOluşturToolStripMenuItem.Text = "Yeni Randevu";
             this.randevuOluşturToolStripMenuItem.Click += new System.EventHandler(this.randevuOluşturToolStripMenuItem_Click);
             // 
@@ -83,6 +83,7 @@
             this.hemşirelerToolStripMenuItem.Name = "hemşirelerToolStripMenuItem";
             this.hemşirelerToolStripMenuItem.Size = new System.Drawing.Size(76, 21);
             this.hemşirelerToolStripMenuItem.Text = "Hemşireler";
+            this.hemşirelerToolStripMenuItem.Click += new System.EventHandler(this.hemşirelerToolStripMenuItem_Click);
             // 
             // personelToolStripMenuItem
             // 

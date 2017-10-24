@@ -89,8 +89,7 @@ namespace OppBitirme.View
                     (item as ComboBox).SelectedIndex = -1;
                 else if (item is DateTimePicker)
                     (item as DateTimePicker).Value = DateTime.Now;
-                else if (item is PictureBox)
-                    (item as PictureBox).Image = Properties.Resources.user_add;
+              
             }
 
         }
@@ -171,6 +170,11 @@ namespace OppBitirme.View
         }
 
         private void chlsHemsire_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlBrans_Paint(object sender, PaintEventArgs e)
         {
 
         }
