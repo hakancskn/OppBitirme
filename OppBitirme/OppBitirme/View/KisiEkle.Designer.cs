@@ -80,6 +80,7 @@
             this.chlsHemsire.Name = "chlsHemsire";
             this.chlsHemsire.Size = new System.Drawing.Size(261, 319);
             this.chlsHemsire.TabIndex = 37;
+            this.chlsHemsire.SelectedIndexChanged += new System.EventHandler(this.chlsHemsire_SelectedIndexChanged);
             // 
             // btnTemizle
             // 
