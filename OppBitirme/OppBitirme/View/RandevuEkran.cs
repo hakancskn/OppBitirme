@@ -33,20 +33,28 @@ namespace OppBitirme.View
                 lstHasta.Items.Add(li);
             });
             cmbServisler.DataSource = Enum.GetValues(typeof(Hastane.Servisler));
-
+            cmbServisler.SelectedIndex = -1;
         }
 
         private void lstHasta_SelectedIndexChanged(object sender, EventArgs e)
         {
+            cmbServisler.SelectedIndex=-1;
+            if(lstHasta.FocusedItem!=null)
             SecilenHasta = (Hasta)lstHasta.FocusedItem.Tag;
         }
 
         private void cmbServisler_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cmbDoktorlar.DataSource = null;
-            cmbDoktorlar.DisplayMember = "AdSoyad";
-            cmbDoktorlar.DataSource = Hastane.Doktorlar.Where(x => x.Servis == (Hastane.Servisler)cmbServisler.SelectedItem).ToList();
-
+            if (cmbServisler.SelectedIndex != -1)
+            {
+                cmbDoktorlar.DataSource = null;
+                cmbDoktorlar.DisplayMember = "AdSoyad";
+                cmbDoktorlar.DataSource = Hastane.Doktorlar.Where(x => x.Servis == (Hastane.Servisler)cmbServisler.SelectedItem).ToList();
+            }
+            else
+            {
+                cmbDoktorlar.DataSource=null;
+            }
         }
         RandevuSaatleri randevuSaatleri;
         private void cmbDoktorlar_SelectedIndexChanged(object sender, EventArgs e)
@@ -71,6 +79,8 @@ namespace OppBitirme.View
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
+            Hasta Khasta = new Hasta();
+            Khasta = (Hasta)lstHasta.FocusedItem.Tag;
             if (randevuSaatleri.SecilenSaat != DateTime.MinValue)
             {
                 if(0<Hastane.Randevular.Where(x => x.hasta == SecilenHasta && x.Zamani == randevuSaatleri.SecilenSaat).Count())
@@ -83,12 +93,14 @@ namespace OppBitirme.View
                         Servisi = (Hastane.Servisler)Enum.Parse((typeof(Hastane.Servisler)),
                                         cmbServisler.SelectedItem.ToString()),
                         doktor = (Doktor)cmbDoktorlar.SelectedValue,
-                        hasta = (Hasta)lstHasta.FocusedItem.Tag
+                        hasta = Khasta
 
                 };
                     Hastane.Randevular.Add(Yenirandevu);
+                    MessageBox.Show("Randevu Eklendi");
+                    cmbServisler.SelectedIndex = -1;
 
-                    
+
 
                 }
             }
@@ -97,5 +109,7 @@ namespace OppBitirme.View
                 MessageBox.Show("Lütfen Bir Saat Seçiniz.");
             }
         }
+
+       
     }
 }
