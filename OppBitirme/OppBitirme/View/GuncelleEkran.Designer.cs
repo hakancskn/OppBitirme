@@ -265,7 +265,6 @@
             this.chlsHemsire.Name = "chlsHemsire";
             this.chlsHemsire.Size = new System.Drawing.Size(261, 289);
             this.chlsHemsire.TabIndex = 84;
-           
             // 
             // lblBrans
             // 
@@ -284,6 +283,7 @@
             this.cmbKisiBrans.Name = "cmbKisiBrans";
             this.cmbKisiBrans.Size = new System.Drawing.Size(206, 21);
             this.cmbKisiBrans.TabIndex = 36;
+            this.cmbKisiBrans.SelectedIndexChanged += new System.EventHandler(this.cmbKisiBrans_SelectedIndexChanged);
             // 
             // panel1
             // 

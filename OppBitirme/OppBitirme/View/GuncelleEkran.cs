@@ -168,6 +168,11 @@ namespace OppBitirme.View
             }
 
         }
+
+        private void cmbKisiBrans_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

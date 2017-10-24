@@ -17,7 +17,7 @@ namespace OppBitirme.View
         {
             InitializeComponent();
         }
-
+        Hasta SecilenHasta = new Hasta();
         private void YeniRandevuEkrani_Load(object sender, EventArgs e)
         {
 
@@ -38,7 +38,7 @@ namespace OppBitirme.View
 
         private void lstHasta_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            SecilenHasta = (Hasta)lstHasta.FocusedItem.Tag;
         }
 
         private void cmbServisler_SelectedIndexChanged(object sender, EventArgs e)
@@ -48,7 +48,7 @@ namespace OppBitirme.View
             cmbDoktorlar.DataSource = Hastane.Doktorlar.Where(x => x.Servis == (Hastane.Servisler)cmbServisler.SelectedItem).ToList();
 
         }
-
+        RandevuSaatleri randevuSaatleri;
         private void cmbDoktorlar_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbDoktorlar.SelectedIndex == -1)
@@ -59,7 +59,7 @@ namespace OppBitirme.View
             else
             {
                 pnlSaatler.Controls.Clear();
-                RandevuSaatleri randevuSaatleri = new RandevuSaatleri();
+                randevuSaatleri= new RandevuSaatleri();
                 randevuSaatleri.doktor = (Doktor)cmbDoktorlar.SelectedItem;
                 randevuSaatleri.Size = pnlSaatler.Size - (new Size(5, 5));
                 pnlSaatler.Controls.Add(randevuSaatleri);
@@ -67,6 +67,35 @@ namespace OppBitirme.View
             }
 
 
+        }
+
+        private void btnKaydet_Click(object sender, EventArgs e)
+        {
+            if (randevuSaatleri.SecilenSaat != DateTime.MinValue)
+            {
+                if(0<Hastane.Randevular.Where(x => x.hasta == SecilenHasta && x.Zamani == randevuSaatleri.SecilenSaat).Count())
+                    MessageBox.Show("Zaten Bu Saatte Bir Randevunuz Var." );
+                else
+                {
+                    Randevu Yenirandevu = new Randevu()
+                    {
+                        Zamani = randevuSaatleri.SecilenSaat,
+                        Servisi = (Hastane.Servisler)Enum.Parse((typeof(Hastane.Servisler)),
+                                        cmbServisler.SelectedItem.ToString()),
+                        doktor = (Doktor)cmbDoktorlar.SelectedValue,
+                        hasta = (Hasta)lstHasta.FocusedItem.Tag
+
+                };
+                    Hastane.Randevular.Add(Yenirandevu);
+
+                    
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Lütfen Bir Saat Seçiniz.");
+            }
         }
     }
 }

@@ -8,6 +8,22 @@ namespace OppBitirme.Models
 {
     public class Kisi
     {
+
+        public void Cast(Kisi kisi)
+        {
+            this.Ad = kisi.Ad;
+            this.Adres = kisi.Adres;
+            this.cinsiyet = kisi.cinsiyet;
+            this.DogumTarihi = kisi.DogumTarihi;
+            this.Mail = kisi.Mail;
+            this.Soyad = kisi.Soyad;
+            this.Tckn = kisi.Tckn;
+            this.Telefon = kisi.Telefon;
+            this.unvan = kisi.unvan;
+            
+
+        }
+
         public String Ad { get; set; }
         public String Soyad { get; set; }
         public String Tckn { get; set; }

@@ -36,8 +36,8 @@ namespace OppBitirme.View
         {
             try
             {
-                Kisi yeniKisi = new Kisi
-                {
+                Kisi yeniKisi=new Kisi
+                    {
                     Ad = txtKisiAd.Text,
                     Soyad = txtKisiSoyad.Text,
                     Tckn = txtKisiTckn.Text,
@@ -54,16 +54,15 @@ namespace OppBitirme.View
                 switch (yeniKisi.unvan)
                 {
                     case Unvan.Hasta:
-                        Hastane.Hastalar.Add((Hasta)yeniKisi);
+                        Hasta hasta = new Hasta();
+                        hasta.Cast(yeniKisi);
                         break;
                     case Unvan.Personel:
                         Hastane.Personeller.Add((Personel)yeniKisi);
                         break;
                     case Unvan.Doktor:
-                        (yeniKisi as Doktor).Servis = (Hastane.Servisler)cmbKisiBrans.SelectedItem;
-                        Doktor doktor = (Doktor)yeniKisi;
-                       
-                        Hastane.Doktorlar.Add(doktor);
+                        Doktor doktor = new Doktor();
+                        doktor.Cast(yeniKisi);
                         break;
                     case Unvan.Hemşire:
                         Hastane.Hemsireler.Add((Hemsire)yeniKisi);
