@@ -24,6 +24,7 @@ namespace OppBitirme.View
 
         private void GuncelleEkrani_Load(object sender, EventArgs e)
         {
+            cmbHastaCinsiyeti.Items.AddRange(Enum.GetNames(typeof(Cinsiyet)));
 
             switch (unvan)
             {
@@ -134,37 +135,77 @@ namespace OppBitirme.View
 
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
+
+
+
+
+
             if (SeciliKisi == null)
             {
                 MessageBox.Show("Neyi Güncelliyim");
                 return;
             }
-            DialogResult cevap = MessageBox.Show($"{SeciliKisi.Ad} adlı kişiyi güncellemek istiyor musunuz ?", "kişi güncelle", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (cevap == DialogResult.Yes)
+
+
+
+
+            if (SeciliKisi.Ad == txtHastaAdi.Text && SeciliKisi.Soyad == txtHastaSoyadi.Text &&
+                SeciliKisi.Tckn == txtHastaTckn.Text)
+            {
+                MessageBox.Show("değişiklik yapmadınız");
+            }
+
+            else // (cevap == DialogResult.Yes) 
+
             {
                 try
                 {
-                    SeciliKisi.Ad = txtHastaAdi.Text;
-                    SeciliKisi.Soyad = txtHastaSoyadi.Text;
-                    SeciliKisi.Tckn = txtHastaTckn.Text;
-                    SeciliKisi.Telefon = txtHastaTel.Text;
-                    SeciliKisi.Mail = txtHastaMail.Text;
-                    SeciliKisi.DogumTarihi = dtpHastaDogumTarihi.Value;
-                    SeciliKisi.cinsiyet = (Cinsiyet)cmbHastaCinsiyeti.SelectedItem;
-                    if(SeciliKisi is IBrans)
-                    {
-                        (SeciliKisi as IBrans).branslar = (Hastane.Branslar)cmbKisiBrans.SelectedItem;
-                    }
-                    if (SeciliKisi is IServis)
-                    {
-                        (SeciliKisi as IServis).Servis = (Hastane.Servisler)cmbKisiBrans.SelectedItem;
-                    }
+                    listView1.SelectedItems[0].SubItems[0].Text = txtHastaAdi.Text;
+                    listView1.SelectedItems[0].SubItems[1].Text = txtHastaSoyadi.Text;
+                    listView1.SelectedItems[0].SubItems[2].Text = cmbHastaCinsiyeti.Text;
+                    listView1.SelectedItems[0].SubItems[3].Text = txtHastaTckn.Text;
+                    listView1.SelectedItems[0].SubItems[4].Text = txtHastaAdres.Text;
+                    listView1.SelectedItems[0].SubItems[5].Text = txtHastaMail.Text;
+                    listView1.SelectedItems[0].SubItems[6].Text = txtHastaTel.Text;
+                    listView1.SelectedItems[0].SubItems[6].Text = cmbKisiBrans.Text;
+                    listView1.SelectedItems[0].SubItems[7].Text = dtpHastaDogumTarihi.Text;
+
+
+
                 }
                 catch (Exception)
                 {
 
-                    throw;
                 }
+                DialogResult cevap = MessageBox.Show($"{SeciliKisi.Ad} adlı kişiyi güncellemek istiyor musunuz ?", "kişi güncelle", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (cevap == DialogResult.Yes)
+                {
+                    try
+                    {
+                        SeciliKisi.Ad = txtHastaAdi.Text;
+                        SeciliKisi.Soyad = txtHastaSoyadi.Text;
+                        SeciliKisi.Tckn = txtHastaTckn.Text;
+                        SeciliKisi.Telefon = txtHastaTel.Text;
+                        SeciliKisi.Mail = txtHastaMail.Text;
+                        SeciliKisi.DogumTarihi = dtpHastaDogumTarihi.Value;
+                        SeciliKisi.cinsiyet = (Cinsiyet)cmbHastaCinsiyeti.SelectedItem;
+                        if (SeciliKisi is IBrans)
+                        {
+                            (SeciliKisi as IBrans).branslar = (Hastane.Branslar)cmbKisiBrans.SelectedItem;
+                        }
+                        if (SeciliKisi is IServis)
+                        {
+                            (SeciliKisi as IServis).Servis = (Hastane.Servisler)cmbKisiBrans.SelectedItem;
+                        }
+                    }
+                    catch (Exception)
+                    {
+
+                        MessageBox.Show("Güncelleme Başarılı");
+                    }
+                }
+
+
             }
 
         }
@@ -176,5 +217,5 @@ namespace OppBitirme.View
     }
 }
 
-   
+
 
