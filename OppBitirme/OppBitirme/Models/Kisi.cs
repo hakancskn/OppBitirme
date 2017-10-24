@@ -11,7 +11,7 @@ namespace OppBitirme.Models
         public String Ad { get; set; }
         public String Soyad { get; set; }
         public String Tckn { get; set; }
-        public DateTime  DogumTarihi { get; set; }
+        public DateTime DogumTarihi { get; set; }
         public Cinsiyet cinsiyet { get; set; }
         public String Telefon { get; set; }
         public String Adres { get; set; }
@@ -19,19 +19,19 @@ namespace OppBitirme.Models
         public Unvan unvan { get; set; }
 
         public String AdSoyad { get { return Ad + " " + Soyad; } }
-        public enum  Cinsiyet
-    {
-        Erkek,
-        Kadın,
-        Belirsiz
-    };
+        public enum Cinsiyet
+        {
+            Erkek,
+            Kadın,
+            Belirsiz
+        };
 
         public enum Unvan
         {
-          Hasta,
-          Personel,
-          Doktor,
-          Hemşire,
+            Hasta,
+            Personel,
+            Doktor,
+            Hemşire,
 
         }
 

@@ -49,8 +49,29 @@ namespace OppBitirme.View
                     Adres = txtKisiAdres.Text,
                     unvan = (Unvan)Enum.Parse((typeof(Unvan)),
                                         cmbKisiUnvan.SelectedItem.ToString()),
-                    
                 };
+
+                switch (yeniKisi.unvan)
+                {
+                    case Unvan.Hasta:
+                        Hastane.Hastalar.Add((Hasta)yeniKisi);
+                        break;
+                    case Unvan.Personel:
+                        Hastane.Personeller.Add((Personel)yeniKisi);
+                        break;
+                    case Unvan.Doktor:
+                        (yeniKisi as Doktor).Servis = (Hastane.Servisler)cmbKisiBrans.SelectedItem;
+                        Doktor doktor = (Doktor)yeniKisi;
+                       
+                        Hastane.Doktorlar.Add(doktor);
+                        break;
+                    case Unvan.Hemşire:
+                        Hastane.Hemsireler.Add((Hemsire)yeniKisi);
+                        break;
+                    default:
+                        break;
+                }
+
                 FormuTemizle();
             }
             catch (Exception ex)
@@ -81,6 +102,7 @@ namespace OppBitirme.View
             cmbKisiUnvan.Items.AddRange(Enum.GetNames(typeof(Unvan)));
             cmbKisiCinsiyet.Items.AddRange(Enum.GetNames(typeof(Cinsiyet)));
 
+            chlsHemsire.Visible = false;
         }
 
         private void cmbKisiUnvan_SelectedIndexChanged(object sender, EventArgs e)
@@ -92,32 +114,46 @@ namespace OppBitirme.View
                     pnlBrans.Visible = true;
                     lblBrans.Text = "Servis";
                     cmbKisiBrans.DataSource = Enum.GetValues(typeof(Hastane.Servisler));
+
+                    chlsHemsire.Visible = true;
+                    
+                    if (cmbKisiBrans.SelectedIndex != -1)
+                    {
+                        chlsHemsire.DataSource = null;
+                        chlsHemsire.DataSource = Hastane.Hemsireler.Where(x => x.Servis == (Hastane.Servisler)cmbKisiBrans.SelectedItem && x.Doktoru == null).ToList();
+                        chlsHemsire.DisplayMember = "AdSoyad";
+                    }
+                   
                     break;
                 case Unvan.Hemşire:
                     cmbKisiBrans.DataSource = null;
                     pnlBrans.Visible = true;
                     lblBrans.Text = "Servis";
                     cmbKisiBrans.DataSource = Enum.GetValues(typeof(Hastane.Servisler));
+                    chlsHemsire.Visible = false;
                     break;
                 case Unvan.Hasta:
                     cmbKisiBrans.DataSource = null;
                     pnlBrans.Visible = false;
+                    chlsHemsire.Visible = false;
                     break;
                 case Unvan.Personel:
                     cmbKisiBrans.DataSource = null;
                     pnlBrans.Visible = true;
                     lblBrans.Text = "Branş";
                     cmbKisiBrans.DataSource = Enum.GetValues(typeof(Hastane.Branslar));
+                    chlsHemsire.Visible = false;
                     break;
                 default:
                     pnlBrans.Visible = false;
+                    chlsHemsire.Visible = false;
                     break;
 
             }
 
-          
-
-
+           
+           
+            
         }
 
         private void label10_Click(object sender, EventArgs e)
@@ -133,6 +169,11 @@ namespace OppBitirme.View
         private void btnTemizle_Click(object sender, EventArgs e)
         {
             FormuTemizle();
+        }
+
+        private void chlsHemsire_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
