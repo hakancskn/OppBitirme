@@ -189,5 +189,17 @@
   <ItemGroup>
     <None Include="Resources\add_user_group-512.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button-Down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button-Up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Up.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

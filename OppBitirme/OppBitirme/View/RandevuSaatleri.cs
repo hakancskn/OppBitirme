@@ -13,6 +13,8 @@ namespace OppBitirme.View
 {
     public partial class RandevuSaatleri : UserControl
     {
+
+        public static int Sutun_sayisi { get; set; }
         private DateTime _secilenSaat=DateTime.MinValue;
         public DateTime SecilenSaat => _secilenSaat;
         public RandevuSaatleri()
@@ -24,37 +26,42 @@ namespace OppBitirme.View
         List<DateTime> Saatlist = new List<DateTime>();
         private void RandevuSaatleri_Load(object sender, EventArgs e)
         {
+
             Saatlist = Hastane.Randevular.Where(x => x.doktor == this.doktor && x.Zamani.Date == DateTime.Today).Select(x => x.Zamani).ToList();
             DateTime saat = new DateTime();
             saat = DateTime.Today;
-            saat=saat.AddHours(9);
+            saat = saat.Add(Hastane.AcilisSaati.TimeOfDay);
 
             bool varmi;
+            int i = 0, j = 0;
 
-            for (int i = 0; i < 4; i++)
+            while (saat.TimeOfDay < Hastane.KapanisSaati.TimeOfDay)
             {
-                for (int j = 0; j < 6; j++)
+                varmi = (Saatlist.Where(x => x.TimeOfDay == saat.TimeOfDay).Count() > 0 || (saat.TimeOfDay <= Hastane.PaydosBitis.TimeOfDay &&
+                    saat.TimeOfDay >= Hastane.PaydosBaslangic.TimeOfDay) || saat.TimeOfDay < DateTime.Now.TimeOfDay) ? true : false;
+
+
+                tblSaatler.Controls.Add(new Button()
                 {
+                    Text = String.Format("{0:t}", saat),
+                    Anchor = AnchorStyles.Bottom,
+                    AutoSize = true,
+                    Tag = saat,
+                    BackColor = (varmi) ? Color.Gray : Color.Green,
+                    Enabled = !varmi
 
-                    varmi = (Saatlist.Where(x => x.Hour == saat.Hour && x.Minute == saat.Minute).Count() > 0 || saat.Hour == 12) ? true : false;
-
-
-                    tblSaatler.Controls.Add(new Button()
-                    {
-                        Text = String.Format("{0:t}", saat),
-                        Anchor = AnchorStyles.Bottom,
-                        AutoSize = true,
-                        Tag = saat,
-                        BackColor = (varmi) ? Color.Gray : Color.Green,
-                        Enabled = !varmi
-
-                    }, j, i);
-
-
-
-
-                    saat = saat.AddMinutes(15);
+                }, i, j);
+                i++;
+                if (i >= Sutun_sayisi)
+                {
+                    i = 0;
+                    j++;
+                    tblSaatler.ColumnCount++;
                 }
+
+
+
+                saat = saat.AddMinutes(15);
             }
             foreach (Button item in tblSaatler.Controls)
             {
@@ -74,6 +81,8 @@ namespace OppBitirme.View
               (sender as Button).BackColor = Color.YellowGreen;
             _secilenSaat = (DateTime)(sender as Button).Tag;
         }
+
+       
 
 
     }

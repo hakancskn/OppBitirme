@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lstHasta = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -45,7 +46,10 @@
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.txtArama = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.menu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.Sil = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlDoktor.SuspendLayout();
+            this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
             // lstHasta
@@ -85,7 +89,7 @@
             this.btnKaydet.BackColor = System.Drawing.Color.PowderBlue;
             this.btnKaydet.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnKaydet.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnKaydet.Location = new System.Drawing.Point(442, 398);
+            this.btnKaydet.Location = new System.Drawing.Point(442, 417);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(115, 58);
             this.btnKaydet.TabIndex = 50;
@@ -115,9 +119,9 @@
             // 
             // pnlSaatler
             // 
-            this.pnlSaatler.Location = new System.Drawing.Point(356, 180);
+            this.pnlSaatler.Location = new System.Drawing.Point(356, 152);
             this.pnlSaatler.Name = "pnlSaatler";
-            this.pnlSaatler.Size = new System.Drawing.Size(283, 181);
+            this.pnlSaatler.Size = new System.Drawing.Size(283, 239);
             this.pnlSaatler.TabIndex = 56;
             // 
             // pnlDoktor
@@ -154,6 +158,7 @@
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader6});
+            this.lstRandevu.ContextMenuStrip = this.menu;
             this.lstRandevu.FullRowSelect = true;
             this.lstRandevu.HideSelection = false;
             this.lstRandevu.Location = new System.Drawing.Point(17, 301);
@@ -195,6 +200,21 @@
             this.label3.TabIndex = 59;
             this.label3.Text = "Arama:";
             // 
+            // menu
+            // 
+            this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Sil});
+            this.menu.Name = "menu";
+            this.menu.Size = new System.Drawing.Size(153, 48);
+            this.menu.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
+            // 
+            // Sil
+            // 
+            this.Sil.Name = "Sil";
+            this.Sil.Size = new System.Drawing.Size(152, 22);
+            this.Sil.Text = "Sil";
+            this.Sil.Click += new System.EventHandler(this.Sil_Click);
+            // 
             // YeniRandevuEkrani
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -214,6 +234,7 @@
             this.Load += new System.EventHandler(this.YeniRandevuEkrani_Load);
             this.pnlDoktor.ResumeLayout(false);
             this.pnlDoktor.PerformLayout();
+            this.menu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -237,5 +258,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.TextBox txtArama;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ContextMenuStrip menu;
+        private System.Windows.Forms.ToolStripMenuItem Sil;
     }
 }

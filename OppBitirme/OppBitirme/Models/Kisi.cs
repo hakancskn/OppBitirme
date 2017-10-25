@@ -26,7 +26,7 @@ namespace OppBitirme.Models
 
         }
 
-        public String Ad { get; set; }
+        public String Ad { get; set;}
         public String Soyad { get; set; }
         public String Tckn { get; set; }
         public DateTime DogumTarihi
@@ -40,6 +40,11 @@ namespace OppBitirme.Models
         public String Mail { get; set; }
         public Unvan unvan { get; set; }
 
+        public override string ToString()
+        {
+            return Ad + " " + Soyad;
+
+        }
         public String AdSoyad { get { return Ad + " " + Soyad; } }
         public enum Cinsiyet
         {
