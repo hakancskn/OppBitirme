@@ -97,5 +97,10 @@ namespace OppBitirme
             panel1.Controls.Clear();
             panel1.Controls.Add(randevuEkran);
         }
+
+        private void hemşirelerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

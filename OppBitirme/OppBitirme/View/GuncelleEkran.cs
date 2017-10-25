@@ -150,7 +150,7 @@ namespace OppBitirme.View
 
 
             if (SeciliKisi.Ad == txtHastaAdi.Text && SeciliKisi.Soyad == txtHastaSoyadi.Text &&
-                SeciliKisi.Tckn == txtHastaTckn.Text)
+                SeciliKisi.Tckn == txtHastaTckn.Text && SeciliKisi.cinsiyet == (Cinsiyet)cmbHastaCinsiyeti.SelectedIndex)
             {
                 MessageBox.Show("değişiklik yapmadınız");
             }
