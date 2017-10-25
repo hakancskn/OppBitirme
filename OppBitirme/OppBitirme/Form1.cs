@@ -45,6 +45,8 @@ namespace OppBitirme
             doktor.Tckn = "15143256030";
             doktor.Telefon = "05387299810";
             doktor.unvan = Kisi.Unvan.Doktor;
+            doktor.cinsiyet = Cinsiyet.Erkek;
+            doktor.DogumTarihi = DateTime.Now;
             doktor.Servis = Hastane.Servisler.Göz;
             Hastane.Doktorlar.Add(doktor);
             Doktor doktor2 = new Doktor();
@@ -53,6 +55,9 @@ namespace OppBitirme
             doktor2.Soyad = "coşkuasdsdn";
             doktor2.Tckn = "1514325saf6030";
             doktor2.Telefon = "05387299810";
+            doktor2.unvan = Kisi.Unvan.Doktor;
+            doktor2.cinsiyet = Cinsiyet.Erkek;
+            doktor2.DogumTarihi = DateTime.Now;
             doktor2.unvan = Kisi.Unvan.Doktor;
             doktor2.Servis = Hastane.Servisler.Göz;
             Hastane.Doktorlar.Add(doktor2);

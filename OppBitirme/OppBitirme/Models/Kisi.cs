@@ -24,7 +24,7 @@ namespace OppBitirme.Models
 
         }
 
-        public String Ad { get; set; }
+        public String Ad { get; set;}
         public String Soyad { get; set; }
         public String Tckn { get; set; }
         public DateTime DogumTarihi { get; set; }
