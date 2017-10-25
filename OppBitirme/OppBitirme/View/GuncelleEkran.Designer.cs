@@ -132,6 +132,7 @@
             this.cmbHastaCinsiyeti.Name = "cmbHastaCinsiyeti";
             this.cmbHastaCinsiyeti.Size = new System.Drawing.Size(209, 21);
             this.cmbHastaCinsiyeti.TabIndex = 40;
+            this.cmbHastaCinsiyeti.SelectedIndexChanged += new System.EventHandler(this.cmbHastaCinsiyeti_SelectedIndexChanged);
             // 
             // txtHastaSoyadi
             // 
