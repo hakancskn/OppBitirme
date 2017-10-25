@@ -57,14 +57,16 @@ namespace OppBitirme.View
                         hasta.Cast(yeniKisi);
                         break;
                     case Unvan.Personel:
-                        Hastane.Personeller.Add((Personel)yeniKisi);
+                        Personel personel = new Personel();
+                        personel.Cast(yeniKisi);
                         break;
                     case Unvan.Doktor:
                         Doktor doktor = new Doktor();
                         doktor.Cast(yeniKisi);
                         break;
                     case Unvan.Hemşire:
-                        Hastane.Hemsireler.Add((Hemsire)yeniKisi);
+                        Hemsire hemsire = new Hemsire();
+                        hemsire.Cast(yeniKisi);
                         break;
                     default:
                         break;

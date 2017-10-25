@@ -54,7 +54,7 @@ namespace OppBitirme
             doktor2.Hemsireleri.Add(hemsire);
             doktor2.Ad = "hakasdsdan";
             doktor2.Soyad = "coşkuasdsdn";
-            doktor2.Tckn = "1514325saf6030";
+            doktor2.Tckn = "15143256030";
             doktor2.Telefon = "05387299810";
             doktor2.unvan = Kisi.Unvan.Doktor;
             doktor2.cinsiyet = Cinsiyet.Erkek;
