@@ -10,6 +10,7 @@ namespace OppBitirme.Models
     public class Kisi
     {
         private DateTime _dogumTarihi;
+        private string _tckn;
 
         public void Cast(Kisi kisi)
         {
@@ -26,9 +27,13 @@ namespace OppBitirme.Models
 
         }
 
-        public String Ad { get; set;}
+        public String Ad { get; set; }
         public String Soyad { get; set; }
-        public String Tckn { get; set; }
+        public String Tckn
+        {
+            get { return _tckn; }
+            set { _tckn = TcknValid(value); }
+        }
         public DateTime DogumTarihi
         {
             get { return _dogumTarihi; }
@@ -80,21 +85,23 @@ namespace OppBitirme.Models
             if (tckn.Length != 11)
                 throw new Exception("T.C. Kimlik numarası 11 haneli olmalıdır.");
             foreach (char harf in tckn)
-           if (!char.IsDigit(harf))
+           
+                if (!char.IsDigit(harf))
                     throw new Exception("T.C. Kimlik numarası içerisinde sadece rakam bulunmalıdır.");
+       
             if (Convert.ToInt32(tckn[10]) % 2 != 0)
                 throw new Exception("T.C.Kimlik numarasının son rakamı çift olmalıdır.");
             if (tckn[0] == '0')
                 throw new Exception("T.C. Kimlik numarası '0' ile başlayamaz.");
             return tckn;
         }
-        public DateTime DogumTarihiValid (DateTime dogumTarihi)
+        public DateTime DogumTarihiValid(DateTime dogumTarihi)
         {
             if (dogumTarihi > DateTime.Now)
                 throw new Exception("Lütfen doğum tarihi bilgisini kontrol ediniz.");
             return dogumTarihi;
         }
 
-
+       
     }
 }
