@@ -14,8 +14,8 @@ namespace OppBitirme.View
 {
     public partial class KisiEkle : UserControl
     {
-        private object ex;
 
+        public Kisi.Unvan Unvani { get; set; }
         public KisiEkle()
         {
             InitializeComponent();

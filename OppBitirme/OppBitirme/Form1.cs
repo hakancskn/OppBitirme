@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using static OppBitirme.Models.Kisi;
 
 namespace OppBitirme
 {
@@ -21,9 +21,10 @@ namespace OppBitirme
             
         }
         
-        KisiEkle kisi;
+        KisiEkle kisiEkleme;
 
-        YeniRandevuEkrani randevuEkran=new YeniRandevuEkrani();
+        YeniRandevuEkrani randevuEkran;
+        GuncelleEkran guncelle;
         private void Form1_Load(object sender, EventArgs e)
         {
        
@@ -58,7 +59,7 @@ namespace OppBitirme
 
 
             //hastane.xml();
-            kisi = new KisiEkle();
+           
             Hemsire hemsa = new Hemsire();
             Hasta hasta = new Hasta();
             hasta.Ad = "Murat";
@@ -77,30 +78,39 @@ namespace OppBitirme
             this.LayoutMdi(MdiLayout.TileVertical);
         }
 
-        private void doktorlarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            GuncelleEkran guncelle = new GuncelleEkran();
-            guncelle.unvan = Kisi.Unvan.Doktor;
-            panel1.Controls.Clear();
-            panel1.Controls.Add(guncelle);
-        }
+     
 
-        private void kişiEkleToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-           
-            panel1.Controls.Clear();
-            panel1.Controls.Add(kisi);
-        }
+       
 
         private void randevuOluşturToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            randevuEkran = new YeniRandevuEkrani();
             panel1.Controls.Clear();
             panel1.Controls.Add(randevuEkran);
         }
 
-        private void hemşirelerToolStripMenuItem_Click(object sender, EventArgs e)
+      
+
+        private void KisiEkleToolStripMenuItem_Click(object sender, EventArgs e)
         {
+           
+            kisiEkleme = new KisiEkle();
+            kisiEkleme.Unvani = (Unvan)(sender as ToolStripMenuItem).Tag;
+            panel1.Controls.Clear();
+            panel1.Controls.Add(kisiEkleme);
+        }
+
+        private void KisiListesiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            guncelle= new GuncelleEkran();
+            guncelle.unvan = (Unvan)(sender as ToolStripMenuItem).Tag;
+            panel1.Controls.Clear();
+            panel1.Controls.Add(guncelle);
+
+            
 
         }
+
+
     }
 }

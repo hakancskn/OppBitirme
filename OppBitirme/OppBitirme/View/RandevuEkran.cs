@@ -13,6 +13,7 @@ namespace OppBitirme.View
 {
     public partial class YeniRandevuEkrani : UserControl
     {
+        List<Hasta> hasta;
         public YeniRandevuEkrani()
         {
             InitializeComponent();
@@ -20,18 +21,11 @@ namespace OppBitirme.View
         Hasta SecilenHasta = new Hasta();
         private void YeniRandevuEkrani_Load(object sender, EventArgs e)
         {
-
-            List<Hasta> hasta = Hastane.Hastalar;
             
-            hasta.ForEach(a =>
-            {
-                ListViewItem li = new ListViewItem();
-                li.Text = a.Ad;
-                li.SubItems.Add(a.Soyad);
-                li.SubItems.Add(a.Tckn);
-                li.Tag = a;
-                lstHasta.Items.Add(li);
-            });
+
+             
+            ListeyiDoldur(Hastane.Hastalar);
+          
             cmbServisler.DataSource = Enum.GetValues(typeof(Hastane.Servisler));
             cmbServisler.SelectedIndex = -1;
         }
@@ -44,17 +38,7 @@ namespace OppBitirme.View
             {
                 SecilenHasta = (Hasta)lstHasta.FocusedItem.Tag;
                 List<Randevu> list = Hastane.Randevular.Where(x => x.hasta == SecilenHasta).ToList();
-                lstRandevu.Items.Clear();
-                list.ForEach(a =>
-                {
-                   
-                    ListViewItem li = new ListViewItem();
-                    li.Text = a.Servisi.ToString();
-                    li.SubItems.Add(a.doktor.AdSoyad);
-                    li.SubItems.Add(a.Zamani.ToString("dd/MM/yy HH:mm"));
-                    li.Tag = a;
-                    lstRandevu.Items.Add(li);
-                });
+                
             }
             cmbServisler.SelectedIndex = -1;
         }
@@ -126,6 +110,56 @@ namespace OppBitirme.View
             }
         }
 
-        
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            string arama = txtArama.Text.ToLower();
+            List<Hasta> sonucList = new List<Hasta>();
+
+            if (arama.Length > 2)
+            {
+              
+                //2.yontem:
+                sonucList = Hastane.Hastalar.Where(x => x.Ad.ToLower().Contains(arama) || x.Soyad.Contains(arama) || x.Tckn.Contains(arama)).ToList();
+
+
+                ListeyiDoldur(sonucList);
+            }
+            else
+            {
+
+                ListeyiDoldur(Hastane.Hastalar);
+            }
+        }
+        private void ListeyiDoldur(List<Hasta> list)
+        {
+            lstHasta.Items.Clear();
+            list.ForEach(a =>
+            {
+                ListViewItem li = new ListViewItem();
+                li.Text = a.Ad;
+                li.SubItems.Add(a.Soyad);
+                li.SubItems.Add(a.Tckn);
+                li.Tag = a;
+                lstHasta.Items.Add(li);
+            });
+
+        }
+        private void lstRandevu_refresh()
+        {
+            lstRandevu.Items.Clear();
+            list.ForEach(a =>
+            {
+
+                ListViewItem li = new ListViewItem();
+                li.Text = a.Servisi.ToString();
+                li.SubItems.Add(a.doktor.AdSoyad);
+                li.SubItems.Add(a.Zamani.ToString("dd/MM/yy HH:mm"));
+                li.Tag = a;
+                lstRandevu.Items.Add(li);
+            });
+        }
+
+
+
     }
 }
