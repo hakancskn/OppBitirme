@@ -37,7 +37,7 @@ namespace OppBitirme.View
             if (lstHasta.FocusedItem != null)
             {
                 SecilenHasta = (Hasta)lstHasta.FocusedItem.Tag;
-                List<Randevu> list = Hastane.Randevular.Where(x => x.hasta == SecilenHasta).ToList();
+                
                 
             }
             cmbServisler.SelectedIndex = -1;
@@ -99,8 +99,8 @@ namespace OppBitirme.View
                     Hastane.Randevular.Add(Yenirandevu);
                     MessageBox.Show("Randevu Eklendi");
                     cmbServisler.SelectedIndex = -1;
+                    lstRandevu_refresh();
                     
-
 
                 }
             }
@@ -147,6 +147,7 @@ namespace OppBitirme.View
         private void lstRandevu_refresh()
         {
             lstRandevu.Items.Clear();
+            List<Randevu> list = Hastane.Randevular.Where(x => x.hasta == SecilenHasta).ToList();
             list.ForEach(a =>
             {
 
