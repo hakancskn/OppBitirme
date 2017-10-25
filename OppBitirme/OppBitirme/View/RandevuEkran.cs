@@ -22,7 +22,7 @@ namespace OppBitirme.View
         {
 
             List<Hasta> hasta = Hastane.Hastalar;
-
+            
             hasta.ForEach(a =>
             {
                 ListViewItem li = new ListViewItem();
@@ -38,9 +38,25 @@ namespace OppBitirme.View
 
         private void lstHasta_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cmbServisler.SelectedIndex=-1;
-            if(lstHasta.FocusedItem!=null)
-            SecilenHasta = (Hasta)lstHasta.FocusedItem.Tag;
+            
+            
+            if (lstHasta.FocusedItem != null)
+            {
+                SecilenHasta = (Hasta)lstHasta.FocusedItem.Tag;
+                List<Randevu> list = Hastane.Randevular.Where(x => x.hasta == SecilenHasta).ToList();
+                lstRandevu.Items.Clear();
+                list.ForEach(a =>
+                {
+                   
+                    ListViewItem li = new ListViewItem();
+                    li.Text = a.Servisi.ToString();
+                    li.SubItems.Add(a.doktor.AdSoyad);
+                    li.SubItems.Add(a.Zamani.ToString("dd/MM/yy HH:mm"));
+                    li.Tag = a;
+                    lstRandevu.Items.Add(li);
+                });
+            }
+            cmbServisler.SelectedIndex = -1;
         }
 
         private void cmbServisler_SelectedIndexChanged(object sender, EventArgs e)
@@ -99,7 +115,7 @@ namespace OppBitirme.View
                     Hastane.Randevular.Add(Yenirandevu);
                     MessageBox.Show("Randevu Eklendi");
                     cmbServisler.SelectedIndex = -1;
-
+                    
 
 
                 }
@@ -110,6 +126,6 @@ namespace OppBitirme.View
             }
         }
 
-       
+        
     }
 }
