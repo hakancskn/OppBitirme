@@ -51,18 +51,20 @@
             this.label13 = new System.Windows.Forms.Label();
             this.txtHastaMail = new System.Windows.Forms.TextBox();
             this.btnGuncelle = new System.Windows.Forms.Button();
-            this.chlsDktHemsire = new System.Windows.Forms.CheckedListBox();
             this.lblBrans = new System.Windows.Forms.Label();
             this.cmbKisiBrans = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.chlBosHemsire = new System.Windows.Forms.CheckedListBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pnlHemsire = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnCikar = new System.Windows.Forms.Button();
             this.btnEkle = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.chlBosHemsire = new System.Windows.Forms.CheckedListBox();
+            this.chlsDktHemsire = new System.Windows.Forms.CheckedListBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pnlHemsire.SuspendLayout();
             this.SuspendLayout();
             // 
             // columnHeader5
@@ -253,14 +255,6 @@
             this.btnGuncelle.UseVisualStyleBackColor = false;
             this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
-            // chlsDktHemsire
-            // 
-            this.chlsDktHemsire.FormattingEnabled = true;
-            this.chlsDktHemsire.Location = new System.Drawing.Point(546, 42);
-            this.chlsDktHemsire.Name = "chlsDktHemsire";
-            this.chlsDktHemsire.Size = new System.Drawing.Size(261, 124);
-            this.chlsDktHemsire.TabIndex = 84;
-            // 
             // lblBrans
             // 
             this.lblBrans.AutoSize = true;
@@ -278,7 +272,6 @@
             this.cmbKisiBrans.Name = "cmbKisiBrans";
             this.cmbKisiBrans.Size = new System.Drawing.Size(206, 21);
             this.cmbKisiBrans.TabIndex = 36;
-            
             // 
             // panel1
             // 
@@ -288,54 +281,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(325, 63);
             this.panel1.TabIndex = 85;
-            // 
-            // chlBosHemsire
-            // 
-            this.chlBosHemsire.FormattingEnabled = true;
-            this.chlBosHemsire.Location = new System.Drawing.Point(546, 233);
-            this.chlBosHemsire.Name = "chlBosHemsire";
-            this.chlBosHemsire.Size = new System.Drawing.Size(261, 124);
-            this.chlBosHemsire.TabIndex = 86;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(546, 26);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(126, 13);
-            this.label2.TabIndex = 89;
-            this.label2.Text = "Doktora Bağlı Hemşireler:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(543, 217);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 13);
-            this.label3.TabIndex = 90;
-            this.label3.Text = "Boştaki Hemşireler:";
-            // 
-            // btnCikar
-            // 
-            this.btnCikar.BackgroundImage = global::OppBitirme.Properties.Resources.Down;
-            this.btnCikar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCikar.Location = new System.Drawing.Point(687, 172);
-            this.btnCikar.Name = "btnCikar";
-            this.btnCikar.Size = new System.Drawing.Size(40, 38);
-            this.btnCikar.TabIndex = 88;
-            this.btnCikar.UseVisualStyleBackColor = true;
-            this.btnCikar.Click += new System.EventHandler(this.btnCikar_Click);
-            // 
-            // btnEkle
-            // 
-            this.btnEkle.BackgroundImage = global::OppBitirme.Properties.Resources.Up;
-            this.btnEkle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEkle.Location = new System.Drawing.Point(606, 172);
-            this.btnEkle.Name = "btnEkle";
-            this.btnEkle.Size = new System.Drawing.Size(46, 38);
-            this.btnEkle.TabIndex = 87;
-            this.btnEkle.UseVisualStyleBackColor = true;
-            this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
             // 
             // pictureBox1
             // 
@@ -347,18 +292,80 @@
             this.pictureBox1.TabIndex = 68;
             this.pictureBox1.TabStop = false;
             // 
+            // pnlHemsire
+            // 
+            this.pnlHemsire.Controls.Add(this.label3);
+            this.pnlHemsire.Controls.Add(this.label2);
+            this.pnlHemsire.Controls.Add(this.btnCikar);
+            this.pnlHemsire.Controls.Add(this.btnEkle);
+            this.pnlHemsire.Controls.Add(this.chlBosHemsire);
+            this.pnlHemsire.Controls.Add(this.chlsDktHemsire);
+            this.pnlHemsire.Location = new System.Drawing.Point(546, 15);
+            this.pnlHemsire.Name = "pnlHemsire";
+            this.pnlHemsire.Size = new System.Drawing.Size(261, 344);
+            this.pnlHemsire.TabIndex = 91;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(-2, 198);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(97, 13);
+            this.label3.TabIndex = 96;
+            this.label3.Text = "Boştaki Hemşireler:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(1, 7);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(126, 13);
+            this.label2.TabIndex = 95;
+            this.label2.Text = "Doktora Bağlı Hemşireler:";
+            // 
+            // btnCikar
+            // 
+            this.btnCikar.BackgroundImage = global::OppBitirme.Properties.Resources.Down;
+            this.btnCikar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCikar.Location = new System.Drawing.Point(142, 153);
+            this.btnCikar.Name = "btnCikar";
+            this.btnCikar.Size = new System.Drawing.Size(40, 38);
+            this.btnCikar.TabIndex = 94;
+            this.btnCikar.UseVisualStyleBackColor = true;
+            // 
+            // btnEkle
+            // 
+            this.btnEkle.BackgroundImage = global::OppBitirme.Properties.Resources.Up;
+            this.btnEkle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEkle.Location = new System.Drawing.Point(61, 153);
+            this.btnEkle.Name = "btnEkle";
+            this.btnEkle.Size = new System.Drawing.Size(46, 38);
+            this.btnEkle.TabIndex = 93;
+            this.btnEkle.UseVisualStyleBackColor = true;
+            // 
+            // chlBosHemsire
+            // 
+            this.chlBosHemsire.FormattingEnabled = true;
+            this.chlBosHemsire.Location = new System.Drawing.Point(1, 214);
+            this.chlBosHemsire.Name = "chlBosHemsire";
+            this.chlBosHemsire.Size = new System.Drawing.Size(261, 124);
+            this.chlBosHemsire.TabIndex = 92;
+            // 
+            // chlsDktHemsire
+            // 
+            this.chlsDktHemsire.FormattingEnabled = true;
+            this.chlsDktHemsire.Location = new System.Drawing.Point(1, 23);
+            this.chlsDktHemsire.Name = "chlsDktHemsire";
+            this.chlsDktHemsire.Size = new System.Drawing.Size(261, 124);
+            this.chlsDktHemsire.TabIndex = 91;
+            // 
             // GuncelleEkran
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PowderBlue;
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnCikar);
-            this.Controls.Add(this.btnEkle);
-            this.Controls.Add(this.chlBosHemsire);
+            this.Controls.Add(this.pnlHemsire);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.chlsDktHemsire);
             this.Controls.Add(this.btnGuncelle);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtHastaMail);
@@ -384,6 +391,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.pnlHemsire.ResumeLayout(false);
+            this.pnlHemsire.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -414,14 +423,15 @@
         private System.Windows.Forms.TextBox txtHastaMail;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnGuncelle;
-        private System.Windows.Forms.CheckedListBox chlsDktHemsire;
         private System.Windows.Forms.Label lblBrans;
         private System.Windows.Forms.ComboBox cmbKisiBrans;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.CheckedListBox chlBosHemsire;
-        private System.Windows.Forms.Button btnEkle;
-        private System.Windows.Forms.Button btnCikar;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel pnlHemsire;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnCikar;
+        private System.Windows.Forms.Button btnEkle;
+        private System.Windows.Forms.CheckedListBox chlBosHemsire;
+        private System.Windows.Forms.CheckedListBox chlsDktHemsire;
     }
 }

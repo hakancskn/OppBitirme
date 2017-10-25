@@ -11,6 +11,7 @@ using static OppBitirme.Models.Kisi;
 using OppBitirme.Models;
 using OppBitirme.Interfaces;
 using static System.Windows.Forms.ComboBox;
+using static OppBitirme.Models.Hastane;
 
 namespace OppBitirme.View
 {
@@ -43,7 +44,7 @@ namespace OppBitirme.View
                     });
                     cmbKisiBrans.DataSource = null;
                     panel1.Visible = false;
-                    chlsDktHemsire.Visible = false;
+                    pnlHemsire.Visible = false;
                     break;
                 case Unvan.Personel:
                     Hastane.Personeller.ForEach(a =>
@@ -61,7 +62,7 @@ namespace OppBitirme.View
                     panel1.Visible = true;
                     lblBrans.Text = "Branş";
                     cmbKisiBrans.DataSource = Enum.GetValues(typeof(Hastane.Branslar));
-                    chlsDktHemsire.Visible = false;
+                    pnlHemsire.Visible = false;
                     break;
                 case Unvan.Doktor:
                     Hastane.Doktorlar.ForEach(a =>
@@ -79,7 +80,7 @@ namespace OppBitirme.View
                     panel1.Visible = true;
                     lblBrans.Text = "Servis";
                     cmbKisiBrans.DataSource = Enum.GetValues(typeof(Hastane.Servisler));
-                    chlsDktHemsire.Visible = true;
+                    pnlHemsire.Visible = true;
 
 
                     break;
@@ -95,7 +96,11 @@ namespace OppBitirme.View
                         li.Tag = a;
                         listView1.Items.Add(li);
                     });
-                    chlsDktHemsire.Visible = false;
+                    cmbKisiBrans.DataSource = null;
+                    panel1.Visible = true;
+                    lblBrans.Text = "Servis";
+                    cmbKisiBrans.DataSource = Enum.GetValues(typeof(Hastane.Servisler));
+                    pnlHemsire.Visible = false;
                     break;
                 default:
                     break;
@@ -172,6 +177,8 @@ namespace OppBitirme.View
                         SeciliKisi.Mail = txtHastaMail.Text;
                         SeciliKisi.DogumTarihi = dtpHastaDogumTarihi.Value;
                         SeciliKisi.cinsiyet = (Cinsiyet)Enum.Parse(typeof(Cinsiyet), cmbHastaCinsiyeti.SelectedItem.ToString());
+                        
+                      
                         if (SeciliKisi is IBrans)
                         {
                             (SeciliKisi as IBrans).branslar = (Hastane.Branslar)cmbKisiBrans.SelectedItem;
@@ -179,6 +186,22 @@ namespace OppBitirme.View
                         if (SeciliKisi is IServis)
                         {
                             (SeciliKisi as IServis).Servis = (Hastane.Servisler)cmbKisiBrans.SelectedItem;
+                        }
+                        if(SeciliKisi is IHemsireAlabilen)
+                        {
+                            (SeciliKisi as IHemsireAlabilen).Hemsireleri.Clear();
+                            foreach (Hemsire item in chlsDktHemsire.Items)
+                            {
+
+                                (SeciliKisi as IHemsireAlabilen).Hemsireleri.Add(item);
+                                item.Doktoru = (Doktor)SeciliKisi;
+                                item.Servis = (Hastane.Servisler)cmbKisiBrans.SelectedItem;
+                            }
+                            foreach (Hemsire item in chlBosHemsire.Items)
+                            {
+                                item.Doktoru = null;
+                            }
+
                         }
 
                         listView1.Items.Clear();
@@ -197,7 +220,7 @@ namespace OppBitirme.View
                         panel1.Visible = true;
                         lblBrans.Text = "Servis";
                         cmbKisiBrans.DataSource = Enum.GetValues(typeof(Hastane.Servisler));
-                        chlsDktHemsire.Visible = true;
+                        pnlHemsire.Visible = true;
 
 
 
