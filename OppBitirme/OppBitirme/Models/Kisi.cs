@@ -34,6 +34,11 @@ namespace OppBitirme.Models
         public String Mail { get; set; }
         public Unvan unvan { get; set; }
 
+        public override string ToString()
+        {
+            return Ad + " " + Soyad;
+
+        }
         public String AdSoyad { get { return Ad + " " + Soyad; } }
         public enum Cinsiyet
         {

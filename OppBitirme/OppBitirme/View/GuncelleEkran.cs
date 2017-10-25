@@ -43,7 +43,7 @@ namespace OppBitirme.View
                     });
                     cmbKisiBrans.DataSource = null;
                     panel1.Visible = false;
-                    chlsHemsire.Visible = false;
+                    chlsDktHemsire.Visible = false;
                     break;
                 case Unvan.Personel:
                     Hastane.Personeller.ForEach(a =>
@@ -61,7 +61,7 @@ namespace OppBitirme.View
                     panel1.Visible = true;
                     lblBrans.Text = "Branş";
                     cmbKisiBrans.DataSource = Enum.GetValues(typeof(Hastane.Branslar));
-                    chlsHemsire.Visible = false;
+                    chlsDktHemsire.Visible = false;
                     break;
                 case Unvan.Doktor:
                     Hastane.Doktorlar.ForEach(a =>
@@ -79,7 +79,7 @@ namespace OppBitirme.View
                     panel1.Visible = true;
                     lblBrans.Text = "Servis";
                     cmbKisiBrans.DataSource = Enum.GetValues(typeof(Hastane.Servisler));
-                    chlsHemsire.Visible = true;
+                    chlsDktHemsire.Visible = true;
 
 
                     break;
@@ -95,12 +95,13 @@ namespace OppBitirme.View
                         li.Tag = a;
                         listView1.Items.Add(li);
                     });
-                    chlsHemsire.Visible = false;
+                    chlsDktHemsire.Visible = false;
                     break;
                 default:
                     break;
             }
         }
+
         Kisi SeciliKisi;
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -121,12 +122,24 @@ namespace OppBitirme.View
             }
             if (SeciliKisi is Doktor)
             {
-                chlsHemsire.DataSource = null;
+                Doktor dkt = (Doktor)SeciliKisi;
+                List<Hemsire> BosHemsireler = new List<Hemsire>();
+                chlsDktHemsire.Items.Clear();
+                chlBosHemsire.Items.Clear();
+                dkt.Hemsireleri.ForEach(c =>
+               {
+                   chlsDktHemsire.Items.Add(c);
 
-                Doktor dkt = (Doktor)listView1.FocusedItem?.Tag;
+               });
+                BosHemsireler = Hastane.Hemsireler.Where(x => x.Servis == dkt.Servis && x.Doktoru == null).ToList();
 
-                chlsHemsire.DataSource = dkt?.Hemsireleri;
-                chlsHemsire.DisplayMember = "AdSoyad";
+                BosHemsireler.ForEach(bos =>
+                {
+                    chlBosHemsire.Items.Add(bos);
+                });
+
+
+
 
             }
             if (SeciliKisi is IBrans)
@@ -145,16 +158,7 @@ namespace OppBitirme.View
                 MessageBox.Show("Neyi Güncelliyim");
                 return;
             }
-
-
-            if (SeciliKisi.Ad == txtHastaAdi.Text && SeciliKisi.Soyad == txtHastaSoyadi.Text &&
-                SeciliKisi.Tckn == txtHastaTckn.Text && SeciliKisi.cinsiyet == (Cinsiyet)cmbHastaCinsiyeti.SelectedIndex)
-            {
-                MessageBox.Show("değişiklik yapmadınız");
-            }
-
-            else // (cevap == DialogResult.Yes) 
-
+            else
             {
                 DialogResult cevap = MessageBox.Show($"{SeciliKisi.Ad} adlı kişiyi güncellemek istiyor musunuz ?", "kişi güncelle", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (cevap == DialogResult.Yes)
@@ -193,7 +197,7 @@ namespace OppBitirme.View
                         panel1.Visible = true;
                         lblBrans.Text = "Servis";
                         cmbKisiBrans.DataSource = Enum.GetValues(typeof(Hastane.Servisler));
-                        chlsHemsire.Visible = true;
+                        chlsDktHemsire.Visible = true;
 
 
 
@@ -204,21 +208,36 @@ namespace OppBitirme.View
                         MessageBox.Show(ex.Message);
                     }
                 }
-
-
-
-
             }
 
+
+
+
+
         }
 
-        private void cmbKisiBrans_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
+
+        private void btnEkle_Click(object sender, EventArgs e)
+        {
+            if (chlBosHemsire.CheckedItems.Count > 0)
+                for (int i = 0; i < chlBosHemsire.CheckedItems.Count; i++)
+                {
+                    chlsDktHemsire.Items.Add(chlBosHemsire.CheckedItems[i]);
+                    chlBosHemsire.Items.Remove(chlBosHemsire.CheckedItems[i]);
+
+                }
         }
 
-        private void cmbHastaCinsiyeti_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnCikar_Click(object sender, EventArgs e)
         {
+
+            for (int i = 0; i < chlsDktHemsire.CheckedItems.Count; i++)
+            {
+                chlBosHemsire.Items.Add(chlsDktHemsire.CheckedItems[i]);
+                chlsDktHemsire.Items.Remove(chlsDktHemsire.CheckedItems[i]);
+
+            }
 
         }
     }
