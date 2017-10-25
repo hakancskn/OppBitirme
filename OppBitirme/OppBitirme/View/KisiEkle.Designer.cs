@@ -33,8 +33,6 @@
             this.chlsHemsire = new System.Windows.Forms.CheckedListBox();
             this.btnTemizle = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.cmbKisiUnvan = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -67,7 +65,7 @@
             this.btnKaydet.Location = new System.Drawing.Point(344, 367);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(115, 39);
-            this.btnKaydet.TabIndex = 19;
+            this.btnKaydet.TabIndex = 130;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnKaydet.UseVisualStyleBackColor = false;
@@ -79,7 +77,7 @@
             this.chlsHemsire.Location = new System.Drawing.Point(487, 25);
             this.chlsHemsire.Name = "chlsHemsire";
             this.chlsHemsire.Size = new System.Drawing.Size(261, 319);
-            this.chlsHemsire.TabIndex = 37;
+            this.chlsHemsire.TabIndex = 18;
             this.chlsHemsire.SelectedIndexChanged += new System.EventHandler(this.chlsHemsire_SelectedIndexChanged);
             // 
             // btnTemizle
@@ -91,7 +89,7 @@
             this.btnTemizle.Location = new System.Drawing.Point(222, 367);
             this.btnTemizle.Name = "btnTemizle";
             this.btnTemizle.Size = new System.Drawing.Size(116, 39);
-            this.btnTemizle.TabIndex = 20;
+            this.btnTemizle.TabIndex = 129;
             this.btnTemizle.Text = "Temizle";
             this.btnTemizle.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnTemizle.UseVisualStyleBackColor = false;
@@ -108,25 +106,6 @@
             this.pictureBox1.TabIndex = 41;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(165, 260);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(55, 17);
-            this.label9.TabIndex = 137;
-            this.label9.Text = "Unvanı:";
-            // 
-            // cmbKisiUnvan
-            // 
-            this.cmbKisiUnvan.FormattingEnabled = true;
-            this.cmbKisiUnvan.Location = new System.Drawing.Point(268, 255);
-            this.cmbKisiUnvan.Name = "cmbKisiUnvan";
-            this.cmbKisiUnvan.Size = new System.Drawing.Size(181, 21);
-            this.cmbKisiUnvan.TabIndex = 136;
-            this.cmbKisiUnvan.SelectedIndexChanged += new System.EventHandler(this.cmbKisiUnvan_SelectedIndexChanged);
             // 
             // label13
             // 
@@ -213,22 +192,23 @@
             this.txtKisiMail.Location = new System.Drawing.Point(268, 194);
             this.txtKisiMail.Name = "txtKisiMail";
             this.txtKisiMail.Size = new System.Drawing.Size(181, 20);
-            this.txtKisiMail.TabIndex = 127;
+            this.txtKisiMail.TabIndex = 126;
             // 
             // cmbKisiCinsiyet
             // 
+            this.cmbKisiCinsiyet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbKisiCinsiyet.FormattingEnabled = true;
             this.cmbKisiCinsiyet.Location = new System.Drawing.Point(268, 109);
             this.cmbKisiCinsiyet.Name = "cmbKisiCinsiyet";
             this.cmbKisiCinsiyet.Size = new System.Drawing.Size(181, 21);
-            this.cmbKisiCinsiyet.TabIndex = 126;
+            this.cmbKisiCinsiyet.TabIndex = 123;
             // 
             // dtpKisiDogumTarihi
             // 
             this.dtpKisiDogumTarihi.Location = new System.Drawing.Point(268, 136);
             this.dtpKisiDogumTarihi.Name = "dtpKisiDogumTarihi";
             this.dtpKisiDogumTarihi.Size = new System.Drawing.Size(181, 20);
-            this.dtpKisiDogumTarihi.TabIndex = 125;
+            this.dtpKisiDogumTarihi.TabIndex = 124;
             // 
             // txtKisiAdres
             // 
@@ -236,7 +216,7 @@
             this.txtKisiAdres.Multiline = true;
             this.txtKisiAdres.Name = "txtKisiAdres";
             this.txtKisiAdres.Size = new System.Drawing.Size(180, 20);
-            this.txtKisiAdres.TabIndex = 124;
+            this.txtKisiAdres.TabIndex = 127;
             // 
             // txtKisiAd
             // 
@@ -272,7 +252,7 @@
             // 
             this.pnlBrans.Controls.Add(this.lblBrans);
             this.pnlBrans.Controls.Add(this.cmbKisiBrans);
-            this.pnlBrans.Location = new System.Drawing.Point(148, 276);
+            this.pnlBrans.Location = new System.Drawing.Point(148, 246);
             this.pnlBrans.Name = "pnlBrans";
             this.pnlBrans.Size = new System.Drawing.Size(311, 65);
             this.pnlBrans.TabIndex = 138;
@@ -291,11 +271,12 @@
             // 
             // cmbKisiBrans
             // 
+            this.cmbKisiBrans.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbKisiBrans.FormattingEnabled = true;
             this.cmbKisiBrans.Location = new System.Drawing.Point(120, 21);
             this.cmbKisiBrans.Name = "cmbKisiBrans";
             this.cmbKisiBrans.Size = new System.Drawing.Size(183, 21);
-            this.cmbKisiBrans.TabIndex = 38;
+            this.cmbKisiBrans.TabIndex = 128;
             this.cmbKisiBrans.SelectedIndexChanged += new System.EventHandler(this.cmbKisiBrans_SelectedIndexChanged);
             // 
             // mtxtTel
@@ -304,7 +285,7 @@
             this.mtxtTel.Mask = "(999) 000-0000";
             this.mtxtTel.Name = "mtxtTel";
             this.mtxtTel.Size = new System.Drawing.Size(181, 20);
-            this.mtxtTel.TabIndex = 139;
+            this.mtxtTel.TabIndex = 125;
             // 
             // KisiEkle
             // 
@@ -313,8 +294,6 @@
             this.BackColor = System.Drawing.Color.PowderBlue;
             this.Controls.Add(this.mtxtTel);
             this.Controls.Add(this.pnlBrans);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.cmbKisiUnvan);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label15);
@@ -351,8 +330,6 @@
         private System.Windows.Forms.CheckedListBox chlsHemsire;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnTemizle;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox cmbKisiUnvan;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;

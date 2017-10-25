@@ -102,28 +102,28 @@
             this.txtHastaAdres.Location = new System.Drawing.Point(331, 205);
             this.txtHastaAdres.Name = "txtHastaAdres";
             this.txtHastaAdres.Size = new System.Drawing.Size(209, 20);
-            this.txtHastaAdres.TabIndex = 44;
+            this.txtHastaAdres.TabIndex = 34;
             // 
             // txtHastaTel
             // 
             this.txtHastaTel.Location = new System.Drawing.Point(331, 176);
             this.txtHastaTel.Name = "txtHastaTel";
             this.txtHastaTel.Size = new System.Drawing.Size(209, 20);
-            this.txtHastaTel.TabIndex = 43;
+            this.txtHastaTel.TabIndex = 33;
             // 
             // txtHastaTckn
             // 
             this.txtHastaTckn.Location = new System.Drawing.Point(331, 146);
             this.txtHastaTckn.Name = "txtHastaTckn";
             this.txtHastaTckn.Size = new System.Drawing.Size(209, 20);
-            this.txtHastaTckn.TabIndex = 42;
+            this.txtHastaTckn.TabIndex = 32;
             // 
             // dtpHastaDogumTarihi
             // 
             this.dtpHastaDogumTarihi.Location = new System.Drawing.Point(331, 116);
             this.dtpHastaDogumTarihi.Name = "dtpHastaDogumTarihi";
             this.dtpHastaDogumTarihi.Size = new System.Drawing.Size(209, 20);
-            this.dtpHastaDogumTarihi.TabIndex = 41;
+            this.dtpHastaDogumTarihi.TabIndex = 31;
             // 
             // cmbHastaCinsiyeti
             // 
@@ -131,7 +131,7 @@
             this.cmbHastaCinsiyeti.Location = new System.Drawing.Point(331, 86);
             this.cmbHastaCinsiyeti.Name = "cmbHastaCinsiyeti";
             this.cmbHastaCinsiyeti.Size = new System.Drawing.Size(209, 21);
-            this.cmbHastaCinsiyeti.TabIndex = 40;
+            this.cmbHastaCinsiyeti.TabIndex = 30;
             // 
             // txtHastaSoyadi
             // 
@@ -232,7 +232,7 @@
             this.txtHastaMail.Location = new System.Drawing.Point(331, 233);
             this.txtHastaMail.Name = "txtHastaMail";
             this.txtHastaMail.Size = new System.Drawing.Size(209, 20);
-            this.txtHastaMail.TabIndex = 65;
+            this.txtHastaMail.TabIndex = 35;
             // 
             // btnGuncelle
             // 
@@ -242,7 +242,7 @@
             this.btnGuncelle.Location = new System.Drawing.Point(331, 328);
             this.btnGuncelle.Name = "btnGuncelle";
             this.btnGuncelle.Size = new System.Drawing.Size(206, 31);
-            this.btnGuncelle.TabIndex = 83;
+            this.btnGuncelle.TabIndex = 37;
             this.btnGuncelle.Text = "Güncelle";
             this.btnGuncelle.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnGuncelle.UseVisualStyleBackColor = false;

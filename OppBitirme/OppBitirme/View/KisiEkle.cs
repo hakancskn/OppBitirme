@@ -36,8 +36,8 @@ namespace OppBitirme.View
         {
             try
             {
-                Kisi yeniKisi=new Kisi
-                    {
+                Kisi yeniKisi = new Kisi
+                {
                     Ad = txtKisiAd.Text,
                     Soyad = txtKisiSoyad.Text,
                     Tckn = txtKisiTckn.Text,
@@ -47,8 +47,7 @@ namespace OppBitirme.View
                     Telefon = mtxtTel.Text,
                     Mail = txtKisiMail.Text,
                     Adres = txtKisiAdres.Text,
-                    unvan = (Unvan)Enum.Parse((typeof(Unvan)),
-                                        cmbKisiUnvan.SelectedItem.ToString()),
+                    unvan = Unvani
                 };
 
                 switch (yeniKisi.unvan)
@@ -70,14 +69,14 @@ namespace OppBitirme.View
                     default:
                         break;
                 }
-
+                MessageBox.Show("Kaydınız alınmıştır.");
                 FormuTemizle();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            } 
-                    
+            }
+
         }
         void FormuTemizle()
         {
@@ -89,23 +88,17 @@ namespace OppBitirme.View
                     (item as ComboBox).SelectedIndex = -1;
                 else if (item is DateTimePicker)
                     (item as DateTimePicker).Value = DateTime.Now;
-              
+
             }
 
         }
-        
+
 
         private void KisiEkle_Load_1(object sender, EventArgs e)
         {
-            cmbKisiUnvan.Items.AddRange(Enum.GetNames(typeof(Unvan)));
             cmbKisiCinsiyet.Items.AddRange(Enum.GetNames(typeof(Cinsiyet)));
 
-            chlsHemsire.Visible = false;
-        }
-
-        private void cmbKisiUnvan_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            switch ((Unvan)cmbKisiUnvan.SelectedIndex)
+            switch (Unvani)
             {
                 case Unvan.Doktor:
                     cmbKisiBrans.DataSource = null;
@@ -114,14 +107,14 @@ namespace OppBitirme.View
                     cmbKisiBrans.DataSource = Enum.GetValues(typeof(Hastane.Servisler));
 
                     chlsHemsire.Visible = true;
-                    
+
                     if (cmbKisiBrans.SelectedIndex != -1)
                     {
                         chlsHemsire.DataSource = null;
                         chlsHemsire.DataSource = Hastane.Hemsireler.Where(x => x.Servis == (Hastane.Servisler)cmbKisiBrans.SelectedItem && x.Doktoru == null).ToList();
                         chlsHemsire.DisplayMember = "AdSoyad";
                     }
-                   
+
                     break;
                 case Unvan.Hemşire:
                     cmbKisiBrans.DataSource = null;
@@ -146,13 +139,10 @@ namespace OppBitirme.View
                     pnlBrans.Visible = false;
                     chlsHemsire.Visible = false;
                     break;
-
             }
-
-           
-           
-            
         }
+
+
 
         private void label10_Click(object sender, EventArgs e)
         {
