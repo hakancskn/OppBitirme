@@ -13,21 +13,18 @@ namespace OppBitirme.View
 {
     public partial class YeniRandevuEkrani : UserControl
     {
-        List<Hasta> hasta;
+        
         public YeniRandevuEkrani()
         {
             InitializeComponent();
         }
+
         Hasta SecilenHasta = new Hasta();
         private void YeniRandevuEkrani_Load(object sender, EventArgs e)
         {
-            
-
-             
             ListeyiDoldur(Hastane.Hastalar);
-          
             cmbServisler.DataSource = Enum.GetValues(typeof(Hastane.Servisler));
-            cmbServisler.SelectedIndex = -1;
+            
         }
 
         private void lstHasta_SelectedIndexChanged(object sender, EventArgs e)
@@ -37,10 +34,11 @@ namespace OppBitirme.View
             if (lstHasta.FocusedItem != null)
             {
                 SecilenHasta = (Hasta)lstHasta.FocusedItem.Tag;
-                
-                
+                lstRandevu_refresh();
+
+
             }
-            cmbServisler.SelectedIndex = -1;
+            cmbServisler.SelectedIndex = 0;
         }
 
         private void cmbServisler_SelectedIndexChanged(object sender, EventArgs e)
@@ -66,12 +64,14 @@ namespace OppBitirme.View
             }
             else
             {
+                RandevuSaatleri.Sutun_sayisi = 4;
                 pnlSaatler.Controls.Clear();
                 randevuSaatleri= new RandevuSaatleri();
                 randevuSaatleri.doktor = (Doktor)cmbDoktorlar.SelectedItem;
                 randevuSaatleri.Size = pnlSaatler.Size - (new Size(5, 5));
+                
                 pnlSaatler.Controls.Add(randevuSaatleri);
-
+                pnlSaatler.Size = randevuSaatleri.Size;
             }
 
 
@@ -80,6 +80,12 @@ namespace OppBitirme.View
         private void btnKaydet_Click(object sender, EventArgs e)
         {
             Hasta Khasta = new Hasta();
+
+            if (lstHasta.FocusedItem == null)
+            {
+                MessageBox.Show("Hasta Seçiniz");
+                return;
+            }
             Khasta = (Hasta)lstHasta.FocusedItem.Tag;
             if (randevuSaatleri.SecilenSaat != DateTime.MinValue)
             {
@@ -98,7 +104,7 @@ namespace OppBitirme.View
                 };
                     Hastane.Randevular.Add(Yenirandevu);
                     MessageBox.Show("Randevu Eklendi");
-                    cmbServisler.SelectedIndex = -1;
+                    cmbServisler.SelectedIndex = 0;
                     lstRandevu_refresh();
                     
 
@@ -160,7 +166,25 @@ namespace OppBitirme.View
             });
         }
 
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
 
+        }
 
+        private void Sil_Click(object sender, EventArgs e)
+        {
+            if (lstRandevu.FocusedItem == null)
+            {
+                MessageBox.Show("Silinecek Randevuyu Seçiniz.");
+                return;
+            }
+            else
+            {
+                Hastane.Randevular.Remove((Randevu)lstRandevu.FocusedItem.Tag);
+                MessageBox.Show("Randevu Silindi");
+                lstRandevu_refresh();
+            }
+
+        }
     }
 }

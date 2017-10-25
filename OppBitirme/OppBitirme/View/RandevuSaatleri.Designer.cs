@@ -34,6 +34,7 @@
             // tblSaatler
             // 
             this.tblSaatler.AutoSize = true;
+            this.tblSaatler.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tblSaatler.ColumnCount = 4;
             this.tblSaatler.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tblSaatler.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
@@ -55,6 +56,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.Controls.Add(this.tblSaatler);
             this.Name = "RandevuSaatleri";
             this.Size = new System.Drawing.Size(473, 291);

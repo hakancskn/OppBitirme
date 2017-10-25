@@ -29,9 +29,10 @@ namespace OppBitirme
         {
        
          
-            Hastane hastane = new Hastane();
-           
-
+            Hastane.AcilisSaati = new DateTime().AddHours(9);
+            Hastane.KapanisSaati = Hastane.AcilisSaati.AddHours(8);
+            Hastane.PaydosBaslangic = Hastane.AcilisSaati.AddHours(4);
+            Hastane.PaydosBitis = Hastane.PaydosBaslangic.AddHours(1);
             Hemsire hemsire = new Hemsire();
 
             hemsire.Ad = "dasds";
@@ -54,7 +55,7 @@ namespace OppBitirme
             doktor2.Tckn = "1514325saf6030";
             doktor2.Telefon = "05387299810";
             doktor2.unvan = Kisi.Unvan.Doktor;
-            doktor2.Servis = Hastane.Servisler.Göz;
+            doktor2.Servis = Hastane.Servisler.Kardiyoloji;
             Hastane.Doktorlar.Add(doktor2);
 
 

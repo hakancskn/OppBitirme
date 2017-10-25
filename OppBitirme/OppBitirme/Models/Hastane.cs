@@ -9,8 +9,12 @@ using System.Xml.Serialization;
 
 namespace OppBitirme.Models
 {
-    public class Hastane
+    public static  class  Hastane
     {
+        public static DateTime AcilisSaati { get; set; }
+        public static DateTime KapanisSaati { get; set; }
+        public static DateTime PaydosBaslangic { get; set; }
+        public static DateTime PaydosBitis { get; set; }
         public static List<Doktor> Doktorlar { get; set; } = new List<Doktor>();
         public static List<Personel> Personeller { get; set; } = new List<Personel>();
         public static List<Hemsire> Hemsireler { get; set; } = new List<Hemsire>();
@@ -31,25 +35,25 @@ dsa
         }
 
 
-        SaveFileDialog dosyaKaydet = new SaveFileDialog();
-        public void xml()
-        {
+     
+        //public static void xml()
+        //{
             
             
-            dosyaKaydet.Filter = "XML Format | *.xml";
-            dosyaKaydet.FileName = string.Empty;
-            dosyaKaydet.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            if (dosyaKaydet.ShowDialog() == DialogResult.OK)
-            {
-                XmlSerializer xmlSerializer = new XmlSerializer(typeof(Hastane));
-                using (TextWriter writer = new StreamWriter(dosyaKaydet.FileName))
-                {
-                    xmlSerializer.Serialize(writer, this);
-                    writer.Close();
-                }
-                MessageBox.Show("XML aktarma işlemi başarılı");
-            }
-        }
+        //    dosyaKaydet.Filter = "XML Format | *.xml";
+        //    dosyaKaydet.FileName = string.Empty;
+        //    dosyaKaydet.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+        //    if (dosyaKaydet.ShowDialog() == DialogResult.OK)
+        //    {
+        //        XmlSerializer xmlSerializer = new XmlSerializer(typeof(Hastane));
+        //        using (TextWriter writer = new StreamWriter(dosyaKaydet.FileName))
+        //        {
+        //            xmlSerializer.Serialize(writer, this);
+        //            writer.Close();
+        //        }
+        //        MessageBox.Show("XML aktarma işlemi başarılı");
+        //    }
+        //}
 
 
     }
