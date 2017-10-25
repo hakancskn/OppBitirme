@@ -255,7 +255,7 @@
             this.pnlBrans.Location = new System.Drawing.Point(148, 246);
             this.pnlBrans.Name = "pnlBrans";
             this.pnlBrans.Size = new System.Drawing.Size(311, 65);
-            this.pnlBrans.TabIndex = 138;
+            this.pnlBrans.TabIndex = 128;
             this.pnlBrans.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlBrans_Paint);
             // 
             // lblBrans
