@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GuncelleEkran));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -62,9 +63,14 @@
             this.btnEkle = new System.Windows.Forms.Button();
             this.chlBosHemsire = new System.Windows.Forms.CheckedListBox();
             this.chlsDktHemsire = new System.Windows.Forms.CheckedListBox();
+            this.txtArama = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.menu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.Sil = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlHemsire.SuspendLayout();
+            this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
             // columnHeader5
@@ -94,6 +100,7 @@
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader5});
+            this.listView1.ContextMenuStrip = this.menu;
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
@@ -362,11 +369,44 @@
             this.chlsDktHemsire.Size = new System.Drawing.Size(261, 124);
             this.chlsDktHemsire.TabIndex = 91;
             // 
+            // txtArama
+            // 
+            this.txtArama.Location = new System.Drawing.Point(86, 338);
+            this.txtArama.Name = "txtArama";
+            this.txtArama.Size = new System.Drawing.Size(132, 20);
+            this.txtArama.TabIndex = 92;
+            this.txtArama.TextChanged += new System.EventHandler(this.txtArama_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(40, 340);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(40, 13);
+            this.label4.TabIndex = 93;
+            this.label4.Text = "Arama:";
+            // 
+            // menu
+            // 
+            this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Sil});
+            this.menu.Name = "menu";
+            this.menu.Size = new System.Drawing.Size(87, 26);
+            // 
+            // Sil
+            // 
+            this.Sil.Name = "Sil";
+            this.Sil.Size = new System.Drawing.Size(152, 22);
+            this.Sil.Text = "Sil";
+            this.Sil.Click += new System.EventHandler(this.Sil_Click);
+            // 
             // GuncelleEkran
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PowderBlue;
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtArama);
             this.Controls.Add(this.pnlHemsire);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnGuncelle);
@@ -396,6 +436,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlHemsire.ResumeLayout(false);
             this.pnlHemsire.PerformLayout();
+            this.menu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -436,5 +477,9 @@
         private System.Windows.Forms.Button btnEkle;
         private System.Windows.Forms.CheckedListBox chlBosHemsire;
         private System.Windows.Forms.CheckedListBox chlsDktHemsire;
+        private System.Windows.Forms.TextBox txtArama;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ContextMenuStrip menu;
+        private System.Windows.Forms.ToolStripMenuItem Sil;
     }
 }

@@ -63,7 +63,7 @@ namespace OppBitirme.View
                         for (int i = 0; i < chlsHemsire.CheckedItems.Count; i++)
                         {
                             Hemsire bsHemsire = (Hemsire)chlsHemsire.CheckedItems[i];
-                            doktor.Hemsireleri.Add(bsHemsire);
+                            
                             bsHemsire.Doktoru = doktor;
                             
                         }

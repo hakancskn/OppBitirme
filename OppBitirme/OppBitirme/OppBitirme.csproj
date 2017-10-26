@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -55,9 +58,12 @@
     <Compile Include="Interfaces\IHemsireAlabilen.cs" />
     <Compile Include="Interfaces\IServis.cs" />
     <Compile Include="Models\Doktor.cs" />
+    <Compile Include="Models\DosyaIslemleri.cs" />
+    <Compile Include="Models\DısaAktar.cs" />
     <Compile Include="Models\Hasta.cs" />
     <Compile Include="Models\Hastane.cs" />
     <Compile Include="Models\Hemsire.cs" />
+    <Compile Include="Models\IceAktar.cs" />
     <Compile Include="Models\Kisi.cs" />
     <Compile Include="Models\Personel.cs" />
     <Compile Include="Models\Randevu.cs" />
@@ -113,6 +119,7 @@
     <EmbeddedResource Include="View\RandevuSaatleri.resx">
       <DependentUpon>RandevuSaatleri.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

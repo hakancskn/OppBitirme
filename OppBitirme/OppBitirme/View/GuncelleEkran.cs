@@ -53,7 +53,9 @@ namespace OppBitirme.View
                 List<Hemsire> BosHemsireler = new List<Hemsire>();
                 chlsDktHemsire.Items.Clear();
                 chlBosHemsire.Items.Clear();
-                dkt.Hemsireleri.ForEach(c =>
+                List<Hemsire> DktHemsireleri= Hastane.Hemsireler.Where(x => x.Doktoru == dkt).ToList();
+
+                 DktHemsireleri.ForEach(c =>
                {
                    chlsDktHemsire.Items.Add(c);
 
@@ -109,13 +111,12 @@ namespace OppBitirme.View
                         {
                             (SeciliKisi as IServis).Servis = (Hastane.Servisler)cmbKisiBrans.SelectedItem;
                         }
-                        if(SeciliKisi is IHemsireAlabilen)
+                        if(SeciliKisi is Doktor)
                         {
-                            (SeciliKisi as IHemsireAlabilen).Hemsireleri.Clear();
+                           
                             foreach (Hemsire item in chlsDktHemsire.Items)
                             {
 
-                                (SeciliKisi as IHemsireAlabilen).Hemsireleri.Add(item);
                                 item.Doktoru = (Doktor)SeciliKisi;
                                 item.Servis = (Hastane.Servisler)cmbKisiBrans.SelectedItem;
                             }
@@ -257,6 +258,135 @@ namespace OppBitirme.View
                 default:
                     break;
             }
+
+
+        }
+
+        private void Sil_Click(object sender, EventArgs e)
+        {
+            if (listView1.FocusedItem == null)
+            {
+                MessageBox.Show("Silinecek Kişiyi Seçiniz.");
+                return;
+            }
+            else
+            {
+                switch (unvan)
+                {
+                    case Unvan.Hasta:
+                        Hastane.Hastalar.Remove((Hasta)listView1.FocusedItem.Tag);
+                        break;
+                    case Unvan.Personel:
+                        Hastane.Personeller.Remove((Personel)listView1.FocusedItem.Tag);
+                        break;
+                    case Unvan.Doktor:
+                        Hastane.Doktorlar.Remove((Doktor)listView1.FocusedItem.Tag);
+                        break;
+                    case Unvan.Hemşire:
+                        Hastane.Hemsireler.Remove((Hemsire)listView1.FocusedItem.Tag);
+                        break;
+                    default:
+                        break;
+                }
+               
+                MessageBox.Show("Kişi Silindi");
+               
+            }
+        }
+
+        private void txtArama_TextChanged(object sender, EventArgs e)
+        {
+            
+            string arama = txtArama.Text.ToLower();
+            switch (unvan)
+            {
+                case Unvan.Hasta:
+                    List<Hasta> hastalst = new List<Hasta>();
+                    Hastane.Arama<Hasta>(arama, ref hastalst);
+                    ListeyiDoldur(hastalst);
+                    break;
+                case Unvan.Personel:
+                     List<Personel> PersonelLst = new List<Personel>();
+                    Hastane.Arama<Personel>(arama, ref PersonelLst);
+                    ListeyiDoldur(PersonelLst);
+
+                    break;
+                case Unvan.Doktor:
+                    List<Doktor> Doktorlst = new List<Doktor>();
+                    Hastane.Arama<Doktor>(arama, ref Doktorlst);
+                    ListeyiDoldur(Doktorlst);
+
+                    break;
+                case Unvan.Hemşire:
+                    List<Hemsire> Hemsirelst = new List<Hemsire>();
+
+                    Hastane.Arama<Hemsire>(arama, ref Hemsirelst);
+                    ListeyiDoldur(Hemsirelst);
+
+                    break;
+                default:
+                    break;
+            }
+           
+            
+               
+       
+        }
+        private void ListeyiDoldur<T>(List<T> list)
+        {
+            listView1.Items.Clear();
+            if(list is List<Hasta>)
+            {
+                (list as List<Hasta>).ForEach(a =>
+                {
+                    ListViewItem li = new ListViewItem();
+                    li.Text = a.Ad;
+                    li.SubItems.Add(a.Soyad);
+                    li.SubItems.Add(a.Tckn);
+                    li.Tag = a;
+                    listView1.Items.Add(li);
+                });
+
+            }else if (list is List<Hemsire>)
+            {
+                (list as List<Hemsire>).ForEach(a =>
+                {
+                    ListViewItem li = new ListViewItem();
+                    li.Text = a.Ad;
+                    li.SubItems.Add(a.Soyad);
+                    li.SubItems.Add(a.Tckn);
+                    li.Tag = a;
+                    listView1.Items.Add(li);
+                });
+
+            }
+            else if (list is List<Doktor>)
+            {
+                (list as List<Doktor>).ForEach(a =>
+                {
+                    ListViewItem li = new ListViewItem();
+                    li.Text = a.Ad;
+                    li.SubItems.Add(a.Soyad);
+                    li.SubItems.Add(a.Tckn);
+                    li.Tag = a;
+                    listView1.Items.Add(li);
+                });
+
+            }
+            else if (list is List<Personel>)
+            {
+                (list as List<Personel>).ForEach(a =>
+                {
+                    ListViewItem li = new ListViewItem();
+                    li.Text = a.Ad;
+                    li.SubItems.Add(a.Soyad);
+                    li.SubItems.Add(a.Tckn);
+                    li.Tag = a;
+                    listView1.Items.Add(li);
+                });
+
+            }
+
 
 
         }

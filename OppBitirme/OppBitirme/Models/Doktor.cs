@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace OppBitirme.Models
 {
-    public class Doktor : Kisi, IServis,IHemsireAlabilen
+    public class Doktor : Kisi, IServis
     {
         
 
 
         public Hastane.Servisler Servis { get; set; }
-        public List<Hemsire> Hemsireleri { get; set; } = new List<Hemsire>();
+       // public List<Hemsire> Hemsireleri { get; set; } = new List<Hemsire>();
     }
 }

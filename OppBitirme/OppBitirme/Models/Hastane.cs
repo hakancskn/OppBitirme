@@ -31,29 +31,69 @@ namespace OppBitirme.Models
         }
         public enum Branslar
         {
-dsa
+        dsa
         }
 
 
-     
-        //public static void xml()
-        //{
-            
-            
-        //    dosyaKaydet.Filter = "XML Format | *.xml";
-        //    dosyaKaydet.FileName = string.Empty;
-        //    dosyaKaydet.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-        //    if (dosyaKaydet.ShowDialog() == DialogResult.OK)
-        //    {
-        //        XmlSerializer xmlSerializer = new XmlSerializer(typeof(Hastane));
-        //        using (TextWriter writer = new StreamWriter(dosyaKaydet.FileName))
-        //        {
-        //            xmlSerializer.Serialize(writer, this);
-        //            writer.Close();
-        //        }
-        //        MessageBox.Show("XML aktarma işlemi başarılı");
-        //    }
-        //}
+       
+
+
+
+        public static void Arama<T>(string Aranan,ref List<T> list)
+        {
+
+            if(list is List<Hasta>)
+            {
+               List<Hasta> liste = Hastane.Hastalar.Where(x => x.Ad.ToLower().Contains(Aranan) || x.Soyad.Contains(Aranan) || x.Tckn.Contains(Aranan)).ToList();
+                list.Clear();
+                for(int i = 0; i < liste.Count(); i++)
+                {
+                    (list as List<Hasta>).Add(liste[i]);
+                }
+
+            }else if (list is List<Doktor>)
+            {
+                List<Doktor> liste = Hastane.Doktorlar.Where(x => x.Ad.ToLower().Contains(Aranan) || x.Soyad.Contains(Aranan) || x.Tckn.Contains(Aranan)).ToList();
+                list.Clear();
+                for (int i = 0; i < liste.Count(); i++)
+                {
+                    (list as List<Doktor>).Add(liste[i]);
+                }
+
+            }
+            else if (list is List<Personel>)
+            {
+                List<Personel> liste = Hastane.Personeller.Where(x => x.Ad.ToLower().Contains(Aranan) || x.Soyad.Contains(Aranan) || x.Tckn.Contains(Aranan)).ToList();
+                list.Clear();
+                for (int i = 0; i < liste.Count(); i++)
+                {
+                    (list as List<Personel>).Add(liste[i]);
+                }
+
+            }
+            else if (list is List<Hemsire>)
+            {
+                List<Hemsire> liste = Hastane.Hemsireler.Where(x => x.Ad.ToLower().Contains(Aranan) || x.Soyad.Contains(Aranan) || x.Tckn.Contains(Aranan)).ToList();
+                list.Clear();
+                for (int i = 0; i < liste.Count(); i++)
+                {
+                    (list as List<Hemsire>).Add(liste[i]);
+                }
+
+            }
+
+
+
+
+
+
+
+        }
+
+
+
+
+        
 
 
     }

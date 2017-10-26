@@ -28,7 +28,7 @@ namespace OppBitirme
         private void Form1_Load(object sender, EventArgs e)
         {
        
-         
+            
             Hastane.AcilisSaati = new DateTime().AddHours(9);
             Hastane.KapanisSaati = Hastane.AcilisSaati.AddHours(8);
             Hastane.PaydosBaslangic = Hastane.AcilisSaati.AddHours(4);
@@ -49,7 +49,7 @@ namespace OppBitirme
            
             
             Doktor doktor2 = new Doktor();
-            doktor2.Hemsireleri.Add(hemsire2);
+           // doktor2.Hemsireleri.Add(hemsire2);
             doktor2.Ad = "hakasdsdan";
             doktor2.Soyad = "coşkuasdsdn";
             doktor2.Tckn = "15143256030";
@@ -80,7 +80,10 @@ namespace OppBitirme
             hasta2.Telefon = "asdsad";
             hasta2.Tckn = "15143256030";
             Hastane.Hastalar.Add(hasta2);
+            
+            DısaAktar.Json();
 
+          
 
             this.LayoutMdi(MdiLayout.TileVertical);
         }
