@@ -87,6 +87,13 @@ namespace OppBitirme.View
                 MessageBox.Show("Neyi Güncelliyim");
                 return;
             }
+
+            if (SeciliKisi.Ad == txtHastaAdi.Text && SeciliKisi.Soyad == txtHastaSoyadi.Text &&
+               SeciliKisi.Tckn == txtHastaTckn.Text && SeciliKisi.cinsiyet == (Cinsiyet)cmbHastaCinsiyeti.SelectedIndex)
+            {
+                MessageBox.Show("değişiklik yapmadınız");
+            }
+
             else
             {
                 DialogResult cevap = MessageBox.Show($"{SeciliKisi.Ad} adlı kişiyi güncellemek istiyor musunuz ?", "kişi güncelle", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
