@@ -63,11 +63,23 @@
     <Compile Include="Models\Randevu.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\AyarlarEkran.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\AyarlarEkran.Designer.cs">
+      <DependentUpon>AyarlarEkran.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\GuncelleEkran.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="View\GuncelleEkran.Designer.cs">
       <DependentUpon>GuncelleEkran.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Hospital.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Hospital.Designer.cs">
+      <DependentUpon>Hospital.cs</DependentUpon>
     </Compile>
     <Compile Include="View\KisiEkle.cs">
       <SubType>UserControl</SubType>
@@ -101,8 +113,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="View\AyarlarEkran.resx">
+      <DependentUpon>AyarlarEkran.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\GuncelleEkran.resx">
       <DependentUpon>GuncelleEkran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Hospital.resx">
+      <DependentUpon>Hospital.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\KisiEkle.resx">
       <DependentUpon>KisiEkle.cs</DependentUpon>

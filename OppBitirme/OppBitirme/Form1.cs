@@ -24,11 +24,16 @@ namespace OppBitirme
         KisiEkle kisiEkleme;
 
         YeniRandevuEkrani randevuEkran;
+        Hospital hastaneEkran;
         GuncelleEkran guncelle;
+        private AyarlarEkran ayarlarEkran;
+
         private void Form1_Load(object sender, EventArgs e)
         {
-       
-         
+            hastaneEkran = new Hospital();
+            panel1.Controls.Clear();
+            panel1.Controls.Add(hastaneEkran);
+
             Hastane.AcilisSaati = new DateTime().AddHours(9);
             Hastane.KapanisSaati = Hastane.AcilisSaati.AddHours(8);
             Hastane.PaydosBaslangic = Hastane.AcilisSaati.AddHours(4);
@@ -118,6 +123,28 @@ namespace OppBitirme
 
         }
 
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
+
+        private void vHospitalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            hastaneEkran = new Hospital();
+            panel1.Controls.Clear();
+            panel1.Controls.Add(hastaneEkran);
+        }
+
+        private void dosyaİşlemleriToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ayarlarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ayarlarEkran = new AyarlarEkran();
+            panel1.Controls.Clear();
+            panel1.Controls.Add(ayarlarEkran);
+        }
     }
 }
