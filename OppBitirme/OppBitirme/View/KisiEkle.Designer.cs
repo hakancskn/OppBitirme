@@ -78,7 +78,6 @@
             this.chlsHemsire.Name = "chlsHemsire";
             this.chlsHemsire.Size = new System.Drawing.Size(261, 319);
             this.chlsHemsire.TabIndex = 18;
-            this.chlsHemsire.SelectedIndexChanged += new System.EventHandler(this.chlsHemsire_SelectedIndexChanged);
             // 
             // btnTemizle
             // 
@@ -105,7 +104,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(156, 274);
             this.pictureBox1.TabIndex = 41;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label13
             // 
@@ -256,7 +254,6 @@
             this.pnlBrans.Name = "pnlBrans";
             this.pnlBrans.Size = new System.Drawing.Size(311, 65);
             this.pnlBrans.TabIndex = 138;
-            this.pnlBrans.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlBrans_Paint);
             // 
             // lblBrans
             // 
@@ -267,7 +264,6 @@
             this.lblBrans.Size = new System.Drawing.Size(50, 17);
             this.lblBrans.TabIndex = 37;
             this.lblBrans.Text = "Branşı:";
-            this.lblBrans.Click += new System.EventHandler(this.label10_Click);
             // 
             // cmbKisiBrans
             // 

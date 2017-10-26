@@ -10,6 +10,6 @@ namespace OppBitirme.Interfaces
 {
     interface IBrans
     {
-       Branslar  branslar { get; set; }
+       Branslar  brans { get; set; }
     }
 }

@@ -96,6 +96,7 @@
             this.columnHeader5});
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
+            this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(29, 365);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(778, 230);
@@ -332,6 +333,7 @@
             this.btnCikar.Size = new System.Drawing.Size(40, 38);
             this.btnCikar.TabIndex = 94;
             this.btnCikar.UseVisualStyleBackColor = true;
+            this.btnCikar.Click += new System.EventHandler(this.btnCikar_Click);
             // 
             // btnEkle
             // 
@@ -342,6 +344,7 @@
             this.btnEkle.Size = new System.Drawing.Size(46, 38);
             this.btnEkle.TabIndex = 93;
             this.btnEkle.UseVisualStyleBackColor = true;
+            this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
             // 
             // chlBosHemsire
             // 
