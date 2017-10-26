@@ -149,5 +149,25 @@ namespace OppBitirme
             panel1.Controls.Clear();
             panel1.Controls.Add(ayarlarEkran);
         }
+
+        private void içeriAktarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            IceAktar.Xml();
+        }
+
+        private void dışarıAktarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DısaAktar.Xml();
+        }
+
+        private void içeriAktarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            IceAktar.Json();
+        }
+
+        private void dışarıAktarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            DısaAktar.Json();
+        }
     }
 }

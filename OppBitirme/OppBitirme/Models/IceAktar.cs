@@ -29,10 +29,14 @@ namespace OppBitirme.Models
                     //kisiler = (List<Kisi>)xmlSerializer.Deserialize(reader);
                     dosyaIslemleri = xmlSerializer.Deserialize(reader) as DosyaIslemleri;
                     reader.Close();
-                    
-                    
+
+                  
 
                 }
+                MessageBox.Show($"{dosyaIslemleri.Doktorlar.Count()} Doktor Eklendi\n" +
+                      $"{dosyaIslemleri.Hastalar.Count()} Hasta Eklendi\n" +
+                      $"{dosyaIslemleri.Hemsireler.Count()} Hemsire Eklendi\n" +
+                      $"{dosyaIslemleri.Personeller.Count()} Personel Eklendi");
             }
         }
         public static void Json()
@@ -50,7 +54,10 @@ namespace OppBitirme.Models
                     writer.Write(json);
                     writer.Close();
                 }
-                MessageBox.Show("JSON aktarma işlemi başarılı");
+                MessageBox.Show($"{dosyaIslemleri.Doktorlar.Count()} Doktor Eklendi\n" +
+                     $"{dosyaIslemleri.Hastalar.Count()} Hasta Eklendi\n" +
+                     $"{dosyaIslemleri.Hemsireler.Count()} Hemsire Eklendi\n" +
+                     $"{dosyaIslemleri.Personeller.Count()} Personel Eklendi");
             }
         }
        
