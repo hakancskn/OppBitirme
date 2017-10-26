@@ -32,19 +32,18 @@ namespace OppBitirme
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.vHospitalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dosyaİşlemleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.xMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.içeriAktarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dışarıAktarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.jSONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.içeriAktarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.dışarıAktarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.ayarlarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.xMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.içeriAktarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dışarıAktarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.randevuOluşturToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.doktorlarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.doktorEkleTSM = new System.Windows.Forms.ToolStripMenuItem();
             this.doktorlarListesiTSM = new System.Windows.Forms.ToolStripMenuItem();
+            this.randevuListesiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hemşirelerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hemşireEkleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hemşirelerListesiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,7 +61,7 @@ namespace OppBitirme
             // 
             this.menuStrip1.AutoSize = false;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.vHospitalToolStripMenuItem,
+            this.dosyaİşlemleriToolStripMenuItem,
             this.randevuOluşturToolStripMenuItem,
             this.doktorlarToolStripMenuItem,
             this.hemşirelerToolStripMenuItem,
@@ -74,48 +73,14 @@ namespace OppBitirme
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // vHospitalToolStripMenuItem
-            // 
-            this.vHospitalToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dosyaİşlemleriToolStripMenuItem,
-            this.ayarlarToolStripMenuItem});
-            this.vHospitalToolStripMenuItem.Name = "vHospitalToolStripMenuItem";
-            this.vHospitalToolStripMenuItem.Size = new System.Drawing.Size(115, 20);
-            this.vHospitalToolStripMenuItem.Text = "Vita-Med Hospital";
-            this.vHospitalToolStripMenuItem.Click += new System.EventHandler(this.vHospitalToolStripMenuItem_Click);
-            // 
             // dosyaİşlemleriToolStripMenuItem
             // 
             this.dosyaİşlemleriToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.xMLToolStripMenuItem,
-            this.jSONToolStripMenuItem});
+            this.jSONToolStripMenuItem,
+            this.xMLToolStripMenuItem});
             this.dosyaİşlemleriToolStripMenuItem.Name = "dosyaİşlemleriToolStripMenuItem";
-            this.dosyaİşlemleriToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.dosyaİşlemleriToolStripMenuItem.Size = new System.Drawing.Size(98, 20);
             this.dosyaİşlemleriToolStripMenuItem.Text = "Dosya İşlemleri";
-            this.dosyaİşlemleriToolStripMenuItem.Click += new System.EventHandler(this.dosyaİşlemleriToolStripMenuItem_Click);
-            // 
-            // xMLToolStripMenuItem
-            // 
-            this.xMLToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.içeriAktarToolStripMenuItem,
-            this.dışarıAktarToolStripMenuItem});
-            this.xMLToolStripMenuItem.Name = "xMLToolStripMenuItem";
-            this.xMLToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.xMLToolStripMenuItem.Text = "XML";
-            // 
-            // içeriAktarToolStripMenuItem
-            // 
-            this.içeriAktarToolStripMenuItem.Name = "içeriAktarToolStripMenuItem";
-            this.içeriAktarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.içeriAktarToolStripMenuItem.Text = "İçeri Aktar";
-            this.içeriAktarToolStripMenuItem.Click += new System.EventHandler(this.içeriAktarToolStripMenuItem_Click);
-            // 
-            // dışarıAktarToolStripMenuItem
-            // 
-            this.dışarıAktarToolStripMenuItem.Name = "dışarıAktarToolStripMenuItem";
-            this.dışarıAktarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.dışarıAktarToolStripMenuItem.Text = "Dışarı Aktar";
-            this.dışarıAktarToolStripMenuItem.Click += new System.EventHandler(this.dışarıAktarToolStripMenuItem_Click);
             // 
             // jSONToolStripMenuItem
             // 
@@ -124,28 +89,44 @@ namespace OppBitirme
             this.dışarıAktarToolStripMenuItem1});
             this.jSONToolStripMenuItem.Name = "jSONToolStripMenuItem";
             this.jSONToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.jSONToolStripMenuItem.Text = "JSON";
+            this.jSONToolStripMenuItem.Text = "XML";
             // 
             // içeriAktarToolStripMenuItem1
             // 
             this.içeriAktarToolStripMenuItem1.Name = "içeriAktarToolStripMenuItem1";
             this.içeriAktarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.içeriAktarToolStripMenuItem1.Text = "İçeri Aktar";
-            this.içeriAktarToolStripMenuItem1.Click += new System.EventHandler(this.içeriAktarToolStripMenuItem1_Click);
+            this.içeriAktarToolStripMenuItem1.Click += new System.EventHandler(this.içeriAktarToolStripMenuItem_Click);
             // 
             // dışarıAktarToolStripMenuItem1
             // 
             this.dışarıAktarToolStripMenuItem1.Name = "dışarıAktarToolStripMenuItem1";
             this.dışarıAktarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.dışarıAktarToolStripMenuItem1.Text = "Dışarı Aktar";
-            this.dışarıAktarToolStripMenuItem1.Click += new System.EventHandler(this.dışarıAktarToolStripMenuItem1_Click);
+            this.dışarıAktarToolStripMenuItem1.Click += new System.EventHandler(this.dışarıAktarToolStripMenuItem_Click);
             // 
-            // ayarlarToolStripMenuItem
+            // xMLToolStripMenuItem
             // 
-            this.ayarlarToolStripMenuItem.Name = "ayarlarToolStripMenuItem";
-            this.ayarlarToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
-            this.ayarlarToolStripMenuItem.Text = "Ayarlar ";
-            this.ayarlarToolStripMenuItem.Click += new System.EventHandler(this.ayarlarToolStripMenuItem_Click);
+            this.xMLToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.içeriAktarToolStripMenuItem,
+            this.dışarıAktarToolStripMenuItem});
+            this.xMLToolStripMenuItem.Name = "xMLToolStripMenuItem";
+            this.xMLToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.xMLToolStripMenuItem.Text = "JSON";
+            // 
+            // içeriAktarToolStripMenuItem
+            // 
+            this.içeriAktarToolStripMenuItem.Name = "içeriAktarToolStripMenuItem";
+            this.içeriAktarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.içeriAktarToolStripMenuItem.Text = "İçeri Aktar";
+            this.içeriAktarToolStripMenuItem.Click += new System.EventHandler(this.içeriAktarToolStripMenuItem1_Click);
+            // 
+            // dışarıAktarToolStripMenuItem
+            // 
+            this.dışarıAktarToolStripMenuItem.Name = "dışarıAktarToolStripMenuItem";
+            this.dışarıAktarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.dışarıAktarToolStripMenuItem.Text = "Dışarı Aktar";
+            this.dışarıAktarToolStripMenuItem.Click += new System.EventHandler(this.dışarıAktarToolStripMenuItem1_Click);
             // 
             // randevuOluşturToolStripMenuItem
             // 
@@ -158,7 +139,8 @@ namespace OppBitirme
             // 
             this.doktorlarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.doktorEkleTSM,
-            this.doktorlarListesiTSM});
+            this.doktorlarListesiTSM,
+            this.randevuListesiToolStripMenuItem});
             this.doktorlarToolStripMenuItem.Name = "doktorlarToolStripMenuItem";
             this.doktorlarToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
             this.doktorlarToolStripMenuItem.Text = "Doktorlar";
@@ -178,6 +160,13 @@ namespace OppBitirme
             this.doktorlarListesiTSM.Tag = OppBitirme.Models.Kisi.Unvan.Doktor;
             this.doktorlarListesiTSM.Text = "Doktorlar Listesi";
             this.doktorlarListesiTSM.Click += new System.EventHandler(this.KisiListesiToolStripMenuItem_Click);
+            // 
+            // randevuListesiToolStripMenuItem
+            // 
+            this.randevuListesiToolStripMenuItem.Name = "randevuListesiToolStripMenuItem";
+            this.randevuListesiToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.randevuListesiToolStripMenuItem.Text = "Randevu Listesi";
+            this.randevuListesiToolStripMenuItem.Click += new System.EventHandler(this.randevuListesiToolStripMenuItem_Click);
             // 
             // hemşirelerToolStripMenuItem
             // 
@@ -259,9 +248,9 @@ namespace OppBitirme
             this.panel1.AutoSize = true;
             this.panel1.Location = new System.Drawing.Point(0, 27);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(606, 358);
+            this.panel1.Size = new System.Drawing.Size(606, 314);
             this.panel1.TabIndex = 1;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            
             // 
             // Form1
             // 
@@ -303,14 +292,13 @@ namespace OppBitirme
         private System.Windows.Forms.ToolStripMenuItem personelListesiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hastaEkleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hastaListesiToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem vHospitalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem randevuListesiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dosyaİşlemleriToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ayarlarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem xMLToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem içeriAktarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem dışarıAktarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem jSONToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem içeriAktarToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem dışarıAktarToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem xMLToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem içeriAktarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dışarıAktarToolStripMenuItem;
     }
 }

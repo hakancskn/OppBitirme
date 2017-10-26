@@ -13,5 +13,12 @@ namespace OppBitirme.Models
         public Doktor doktor { get; set; }
         public DateTime Zamani { get; set; }
         public Servisler Servisi { get; set; }
+        public override string ToString()
+        {
+            return hasta.AdSoyad+" "+Servisi+" "+doktor+" "+Zamani;
+
+        }
+
+
     }
 }

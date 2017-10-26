@@ -43,20 +43,37 @@ namespace OppBitirme.View
                     unvan = Unvani
                 };
 
+
                 switch (yeniKisi.unvan)
                 {
                     case Unvan.Hasta:
-                        Hasta hasta = new Hasta();
+                        if (Hastane.Hastalar.Where(x => x.Tckn == yeniKisi.Tckn).Count() > 0)
+                        {
+                            MessageBox.Show("Bu kişi zaten kaydedilmiş");
+                            break;
+                        }
+                            Hasta hasta = new Hasta();
                         hasta.Cast(yeniKisi);
                         Hastane.Hastalar.Add(hasta);
+                        
                         break;
                     case Unvan.Personel:
+                        if (Hastane.Personeller.Where(x => x.Tckn == yeniKisi.Tckn).Count() > 0)
+                        {
+                            MessageBox.Show("Bu kişi zaten kaydedilmiş");
+                            break;
+                        }
                         Personel personel = new Personel();
                         personel.Cast(yeniKisi);
                         personel.brans = (Branslar)cmbKisiBrans.SelectedItem;
                         Hastane.Personeller.Add(personel);
                         break;
                     case Unvan.Doktor:
+                        if (Hastane.Doktorlar.Where(x => x.Tckn == yeniKisi.Tckn).Count() > 0)
+                        {
+                            MessageBox.Show("Bu kişi zaten kaydedilmiş");
+                            break;
+                        }
                         Doktor doktor = new Doktor();
                         doktor.Cast(yeniKisi);
                         doktor.Servis = (Servisler)cmbKisiBrans.SelectedItem;
@@ -71,6 +88,11 @@ namespace OppBitirme.View
 
                             break;
                     case Unvan.Hemşire:
+                        if (Hastane.Hemsireler.Where(x => x.Tckn == yeniKisi.Tckn).Count() > 0)
+                        {
+                            MessageBox.Show("Bu kişi zaten kaydedilmiş");
+                            break;
+                        }
                         Hemsire hemsire = new Hemsire();
                         hemsire.Cast(yeniKisi);
                         hemsire.Servis = (Servisler)cmbKisiBrans.SelectedItem;

@@ -27,7 +27,7 @@ namespace OppBitirme.View
         private void RandevuSaatleri_Load(object sender, EventArgs e)
         {
 
-            Saatlist = Hastane.Randevular.Where(x => x.doktor == this.doktor && x.Zamani.Date == DateTime.Today).Select(x => x.Zamani).ToList();
+            Saatlist = Hastane.Randevular.Where(x => x.doktor.Tckn == this.doktor.Tckn && x.Zamani.Date == DateTime.Today).Select(x => x.Zamani).ToList();
             DateTime saat = new DateTime();
             saat = DateTime.Today;
             saat = saat.Add(Hastane.AcilisSaati.TimeOfDay);
@@ -38,7 +38,7 @@ namespace OppBitirme.View
             while (saat.TimeOfDay < Hastane.KapanisSaati.TimeOfDay)
             {
                 varmi = (Saatlist.Where(x => x.TimeOfDay == saat.TimeOfDay).Count() > 0 || (saat.TimeOfDay <= Hastane.PaydosBitis.TimeOfDay &&
-                    saat.TimeOfDay >= Hastane.PaydosBaslangic.TimeOfDay) || saat.TimeOfDay < DateTime.Now.TimeOfDay) ? true : false;
+                    saat.TimeOfDay >= Hastane.PaydosBaslangic.TimeOfDay) ) ? true : false;//|| saat.TimeOfDay < DateTime.Now.TimeOfDay eklenicek
 
 
                 tblSaatler.Controls.Add(new Button()

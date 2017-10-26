@@ -206,7 +206,7 @@
             this.Sil});
             this.menu.Name = "menu";
             this.menu.Size = new System.Drawing.Size(153, 48);
-            this.menu.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
+            
             // 
             // Sil
             // 

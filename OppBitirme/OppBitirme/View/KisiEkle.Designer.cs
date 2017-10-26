@@ -254,7 +254,6 @@
             this.pnlBrans.Name = "pnlBrans";
             this.pnlBrans.Size = new System.Drawing.Size(311, 65);
             this.pnlBrans.TabIndex = 128;
-           
             // 
             // lblBrans
             // 
@@ -312,7 +311,7 @@
             this.Controls.Add(this.btnTemizle);
             this.Controls.Add(this.btnKaydet);
             this.Name = "KisiEkle";
-            this.Size = new System.Drawing.Size(798, 414);
+            this.Size = new System.Drawing.Size(821, 436);
             this.Load += new System.EventHandler(this.KisiEkle_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlBrans.ResumeLayout(false);

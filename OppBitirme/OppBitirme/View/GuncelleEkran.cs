@@ -53,7 +53,7 @@ namespace OppBitirme.View
                 List<Hemsire> BosHemsireler = new List<Hemsire>();
                 chlsDktHemsire.Items.Clear();
                 chlBosHemsire.Items.Clear();
-                List<Hemsire> DktHemsireleri= Hastane.Hemsireler.Where(x => x.Doktoru == dkt).ToList();
+                List<Hemsire> DktHemsireleri= Hastane.Hemsireler.Where(x => x.Doktoru?.Tckn == dkt.Tckn).ToList();
 
                  DktHemsireleri.ForEach(c =>
                {
@@ -88,73 +88,66 @@ namespace OppBitirme.View
                 return;
             }
 
-            if (SeciliKisi.Ad == txtHastaAdi.Text && SeciliKisi.Soyad == txtHastaSoyadi.Text &&
-               SeciliKisi.Tckn == txtHastaTckn.Text && SeciliKisi.cinsiyet == (Cinsiyet)cmbHastaCinsiyeti.SelectedIndex)
-            {
-                MessageBox.Show("değişiklik yapmadınız");
-            }
-
-            else
-            {
+          
                 DialogResult cevap = MessageBox.Show($"{SeciliKisi.Ad} adlı kişiyi güncellemek istiyor musunuz ?", "kişi güncelle", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (cevap == DialogResult.Yes)
+            if (cevap == DialogResult.Yes)
+            {
+                try
                 {
-                    try
+                    SeciliKisi.Ad = txtHastaAdi.Text;
+                    SeciliKisi.Soyad = txtHastaSoyadi.Text;
+                    SeciliKisi.Tckn = txtHastaTckn.Text;
+                    SeciliKisi.Telefon = txtHastaTel.Text;
+                    SeciliKisi.Mail = txtHastaMail.Text;
+                    SeciliKisi.DogumTarihi = dtpHastaDogumTarihi.Value;
+                    SeciliKisi.cinsiyet = (Cinsiyet)Enum.Parse(typeof(Cinsiyet), cmbHastaCinsiyeti.SelectedItem.ToString());
+
+
+                    if (SeciliKisi is IBrans)
                     {
-                        SeciliKisi.Ad = txtHastaAdi.Text;
-                        SeciliKisi.Soyad = txtHastaSoyadi.Text;
-                        SeciliKisi.Tckn = txtHastaTckn.Text;
-                        SeciliKisi.Telefon = txtHastaTel.Text;
-                        SeciliKisi.Mail = txtHastaMail.Text;
-                        SeciliKisi.DogumTarihi = dtpHastaDogumTarihi.Value;
-                        SeciliKisi.cinsiyet = (Cinsiyet)Enum.Parse(typeof(Cinsiyet), cmbHastaCinsiyeti.SelectedItem.ToString());
-                        
-                      
-                        if (SeciliKisi is IBrans)
-                        {
-                            (SeciliKisi as IBrans).brans = (Hastane.Branslar)cmbKisiBrans.SelectedItem;
-                        }
-                        if (SeciliKisi is IServis)
-                        {
-                            (SeciliKisi as IServis).Servis = (Hastane.Servisler)cmbKisiBrans.SelectedItem;
-                        }
-                        if(SeciliKisi is Doktor)
-                        {
-                           
-                            foreach (Hemsire item in chlsDktHemsire.Items)
-                            {
-
-                                item.Doktoru = (Doktor)SeciliKisi;
-                                item.Servis = (Hastane.Servisler)cmbKisiBrans.SelectedItem;
-                            }
-                            foreach (Hemsire item in chlBosHemsire.Items)
-                            {
-                                item.Doktoru = null;
-                            }
-
-                        }
-
-                        Form_Temizle();
-                        //cmbKisiBrans.DataSource = null;
-                        //panel1.Visible = true;
-                        //lblBrans.Text = "Servis";
-                        //cmbKisiBrans.DataSource = Enum.GetValues(typeof(Hastane.Servisler));
-                        //pnlHemsire.Visible = true;
-
-
-
+                        (SeciliKisi as IBrans).brans = (Hastane.Branslar)cmbKisiBrans.SelectedItem;
                     }
-                    catch (Exception ex)
+                    if (SeciliKisi is IServis)
+                    {
+                        (SeciliKisi as IServis).Servis = (Hastane.Servisler)cmbKisiBrans.SelectedItem;
+                    }
+                    if (SeciliKisi is Doktor)
                     {
 
-                        MessageBox.Show(ex.Message);
+                        foreach (Hemsire item in chlsDktHemsire.Items)
+                        {
+
+                            item.Doktoru = (Doktor)SeciliKisi;
+                            item.Servis = (Hastane.Servisler)cmbKisiBrans.SelectedItem;
+                        }
+                        foreach (Hemsire item in chlBosHemsire.Items)
+                        {
+                            item.Doktoru = null;
+                        }
+
                     }
+
+                    Form_Temizle();
+                    //cmbKisiBrans.DataSource = null;
+                    //panel1.Visible = true;
+                    //lblBrans.Text = "Servis";
+                    //cmbKisiBrans.DataSource = Enum.GetValues(typeof(Hastane.Servisler));
+                    //pnlHemsire.Visible = true;
+
+
+
                 }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message);
+                }
+
+
+
+
+
             }
-
-
-
-
 
         }
 
@@ -309,25 +302,25 @@ namespace OppBitirme.View
             {
                 case Unvan.Hasta:
                     List<Hasta> hastalst = new List<Hasta>();
-                    Hastane.Arama<Hasta>(arama, ref hastalst);
+                    Arama.ListedeArama<Hasta>(arama, ref hastalst);
                     ListeyiDoldur(hastalst);
                     break;
                 case Unvan.Personel:
                      List<Personel> PersonelLst = new List<Personel>();
-                    Hastane.Arama<Personel>(arama, ref PersonelLst);
+                    Arama.ListedeArama<Personel>(arama, ref PersonelLst);
                     ListeyiDoldur(PersonelLst);
 
                     break;
                 case Unvan.Doktor:
                     List<Doktor> Doktorlst = new List<Doktor>();
-                    Hastane.Arama<Doktor>(arama, ref Doktorlst);
+                    Arama.ListedeArama<Doktor>(arama, ref Doktorlst);
                     ListeyiDoldur(Doktorlst);
 
                     break;
                 case Unvan.Hemşire:
                     List<Hemsire> Hemsirelst = new List<Hemsire>();
 
-                    Hastane.Arama<Hemsire>(arama, ref Hemsirelst);
+                    Arama.ListedeArama<Hemsire>(arama, ref Hemsirelst);
                     ListeyiDoldur(Hemsirelst);
 
                     break;

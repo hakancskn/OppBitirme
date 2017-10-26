@@ -47,7 +47,7 @@ namespace OppBitirme.Models
 
         public override string ToString()
         {
-            return Ad + " " + Soyad;
+            return Ad + " " + Soyad+" "+Tckn;
 
         }
         public String AdSoyad { get { return Ad + " " + Soyad; } }

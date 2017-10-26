@@ -12,9 +12,10 @@ namespace OppBitirme.Models
 {
     public class IceAktar
     {
+        private static DosyaIslemleri dosyaIslemleri;
         public static void Xml()
         {
-            DosyaIslemleri dosyaIslemleri = new DosyaIslemleri();
+             dosyaIslemleri = new DosyaIslemleri();
             OpenFileDialog dosyaAc = new OpenFileDialog();
             dosyaAc.Title = "Bir Kisi XML dosyasını seçiniz";
             dosyaAc.Filter = "XML Format | *.xml";
@@ -33,32 +34,38 @@ namespace OppBitirme.Models
                   
 
                 }
-                MessageBox.Show($"{dosyaIslemleri.Doktorlar.Count()} Doktor Eklendi\n" +
-                      $"{dosyaIslemleri.Hastalar.Count()} Hasta Eklendi\n" +
-                      $"{dosyaIslemleri.Hemsireler.Count()} Hemsire Eklendi\n" +
-                      $"{dosyaIslemleri.Personeller.Count()} Personel Eklendi");
+                Yazdir();
             }
         }
         public static void Json()
         {
-            DosyaIslemleri dosyaIslemleri = new DosyaIslemleri();
-            OpenFileDialog dosyaKaydet = new OpenFileDialog();
-            dosyaKaydet.FileName = string.Empty;
-            dosyaKaydet.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            dosyaKaydet.Filter = "JSON Format | *.json";
-            if (dosyaKaydet.ShowDialog() == DialogResult.OK)
+             dosyaIslemleri = new DosyaIslemleri();
+            OpenFileDialog dosyaAc = new OpenFileDialog();
+            dosyaAc.FileName = string.Empty;
+            dosyaAc.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            dosyaAc.Filter = "JSON Format | *.json";
+          
+            if (dosyaAc.ShowDialog() == DialogResult.OK)
             {
-                string json = JsonConvert.SerializeObject(dosyaIslemleri);
-                using (TextWriter writer = new StreamWriter(dosyaKaydet.FileName))
+
+                using (StreamReader reader = new StreamReader(dosyaAc.FileName))
                 {
-                    writer.Write(json);
-                    writer.Close();
+                    string json = reader.ReadToEnd();
+                    dosyaIslemleri= JsonConvert.DeserializeObject<DosyaIslemleri>(json);
                 }
-                MessageBox.Show($"{dosyaIslemleri.Doktorlar.Count()} Doktor Eklendi\n" +
+
+
+                Yazdir();
+                
+            }
+        }
+        private static void Yazdir()
+        {
+            MessageBox.Show($"{dosyaIslemleri.Doktorlar.Count()} Doktor Eklendi\n" +
                      $"{dosyaIslemleri.Hastalar.Count()} Hasta Eklendi\n" +
                      $"{dosyaIslemleri.Hemsireler.Count()} Hemsire Eklendi\n" +
-                     $"{dosyaIslemleri.Personeller.Count()} Personel Eklendi");
-            }
+                     $"{dosyaIslemleri.Personeller.Count()} Personel Eklendi\n" +
+                       $"{dosyaIslemleri.Randevular.Count()} Randevu Eklendi");
         }
        
 

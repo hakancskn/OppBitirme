@@ -35,10 +35,10 @@ namespace OppBitirme.View
             {
                 SecilenHasta = (Hasta)lstHasta.FocusedItem.Tag;
                 lstRandevu_refresh();
-
+                pnlSaatler_Refresh();
 
             }
-            cmbServisler.SelectedIndex = 0;
+            
         }
 
         private void cmbServisler_SelectedIndexChanged(object sender, EventArgs e)
@@ -64,17 +64,21 @@ namespace OppBitirme.View
             }
             else
             {
-                RandevuSaatleri.Sutun_sayisi = 4;
-                pnlSaatler.Controls.Clear();
-                randevuSaatleri= new RandevuSaatleri();
-                randevuSaatleri.doktor = (Doktor)cmbDoktorlar.SelectedItem;
-                randevuSaatleri.Size = pnlSaatler.Size - (new Size(5, 5));
-                
-                pnlSaatler.Controls.Add(randevuSaatleri);
-                pnlSaatler.Size = randevuSaatleri.Size;
+                pnlSaatler_Refresh();
             }
 
 
+        }
+
+        private void pnlSaatler_Refresh()
+        {
+            RandevuSaatleri.Sutun_sayisi = 4;
+            pnlSaatler.Controls.Clear();
+            randevuSaatleri = new RandevuSaatleri();
+            randevuSaatleri.doktor = (Doktor)cmbDoktorlar.SelectedItem;
+            randevuSaatleri.Size = pnlSaatler.Size - (new Size(5, 5));
+            pnlSaatler.Controls.Add(randevuSaatleri);
+            
         }
 
         private void btnKaydet_Click(object sender, EventArgs e)
@@ -89,7 +93,7 @@ namespace OppBitirme.View
             Khasta = (Hasta)lstHasta.FocusedItem.Tag;
             if (randevuSaatleri.SecilenSaat != DateTime.MinValue)
             {
-                if(0<Hastane.Randevular.Where(x => x.hasta == SecilenHasta && x.Zamani == randevuSaatleri.SecilenSaat).Count())
+                if(0<Hastane.Randevular.Where(x => x.hasta.Tckn == SecilenHasta.Tckn && x.Zamani == randevuSaatleri.SecilenSaat).Count())
                     MessageBox.Show("Zaten Bu Saatte Bir Randevunuz Var." );
                 else
                 {
@@ -153,7 +157,7 @@ namespace OppBitirme.View
         private void lstRandevu_refresh()
         {
             lstRandevu.Items.Clear();
-            List<Randevu> list = Hastane.Randevular.Where(x => x.hasta == SecilenHasta).ToList();
+            List<Randevu> list = Hastane.Randevular.Where(x => x.hasta.Tckn == SecilenHasta.Tckn).ToList();
             list.ForEach(a =>
             {
 
@@ -166,10 +170,7 @@ namespace OppBitirme.View
             });
         }
 
-        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
-        {
-
-        }
+      
 
         private void Sil_Click(object sender, EventArgs e)
         {
@@ -183,6 +184,7 @@ namespace OppBitirme.View
                 Hastane.Randevular.Remove((Randevu)lstRandevu.FocusedItem.Tag);
                 MessageBox.Show("Randevu Silindi");
                 lstRandevu_refresh();
+                pnlSaatler_Refresh();
             }
 
         }
