@@ -9,17 +9,8 @@ namespace OppBitirme.Models
 {
     public class Personel : Kisi, IBrans
     {
-        public Hastane.Branslar branslar
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
+       
 
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
+        public Hastane.Branslar brans { get; set ; }
     }
 }

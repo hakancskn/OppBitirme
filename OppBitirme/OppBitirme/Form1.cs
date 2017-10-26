@@ -38,25 +38,23 @@ namespace OppBitirme
             Hastane.KapanisSaati = Hastane.AcilisSaati.AddHours(8);
             Hastane.PaydosBaslangic = Hastane.AcilisSaati.AddHours(4);
             Hastane.PaydosBitis = Hastane.PaydosBaslangic.AddHours(1);
-            Hemsire hemsire = new Hemsire();
+    
+         
 
-            hemsire.Ad = "dasds";
-            hemsire.Mail = "sadsd0";
-            hemsire.Soyad = "asdsd";
-            Hastane.Hemsireler.Add(hemsire);
-            Doktor doktor = new Doktor();
-            doktor.Hemsireleri.Add(hemsire);
-            doktor.Ad = "hakan";
-            doktor.Soyad = "coşkun";
-            doktor.Tckn = "15143256030";
-            doktor.Telefon = "05387299810";
-            doktor.unvan = Kisi.Unvan.Doktor;
-            doktor.cinsiyet = Cinsiyet.Erkek;
-            doktor.DogumTarihi = DateTime.Now;
-            doktor.Servis = Hastane.Servisler.Göz;
-            Hastane.Doktorlar.Add(doktor);
+            Hemsire hemsire2 = new Hemsire();
+
+            hemsire2.Ad = "dasds";
+            hemsire2.Mail = "sadsd0";
+            hemsire2.Soyad = "asdsd";
+            hemsire2.Servis = Hastane.Servisler.Kardiyoloji;
+           
+
+
+
+           
+            
             Doktor doktor2 = new Doktor();
-            doktor2.Hemsireleri.Add(hemsire);
+           // doktor2.Hemsireleri.Add(hemsire2);
             doktor2.Ad = "hakasdsdan";
             doktor2.Soyad = "coşkuasdsdn";
             doktor2.Tckn = "15143256030";
@@ -67,6 +65,8 @@ namespace OppBitirme
             doktor2.unvan = Kisi.Unvan.Doktor;
             doktor2.Servis = Hastane.Servisler.Göz;
             doktor2.Servis = Hastane.Servisler.Kardiyoloji;
+            hemsire2.Doktoru = doktor2;
+            Hastane.Hemsireler.Add(hemsire2);
             Hastane.Doktorlar.Add(doktor2);
 
 
@@ -85,7 +85,10 @@ namespace OppBitirme
             hasta2.Telefon = "asdsad";
             hasta2.Tckn = "15143256030";
             Hastane.Hastalar.Add(hasta2);
+            
+            DısaAktar.Json();
 
+          
 
             this.LayoutMdi(MdiLayout.TileVertical);
         }
