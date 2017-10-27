@@ -21,7 +21,7 @@ namespace OppBitirme.Models
         public static List<Hasta> Hastalar { get; set; } = new List<Hasta>();
 
         public static List<Randevu> Randevular { get; set; } = new List<Randevu>();
-
+        
         public enum Servisler
         {
             Kardiyoloji,

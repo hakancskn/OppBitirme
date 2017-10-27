@@ -93,7 +93,7 @@ namespace OppBitirme.View
             Khasta = (Hasta)lstHasta.FocusedItem.Tag;
             if (randevuSaatleri.SecilenSaat != DateTime.MinValue)
             {
-                if(0<Hastane.Randevular.Where(x => x.hasta.Tckn == SecilenHasta.Tckn && x.Zamani == randevuSaatleri.SecilenSaat).Count())
+                if(0<Hastane.Randevular.Where(x => x?.hastaTckn == SecilenHasta?.Tckn && x.Zamani == randevuSaatleri.SecilenSaat).Count())
                     MessageBox.Show("Zaten Bu Saatte Bir Randevunuz Var." );
                 else
                 {
@@ -102,15 +102,15 @@ namespace OppBitirme.View
                         Zamani = randevuSaatleri.SecilenSaat,
                         Servisi = (Hastane.Servisler)Enum.Parse((typeof(Hastane.Servisler)),
                                         cmbServisler.SelectedItem.ToString()),
-                        doktor = (Doktor)cmbDoktorlar.SelectedValue,
-                        hasta = Khasta
+                        doktorTckn = ((Doktor)cmbDoktorlar.SelectedValue).Tckn,
+                        hastaTckn = Khasta.Tckn
 
                 };
                     Hastane.Randevular.Add(Yenirandevu);
                     MessageBox.Show("Randevu Eklendi");
                     cmbServisler.SelectedIndex = 0;
                     lstRandevu_refresh();
-                    
+                    pnlSaatler_Refresh();
 
                 }
             }
@@ -157,13 +157,13 @@ namespace OppBitirme.View
         private void lstRandevu_refresh()
         {
             lstRandevu.Items.Clear();
-            List<Randevu> list = Hastane.Randevular.Where(x => x.hasta.Tckn == SecilenHasta.Tckn).ToList();
+            List<Randevu> list = Hastane.Randevular.Where(x => x?.hastaTckn == SecilenHasta?.Tckn).ToList();
             list.ForEach(a =>
             {
-
+                
                 ListViewItem li = new ListViewItem();
                 li.Text = a.Servisi.ToString();
-                li.SubItems.Add(a.doktor.AdSoyad);
+                li.SubItems.Add(Hastane.Doktorlar.Where(x=>x.Tckn==a.doktorTckn).First().AdSoyad);
                 li.SubItems.Add(a.Zamani.ToString("dd/MM/yy HH:mm"));
                 li.Tag = a;
                 lstRandevu.Items.Add(li);

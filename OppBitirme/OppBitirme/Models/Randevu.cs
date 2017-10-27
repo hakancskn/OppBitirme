@@ -9,13 +9,14 @@ namespace OppBitirme.Models
 {
     public class Randevu
     {
-        public Hasta hasta { get; set; }
-        public Doktor doktor { get; set; }
+        public string hastaTckn { get; set; }
+        public string doktorTckn { get; set; }
         public DateTime Zamani { get; set; }
         public Servisler Servisi { get; set; }
         public override string ToString()
         {
-            return hasta.AdSoyad+" "+Servisi+" "+doktor+" "+Zamani;
+            return Hastane.Hastalar.Where(x=>x.Tckn==hastaTckn).First().AdSoyad+" "+Servisi+" "+ 
+                Hastane.Doktorlar.Where(x => x.Tckn == doktorTckn).First().AdSoyad+ " "+Zamani;
 
         }
 

@@ -26,57 +26,16 @@ namespace OppBitirme.View
 
         private void GuncelleEkrani_Load(object sender, EventArgs e)
         {
-            Form_Temizle();
+            Form_Yenile();
         }
 
         Kisi SeciliKisi;
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-            SeciliKisi = (Kisi)(listView1.FocusedItem.Tag);
-            int a = cmbHastaCinsiyeti.Items.IndexOf(SeciliKisi.cinsiyet.ToString());
-            txtHastaAdi.Text = SeciliKisi.Ad;
-            txtHastaSoyadi.Text = SeciliKisi.Soyad;
-            txtHastaTckn.Text = SeciliKisi.Tckn;
-            txtHastaTel.Text = SeciliKisi.Telefon;
-            txtHastaAdres.Text = SeciliKisi.Adres;
-            txtHastaMail.Text = SeciliKisi.Mail;
-            dtpHastaDogumTarihi.Value = SeciliKisi.DogumTarihi;
-            cmbHastaCinsiyeti.SelectedIndex = a;
-            if (SeciliKisi is IServis)
-            {
-                cmbKisiBrans.SelectedItem = (SeciliKisi as IServis).Servis;
-            }
-            if (SeciliKisi is Doktor)
-            {
-                Doktor dkt = (Doktor)SeciliKisi;
-                List<Hemsire> BosHemsireler = new List<Hemsire>();
-                chlsDktHemsire.Items.Clear();
-                chlBosHemsire.Items.Clear();
-                List<Hemsire> DktHemsireleri= Hastane.Hemsireler.Where(x => x.Doktoru?.Tckn == dkt.Tckn).ToList();
-
-                 DktHemsireleri.ForEach(c =>
-               {
-                   chlsDktHemsire.Items.Add(c);
-
-               });
-                BosHemsireler = Hastane.Hemsireler.Where(x => x.Servis == dkt.Servis && x.Doktoru == null).ToList();
-
-                BosHemsireler.ForEach(bos =>
-                {
-                    chlBosHemsire.Items.Add(bos);
-                });
-
-
-
-
-            }
-            if (SeciliKisi is IBrans)
-            {
-                cmbKisiBrans.SelectedItem = (SeciliKisi as IBrans).brans;
-            }
-
+            Control_Doldur();
+          
         }
+        
 
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
@@ -84,7 +43,7 @@ namespace OppBitirme.View
 
             if (SeciliKisi == null)
             {
-                MessageBox.Show("Neyi Güncelliyim");
+                MessageBox.Show("Güncellenecek Kişiyi Seçiniz.");
                 return;
             }
 
@@ -101,8 +60,7 @@ namespace OppBitirme.View
                     SeciliKisi.Mail = txtHastaMail.Text;
                     SeciliKisi.DogumTarihi = dtpHastaDogumTarihi.Value;
                     SeciliKisi.cinsiyet = (Cinsiyet)Enum.Parse(typeof(Cinsiyet), cmbHastaCinsiyeti.SelectedItem.ToString());
-
-
+                    
                     if (SeciliKisi is IBrans)
                     {
                         (SeciliKisi as IBrans).brans = (Hastane.Branslar)cmbKisiBrans.SelectedItem;
@@ -117,25 +75,19 @@ namespace OppBitirme.View
                         foreach (Hemsire item in chlsDktHemsire.Items)
                         {
 
-                            item.Doktoru = (Doktor)SeciliKisi;
+                            item.DoktorTckn = ((Doktor)SeciliKisi).Tckn;
                             item.Servis = (Hastane.Servisler)cmbKisiBrans.SelectedItem;
                         }
                         foreach (Hemsire item in chlBosHemsire.Items)
                         {
-                            item.Doktoru = null;
+                            item.DoktorTckn = null;
                         }
 
                     }
 
-                    Form_Temizle();
-                    //cmbKisiBrans.DataSource = null;
-                    //panel1.Visible = true;
-                    //lblBrans.Text = "Servis";
-                    //cmbKisiBrans.DataSource = Enum.GetValues(typeof(Hastane.Servisler));
-                    //pnlHemsire.Visible = true;
-
-
-
+                    Form_Yenile();
+                    
+              
                 }
                 catch (Exception ex)
                 {
@@ -176,7 +128,7 @@ namespace OppBitirme.View
 
         }
 
-        private void Form_Temizle()
+        private void Form_Yenile()
         {
             listView1.Items.Clear();
             cmbHastaCinsiyeti.Items.AddRange(Enum.GetNames(typeof(Cinsiyet)));
@@ -301,27 +253,60 @@ namespace OppBitirme.View
             switch (unvan)
             {
                 case Unvan.Hasta:
-                    List<Hasta> hastalst = new List<Hasta>();
-                    Arama.ListedeArama<Hasta>(arama, ref hastalst);
-                    ListeyiDoldur(hastalst);
+                    List<Hasta> hastalst ;
+                    hastalst = Hastane.Hastalar.Where(x => x.Ad.ToLower().Contains(arama) || x.Soyad.Contains(arama) || x.Tckn.Contains(arama)).ToList();
+                   hastalst.ForEach(a =>
+                    {
+                        ListViewItem li = new ListViewItem();
+                        li.Text = a.Ad;
+                        li.SubItems.Add(a.Soyad);
+                        li.SubItems.Add(a.Tckn);
+                        li.Tag = a;
+                        listView1.Items.Add(li);
+                    });
+
+                    
                     break;
                 case Unvan.Personel:
-                     List<Personel> PersonelLst = new List<Personel>();
-                    Arama.ListedeArama<Personel>(arama, ref PersonelLst);
-                    ListeyiDoldur(PersonelLst);
+                    List<Personel> prslst;
+                    prslst = Hastane.Personeller.Where(x => x.Ad.ToLower().Contains(arama) || x.Soyad.Contains(arama) || x.Tckn.Contains(arama)).ToList();
+                    prslst.ForEach(a =>
+                    {
+                        ListViewItem li = new ListViewItem();
+                        li.Text = a.Ad;
+                        li.SubItems.Add(a.Soyad);
+                        li.SubItems.Add(a.Tckn);
+                        li.Tag = a;
+                        listView1.Items.Add(li);
+                    });
 
                     break;
                 case Unvan.Doktor:
-                    List<Doktor> Doktorlst = new List<Doktor>();
-                    Arama.ListedeArama<Doktor>(arama, ref Doktorlst);
-                    ListeyiDoldur(Doktorlst);
+                    List<Doktor> dktlst;
+                    dktlst = Hastane.Doktorlar.Where(x => x.Ad.ToLower().Contains(arama) || x.Soyad.Contains(arama) || x.Tckn.Contains(arama)).ToList();
+                    dktlst.ForEach(a =>
+                    {
+                        ListViewItem li = new ListViewItem();
+                        li.Text = a.Ad;
+                        li.SubItems.Add(a.Soyad);
+                        li.SubItems.Add(a.Tckn);
+                        li.Tag = a;
+                        listView1.Items.Add(li);
+                    });
 
                     break;
                 case Unvan.Hemşire:
-                    List<Hemsire> Hemsirelst = new List<Hemsire>();
-
-                    Arama.ListedeArama<Hemsire>(arama, ref Hemsirelst);
-                    ListeyiDoldur(Hemsirelst);
+                    List<Hemsire> hmslst;
+                    hmslst = Hastane.Hemsireler.Where(x => x.Ad.ToLower().Contains(arama) || x.Soyad.Contains(arama) || x.Tckn.Contains(arama)).ToList();
+                    hmslst.ForEach(a =>
+                    {
+                        ListViewItem li = new ListViewItem();
+                        li.Text = a.Ad;
+                        li.SubItems.Add(a.Soyad);
+                        li.SubItems.Add(a.Tckn);
+                        li.Tag = a;
+                        listView1.Items.Add(li);
+                    });
 
                     break;
                 default:
@@ -332,64 +317,53 @@ namespace OppBitirme.View
                
        
         }
-        private void ListeyiDoldur<T>(List<T> list)
+        private void Control_Doldur()
         {
-            listView1.Items.Clear();
-            if(list is List<Hasta>)
-            {
-                (list as List<Hasta>).ForEach(a =>
-                {
-                    ListViewItem li = new ListViewItem();
-                    li.Text = a.Ad;
-                    li.SubItems.Add(a.Soyad);
-                    li.SubItems.Add(a.Tckn);
-                    li.Tag = a;
-                    listView1.Items.Add(li);
-                });
+            SeciliKisi = (Kisi)(listView1.FocusedItem.Tag);
 
-            }else if (list is List<Hemsire>)
+            txtHastaAdi.Text = SeciliKisi.Ad;
+            txtHastaSoyadi.Text = SeciliKisi.Soyad;
+            txtHastaTckn.Text = SeciliKisi.Tckn;
+            txtHastaTel.Text = SeciliKisi.Telefon;
+            txtHastaAdres.Text = SeciliKisi.Adres;
+            txtHastaMail.Text = SeciliKisi.Mail;
+            dtpHastaDogumTarihi.Value = SeciliKisi.DogumTarihi;
+            cmbHastaCinsiyeti.SelectedIndex = cmbHastaCinsiyeti.Items.IndexOf(SeciliKisi.cinsiyet.ToString());
+
+            if (SeciliKisi is IServis)
             {
-                (list as List<Hemsire>).ForEach(a =>
+                cmbKisiBrans.SelectedItem = (SeciliKisi as IServis).Servis;
+            }
+            if (SeciliKisi is Doktor)
+            {
+                Doktor dkt = (Doktor)SeciliKisi;
+                List<Hemsire> BosHemsireler = new List<Hemsire>();
+                chlsDktHemsire.Items.Clear();
+                chlBosHemsire.Items.Clear();
+                List<Hemsire> DktHemsireleri = Hastane.Hemsireler.Where(x => x?.DoktorTckn == dkt.Tckn).ToList();
+
+                DktHemsireleri.ForEach(c =>
                 {
-                    ListViewItem li = new ListViewItem();
-                    li.Text = a.Ad;
-                    li.SubItems.Add(a.Soyad);
-                    li.SubItems.Add(a.Tckn);
-                    li.Tag = a;
-                    listView1.Items.Add(li);
+                    chlsDktHemsire.Items.Add(c);
+
+                });
+                BosHemsireler = Hastane.Hemsireler.Where(x => x.Servis == dkt.Servis && x.DoktorTckn== null).ToList();
+
+                BosHemsireler.ForEach(bos =>
+                {
+                    chlBosHemsire.Items.Add(bos);
                 });
 
             }
-            else if (list is List<Doktor>)
+            if (SeciliKisi is IBrans)
             {
-                (list as List<Doktor>).ForEach(a =>
-                {
-                    ListViewItem li = new ListViewItem();
-                    li.Text = a.Ad;
-                    li.SubItems.Add(a.Soyad);
-                    li.SubItems.Add(a.Tckn);
-                    li.Tag = a;
-                    listView1.Items.Add(li);
-                });
-
+                cmbKisiBrans.SelectedItem = (SeciliKisi as IBrans).brans;
             }
-            else if (list is List<Personel>)
-            {
-                (list as List<Personel>).ForEach(a =>
-                {
-                    ListViewItem li = new ListViewItem();
-                    li.Text = a.Ad;
-                    li.SubItems.Add(a.Soyad);
-                    li.SubItems.Add(a.Tckn);
-                    li.Tag = a;
-                    listView1.Items.Add(li);
-                });
-
-            }
-
-
 
         }
+
+
+       
 
     }
 }

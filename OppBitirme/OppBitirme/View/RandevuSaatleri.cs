@@ -27,7 +27,7 @@ namespace OppBitirme.View
         private void RandevuSaatleri_Load(object sender, EventArgs e)
         {
 
-            Saatlist = Hastane.Randevular.Where(x => x.doktor.Tckn == this.doktor.Tckn && x.Zamani.Date == DateTime.Today).Select(x => x.Zamani).ToList();
+            Saatlist = Hastane.Randevular.Where(x => x?.doktorTckn == this.doktor?.Tckn && x.Zamani.Date == DateTime.Today).Select(x => x.Zamani).ToList();
             DateTime saat = new DateTime();
             saat = DateTime.Today;
             saat = saat.Add(Hastane.AcilisSaati.TimeOfDay);

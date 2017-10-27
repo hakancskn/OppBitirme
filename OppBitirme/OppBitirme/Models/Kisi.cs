@@ -80,7 +80,7 @@ namespace OppBitirme.Models
                 throw new Exception("Ad veya soyad en az 2 karakter olmalı");
             return CultureInfo.CurrentCulture.TextInfo.ToTitleCase(adsoyad);
         }
-        public string TcknValid(string tckn)
+        public virtual string  TcknValid(string tckn)
         {
             if (tckn.Length != 11)
                 throw new Exception("T.C. Kimlik numarası 11 haneli olmalıdır.");

@@ -77,13 +77,14 @@ namespace OppBitirme.View
             myStringFormat.Alignment = StringAlignment.Far;
 
           
-
+            
             foreach (Randevu lvi in listBox2.Items)
             {
-                e.Graphics.DrawString(lvi.Zamani.ToString("dd/MM/yy hh:mm"), myFont, sbrush, 220, y, myStringFormat);
-                e.Graphics.DrawString(lvi.hasta.Tckn, myFont, sbrush, 340, y, myStringFormat); 
-                e.Graphics.DrawString(lvi.hasta.Ad, myFont, sbrush, 500, y, myStringFormat);
-                e.Graphics.DrawString(lvi.hasta.Soyad, myFont, sbrush, 700, y, myStringFormat);
+                Hasta hasta=Hastane.Hastalar.Where(x => x.Tckn == lvi.hastaTckn).First();
+                e.Graphics.DrawString(lvi.Zamani.ToString("dd/MM/yy HH:mm"), myFont, sbrush, 220, y, myStringFormat);
+                e.Graphics.DrawString(hasta.Tckn, myFont, sbrush, 340, y, myStringFormat); 
+                e.Graphics.DrawString(hasta.Ad, myFont, sbrush, 500, y, myStringFormat);
+                e.Graphics.DrawString(hasta.Soyad, myFont, sbrush, 700, y, myStringFormat);
 
                 y += 20;
 
@@ -100,7 +101,7 @@ namespace OppBitirme.View
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            List<Randevu> list = Hastane.Randevular.Where(x=>x.doktor.Tckn==(listBox1.SelectedItem as Doktor).Tckn).ToList();
+            List<Randevu> list = Hastane.Randevular.Where(x=>x?.doktorTckn==(listBox1.SelectedItem as Doktor)?.Tckn).ToList();
             Liste_Doldur.ListeDoldur<Randevu>(list, listBox2);
         }
     }
